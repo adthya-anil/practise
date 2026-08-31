@@ -1,0 +1,2382 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Complete, syllabus-aligned ACCA APM Data Science and Technology study guide for September 2026 to June 2027.">
+  <meta name="theme-color" content="#071b2b">
+  <title>ACCA APM — Data Science &amp; Technology Study Guide</title>
+  <style>
+:root {
+  color-scheme: light;
+  --navy-950: #071b2b;
+  --navy-900: #0b263b;
+  --navy-800: #123a55;
+  --teal-700: #087b77;
+  --teal-600: #0b918a;
+  --teal-100: #dff6f2;
+  --teal-50: #effbf9;
+  --gold-500: #f1b84b;
+  --gold-100: #fff2d1;
+  --ink: #17212b;
+  --muted: #5c6975;
+  --surface: #ffffff;
+  --surface-soft: #f5f8fa;
+  --surface-raised: #ffffff;
+  --border: #d8e1e7;
+  --code: #eef3f6;
+  --danger-soft: #fff2ef;
+  --danger: #a13c2d;
+  --shadow: 0 18px 48px rgba(7, 27, 43, .10);
+  --radius-lg: 22px;
+  --radius-md: 14px;
+  --content: 860px;
+  --sidebar: 300px;
+}
+
+[data-theme='dark'] {
+  color-scheme: dark;
+  --ink: #eaf2f6;
+  --muted: #afbec8;
+  --surface: #0b1d2a;
+  --surface-soft: #102837;
+  --surface-raised: #122b3a;
+  --border: #284758;
+  --code: #193746;
+  --teal-700: #73ded3;
+  --teal-600: #4ac8bd;
+  --teal-100: #123c3b;
+  --teal-50: #102f31;
+  --gold-100: #46391c;
+  --danger-soft: #3b2423;
+  --danger: #ffac9e;
+  --shadow: 0 18px 48px rgba(0, 0, 0, .3);
+}
+
+* { box-sizing: border-box; }
+.sr-only {
+  position: absolute !important;
+  width: 1px !important;
+  height: 1px !important;
+  padding: 0 !important;
+  margin: -1px !important;
+  overflow: hidden !important;
+  clip: rect(0, 0, 0, 0) !important;
+  white-space: nowrap !important;
+  border: 0 !important;
+}
+html { scroll-behavior: smooth; scroll-padding-top: 86px; }
+body {
+  margin: 0;
+  background: var(--surface-soft);
+  color: var(--ink);
+  font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  font-size: 16px;
+  line-height: 1.72;
+  text-rendering: optimizeLegibility;
+}
+a { color: var(--teal-700); text-underline-offset: .16em; }
+a:hover { text-decoration-thickness: 2px; }
+button, input { font: inherit; }
+button { cursor: pointer; }
+
+.skip-link {
+  position: fixed;
+  left: 16px;
+  top: -80px;
+  z-index: 1000;
+  border-radius: 8px;
+  background: var(--gold-500);
+  color: #17212b;
+  font-weight: 800;
+  padding: 10px 14px;
+  transition: top .15s ease;
+}
+.skip-link:focus { top: 16px; }
+:focus-visible { outline: 3px solid var(--gold-500); outline-offset: 3px; }
+
+.reading-progress {
+  position: fixed;
+  inset: 0 0 auto;
+  z-index: 999;
+  height: 4px;
+  background: transparent;
+}
+.reading-progress span {
+  display: block;
+  width: 0;
+  height: 100%;
+  background: linear-gradient(90deg, var(--gold-500), #55d7c8);
+}
+
+.utility-bar {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  min-height: 62px;
+  padding: 9px clamp(16px, 4vw, 52px);
+  border-bottom: 1px solid rgba(255,255,255,.14);
+  background: rgba(7, 27, 43, .94);
+  color: #fff;
+  backdrop-filter: blur(14px);
+}
+.brand { display: flex; align-items: center; gap: 10px; font-weight: 850; letter-spacing: -.01em; }
+.brand-mark {
+  display: grid;
+  width: 36px;
+  height: 36px;
+  place-items: center;
+  border-radius: 10px;
+  background: var(--gold-500);
+  color: #17212b;
+  font-size: .82rem;
+  letter-spacing: .03em;
+}
+.toolbar { display: flex; gap: 8px; }
+.tool-button, .menu-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+  min-height: 40px;
+  padding: 8px 12px;
+  border: 1px solid rgba(255,255,255,.22);
+  border-radius: 10px;
+  background: rgba(255,255,255,.07);
+  color: #fff;
+  font-weight: 700;
+}
+.tool-button:hover, .menu-button:hover { background: rgba(255,255,255,.14); }
+.tool-button svg, .menu-button svg {
+  width: 18px;
+  height: 18px;
+  flex: 0 0 auto;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+.menu-button { display: none; }
+
+.hero {
+  position: relative;
+  overflow: hidden;
+  padding: clamp(54px, 8vw, 98px) clamp(18px, 6vw, 72px) clamp(48px, 7vw, 82px);
+  background:
+    radial-gradient(circle at 82% 22%, rgba(85,215,200,.2), transparent 26%),
+    radial-gradient(circle at 12% 88%, rgba(241,184,75,.14), transparent 30%),
+    linear-gradient(145deg, var(--navy-950), var(--navy-800));
+  color: #fff;
+}
+.hero-inner { width: min(1100px, 100%); margin: 0 auto; }
+.eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin: 0 0 17px;
+  color: #91e4da;
+  font-size: .82rem;
+  font-weight: 850;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+}
+.eyebrow::before { content: ''; width: 28px; height: 2px; background: var(--gold-500); }
+.hero h1 {
+  max-width: 820px;
+  margin: 0;
+  color: #fff;
+  font-size: clamp(2.35rem, 6vw, 4.7rem);
+  line-height: 1.02;
+  letter-spacing: -.055em;
+}
+.hero-lede {
+  max-width: 700px;
+  margin: 22px 0 0;
+  color: #d5e5ed;
+  font-size: clamp(1.05rem, 2vw, 1.28rem);
+  line-height: 1.55;
+}
+.hero-badges { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 28px; }
+.badge {
+  border: 1px solid rgba(255,255,255,.2);
+  border-radius: 999px;
+  background: rgba(255,255,255,.08);
+  color: #ecf7fa;
+  padding: 7px 12px;
+  font-size: .86rem;
+  font-weight: 750;
+}
+
+.exam-strip {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  width: min(1100px, calc(100% - 32px));
+  margin: -30px auto 36px;
+  position: relative;
+  z-index: 2;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  background: var(--surface-raised);
+  box-shadow: var(--shadow);
+}
+.exam-fact { padding: 19px 22px; border-right: 1px solid var(--border); }
+.exam-fact:last-child { border-right: 0; }
+.exam-fact strong { display: block; color: var(--teal-700); font-size: 1.4rem; line-height: 1.2; }
+.exam-fact span { display: block; margin-top: 5px; color: var(--muted); font-size: .82rem; font-weight: 700; }
+
+.layout {
+  display: grid;
+  grid-template-columns: var(--sidebar) minmax(0, var(--content));
+  gap: clamp(28px, 4vw, 54px);
+  justify-content: center;
+  width: min(1240px, calc(100% - 32px));
+  margin: 0 auto;
+  align-items: start;
+}
+.sidebar {
+  position: sticky;
+  top: 82px;
+  max-height: calc(100vh - 102px);
+  overflow: hidden;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  background: var(--surface-raised);
+  box-shadow: 0 8px 24px rgba(7, 27, 43, .06);
+}
+.sidebar-head { padding: 17px 17px 12px; border-bottom: 1px solid var(--border); }
+.sidebar-title { margin: 0 0 10px; font-size: .8rem; font-weight: 850; letter-spacing: .1em; text-transform: uppercase; }
+.search-wrap { position: relative; }
+.search-wrap span { position: absolute; left: 11px; top: 8px; color: var(--muted); }
+#topic-search {
+  width: 100%;
+  height: 40px;
+  padding: 7px 10px 7px 34px;
+  border: 1px solid var(--border);
+  border-radius: 9px;
+  background: var(--surface-soft);
+  color: var(--ink);
+}
+.search-status { min-height: 1.3em; margin: 7px 1px 0; color: var(--muted); font-size: .75rem; }
+.toc-scroll { max-height: calc(100vh - 216px); overflow: auto; padding: 10px 10px 18px; scrollbar-width: thin; }
+.toc { font-size: .83rem; line-height: 1.38; }
+.toc ul { margin: 0; padding: 0; list-style: none; }
+.toc ul ul { padding-left: 10px; margin: 3px 0 8px 7px; border-left: 1px solid var(--border); }
+.toc li { margin: 1px 0; }
+.toc a {
+  display: block;
+  padding: 7px 9px;
+  border-radius: 8px;
+  color: var(--muted);
+  text-decoration: none;
+}
+.toc ul ul a { padding-top: 5px; padding-bottom: 5px; font-size: .78rem; }
+.toc a:hover { background: var(--surface-soft); color: var(--ink); }
+.toc a.active { background: var(--teal-100); color: var(--teal-700); font-weight: 800; }
+.toc li.search-hidden { display: none; }
+
+.content { min-width: 0; padding-bottom: 90px; }
+.notice {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 14px;
+  margin-bottom: 28px;
+  padding: 18px 20px;
+  border: 1px solid #edcf7d;
+  border-radius: var(--radius-md);
+  background: var(--gold-100);
+}
+.notice-icon { font-size: 1.35rem; }
+.notice p { margin: 0; }
+.notice strong { display: block; margin-bottom: 2px; }
+
+article {
+  padding: clamp(24px, 5vw, 58px);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  background: var(--surface-raised);
+  box-shadow: 0 8px 28px rgba(7, 27, 43, .055);
+}
+article > :first-child { margin-top: 0; }
+article h1 {
+  margin: 70px calc(clamp(24px, 5vw, 58px) * -1) 28px;
+  padding: 25px clamp(24px, 5vw, 58px);
+  background: linear-gradient(130deg, var(--navy-900), var(--navy-800));
+  color: #fff;
+  font-size: clamp(1.45rem, 3vw, 2rem);
+  line-height: 1.25;
+  letter-spacing: -.025em;
+}
+article h1:first-of-type { margin-top: 48px; }
+article h2 {
+  margin: 64px 0 22px;
+  padding-top: 12px;
+  border-top: 1px solid var(--border);
+  color: var(--navy-800);
+  font-size: clamp(1.55rem, 3vw, 2.05rem);
+  line-height: 1.23;
+  letter-spacing: -.035em;
+}
+[data-theme='dark'] article h2 { color: #7adfd3; }
+article h3 { margin: 38px 0 14px; color: var(--teal-700); font-size: 1.25rem; line-height: 1.35; }
+article h4 { margin: 28px 0 10px; font-size: 1.04rem; }
+article p { margin: 0 0 18px; }
+article ul, article ol { margin: 0 0 22px; padding-left: 1.45rem; }
+article li { margin: 0 0 8px; padding-left: .25rem; }
+article li::marker { color: var(--teal-600); font-weight: 800; }
+.interactive-checklist { padding-left: 0; list-style: none; }
+.interactive-checklist li {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 10px;
+  align-items: start;
+  padding: 9px 11px;
+  border-radius: 9px;
+  background: var(--surface-soft);
+}
+.interactive-checklist input {
+  width: 18px;
+  height: 18px;
+  margin: 4px 0 0;
+  accent-color: var(--teal-600);
+}
+.interactive-checklist li:has(input:checked) { color: var(--muted); text-decoration: line-through; }
+article strong { color: inherit; font-weight: 800; }
+article blockquote {
+  margin: 24px 0;
+  padding: 17px 20px;
+  border: 0;
+  border-left: 5px solid var(--teal-600);
+  border-radius: 0 var(--radius-md) var(--radius-md) 0;
+  background: var(--teal-50);
+}
+article blockquote p:last-child { margin-bottom: 0; }
+article hr { margin: 62px 0; border: 0; border-top: 1px solid var(--border); }
+article code { border-radius: 5px; background: var(--code); padding: .12em .34em; font-size: .9em; }
+article table {
+  display: block;
+  width: 100%;
+  margin: 24px 0;
+  overflow-x: auto;
+  border-collapse: collapse;
+  font-size: .9rem;
+}
+article th, article td { min-width: 180px; padding: 11px 13px; border: 1px solid var(--border); text-align: left; vertical-align: top; }
+article th { background: var(--teal-100); color: var(--ink); }
+.heading-anchor {
+  margin-left: 7px;
+  color: var(--muted);
+  font-size: .62em;
+  font-weight: 500;
+  opacity: 0;
+  text-decoration: none;
+}
+h2:hover .heading-anchor, h3:hover .heading-anchor, .heading-anchor:focus { opacity: 1; }
+
+.back-to-top {
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+  z-index: 30;
+  display: grid;
+  width: 45px;
+  height: 45px;
+  place-items: center;
+  border: 1px solid var(--border);
+  border-radius: 50%;
+  background: var(--surface-raised);
+  color: var(--ink);
+  box-shadow: var(--shadow);
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(8px);
+  transition: .2s ease;
+}
+.back-to-top.visible { opacity: 1; pointer-events: auto; transform: none; }
+
+.site-footer {
+  margin-top: 42px;
+  padding: 28px 18px 46px;
+  color: var(--muted);
+  text-align: center;
+  font-size: .86rem;
+}
+.site-footer strong { color: var(--ink); }
+
+@media (max-width: 980px) {
+  .layout { grid-template-columns: minmax(0, var(--content)); }
+  .menu-button { display: inline-flex; }
+  .sidebar {
+    position: fixed;
+    inset: 66px auto 0 0;
+    z-index: 45;
+    width: min(340px, 88vw);
+    max-height: none;
+    border-radius: 0 var(--radius-md) 0 0;
+    transform: translateX(-105%);
+    transition: transform .2s ease;
+  }
+  .sidebar.open { transform: translateX(0); }
+  .toc-scroll { max-height: calc(100vh - 195px); }
+  .nav-scrim { position: fixed; inset: 62px 0 0; z-index: 40; background: rgba(3,14,22,.6); display: none; }
+  .nav-scrim.open { display: block; }
+}
+@media (max-width: 720px) {
+  .utility-bar { padding-inline: 12px; }
+  .brand-label { display: none; }
+  .tool-label { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); }
+  .exam-strip { grid-template-columns: repeat(2, 1fr); }
+  .exam-fact:nth-child(2) { border-right: 0; }
+  .exam-fact:nth-child(-n+2) { border-bottom: 1px solid var(--border); }
+  article { padding: 23px 18px; border-radius: var(--radius-md); }
+  article h1 { margin-inline: -18px; padding-inline: 18px; }
+  article h2 { font-size: 1.48rem; }
+}
+@media (max-width: 430px) {
+  .hero { padding-inline: 18px; }
+  .exam-strip { width: calc(100% - 20px); }
+  .exam-fact { padding: 15px; }
+  .exam-fact strong { font-size: 1.12rem; }
+  .layout { width: calc(100% - 20px); }
+}
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after { transition-duration: .01ms !important; animation-duration: .01ms !important; }
+}
+@media print {
+  :root { --ink: #111; --muted: #444; --surface-raised: #fff; --border: #bbb; }
+  body { background: #fff; font-size: 10pt; line-height: 1.45; }
+  .utility-bar, .sidebar, .reading-progress, .back-to-top, .nav-scrim { display: none !important; }
+  .hero { padding: 32px 0; background: none; color: #111; }
+  .hero h1 { color: #111; font-size: 30pt; }
+  .hero-lede, .eyebrow { color: #333; }
+  .hero-badges .badge { border-color: #777; color: #222; }
+  .exam-strip { width: 100%; margin: 0 0 18px; box-shadow: none; }
+  .layout { display: block; width: 100%; }
+  .notice { break-inside: avoid; }
+  article { padding: 0; border: 0; box-shadow: none; }
+  article h1 { margin-inline: 0; padding: 12px; background: #eee; color: #111; }
+  article h2, article h3 { break-after: avoid; }
+  article blockquote, article table, article li { break-inside: avoid; }
+  .heading-anchor { display: none; }
+  a { color: inherit; text-decoration: none; }
+  a[href^='http']::after { content: ' (' attr(href) ')'; font-size: 8pt; overflow-wrap: anywhere; }
+  .site-footer { padding-bottom: 0; }
+  @page { size: A4; margin: 16mm; }
+}
+</style>
+</head>
+<body>
+  <a class="skip-link" href="#study-notes">Skip to study notes</a>
+  <div class="reading-progress" aria-hidden="true"><span id="progress-bar"></span></div>
+
+  <div class="utility-bar">
+    <div class="brand"><span class="brand-mark">APM</span><span class="brand-label">Performance Insights Study Guide</span></div>
+    <div class="toolbar">
+      <button class="menu-button" id="menu-toggle" type="button" aria-expanded="false" aria-controls="study-navigation"><svg aria-hidden="true" viewBox="0 0 24 24"><path d="M4 6h16M4 12h16M4 18h16"/></svg><span class="tool-label">Topics</span></button>
+      <button class="tool-button" id="print-guide" type="button"><svg aria-hidden="true" viewBox="0 0 24 24"><path d="M6 9V3h12v6M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2M6 14h12v7H6z"/></svg><span class="tool-label">Print / Save PDF</span></button>
+      <button class="tool-button" id="theme-toggle" type="button" aria-pressed="false"><svg class="theme-icon" aria-hidden="true" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.42 1.42M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.42-1.42M17.66 6.34l1.41-1.41"/></svg><span class="tool-label">Theme</span></button>
+    </div>
+  </div>
+
+  <header class="hero">
+    <div class="hero-inner">
+      <p class="eyebrow">ACCA Advanced Performance Management</p>
+      <h1>Data Science &amp;<br>Technology</h1>
+      <p class="hero-lede">A clear, exam-focused guide to performance insights—covering every Section D learning outcome for September 2026–June 2027.</p>
+      <div class="hero-badges" aria-label="Guide features">
+        <span class="badge">Complete D1 &amp; D2 coverage</span>
+        <span class="badge">Ethics included</span>
+        <span class="badge">Exam answer frameworks</span>
+        <span class="badge">Works offline</span>
+      </div>
+    </div>
+  </header>
+
+  <section class="exam-strip" aria-label="Key exam facts">
+    <div class="exam-fact"><strong>25 marks</strong><span>Compulsory Section D question</span></div>
+    <div class="exam-fact"><strong>20 + 5</strong><span>Technical + professional skills</span></div>
+    <div class="exam-fact"><strong>49 min</strong><span>Approximate time allocation</span></div>
+    <div class="exam-fact"><strong>14 outcomes</strong><span>All covered in this guide</span></div>
+  </section>
+
+  <div class="layout">
+    <aside class="sidebar" id="study-navigation" aria-label="Study guide navigation">
+      <div class="sidebar-head">
+        <p class="sidebar-title">Study topics</p>
+        <label class="search-wrap"><span aria-hidden="true">⌕</span><input id="topic-search" type="search" placeholder="Filter topics…" autocomplete="off"><span class="sr-only">Filter study topics</span></label>
+        <p class="search-status" id="search-status" aria-live="polite">Filter the table of contents</p>
+      </div>
+      <nav class="toc-scroll" aria-label="Table of contents"><div class="toc">
+<ul>
+<li><a href="#1-what-has-changed-and-why-it-matters">1. What has changed and why it matters</a></li>
+<li><a href="#2-the-golden-rule-for-section-d-answers">2. The golden rule for Section D answers</a></li>
+<li><a href="#3-how-it-developments-influence-performance-management-systems-d1a">3. How IT developments influence performance management systems (D1a)</a><ul>
+<li><a href="#performance-management-benefits">Performance-management benefits</a></li>
+<li><a href="#risks-and-limitations">Risks and limitations</a></li>
+</ul>
+</li>
+<li><a href="#4-unified-corporate-databases">4. Unified corporate databases</a><ul>
+<li><a href="#benefits">Benefits</a></li>
+<li><a href="#problems">Problems</a></li>
+<li><a href="#exam-judgement">Exam judgement</a></li>
+</ul>
+</li>
+<li><a href="#5-data-warehouses">5. Data warehouses</a><ul>
+<li><a href="#difference-from-a-unified-database">Difference from a unified database</a></li>
+<li><a href="#benefits_1">Benefits</a></li>
+<li><a href="#risks">Risks</a></li>
+</ul>
+</li>
+<li><a href="#6-process-automation-and-robotic-process-automation-rpa">6. Process automation and robotic process automation (RPA)</a><ul>
+<li><a href="#suitable-activities">Suitable activities</a></li>
+<li><a href="#benefits_2">Benefits</a></li>
+<li><a href="#risks_1">Risks</a></li>
+<li><a href="#controlsrecommendations">Controls/recommendations</a></li>
+</ul>
+</li>
+<li><a href="#7-artificial-intelligence-ai">7. Artificial intelligence (AI)</a><ul>
+<li><a href="#performance-management-applications">Performance-management applications</a></li>
+<li><a href="#evaluation">Evaluation</a></li>
+</ul>
+</li>
+<li><a href="#8-rfid-sensors-and-the-internet-of-things">8. RFID, sensors and the Internet of Things</a><ul>
+<li><a href="#applications">Applications</a></li>
+<li><a href="#performance-benefits">Performance benefits</a></li>
+<li><a href="#risks_2">Risks</a></li>
+</ul>
+</li>
+<li><a href="#9-cloud-and-network-technology">9. Cloud and network technology</a><ul>
+<li><a href="#benefits_3">Benefits</a></li>
+<li><a href="#risks_3">Risks</a></li>
+<li><a href="#appropriate-controls">Appropriate controls</a></li>
+</ul>
+</li>
+<li><a href="#10-data-silos-d1b">10. Data silos (D1b)</a><ul>
+<li><a href="#causes">Causes</a></li>
+<li><a href="#problems-for-the-accounting-function">Problems for the accounting function</a></li>
+<li><a href="#solutions">Solutions</a></li>
+</ul>
+</li>
+<li><a href="#11-enterprise-resource-planning-systems-erp-d1c">11. Enterprise resource planning systems (ERP) (D1c)</a><ul>
+<li><a href="#performance-management-benefits_1">Performance-management benefits</a></li>
+<li><a href="#limitationsimplementation-risks">Limitations/implementation risks</a></li>
+<li><a href="#recommendation-framework">Recommendation framework</a></li>
+</ul>
+</li>
+<li><a href="#12-knowledge-management-systems-kms-d1c">12. Knowledge management systems (KMS) (D1c)</a><ul>
+<li><a href="#benefits_4">Benefits</a></li>
+<li><a href="#limitationscontrols">Limitations/controls</a></li>
+</ul>
+</li>
+<li><a href="#13-customer-relationship-management-systems-crm-d1c">13. Customer relationship management systems (CRM) (D1c)</a><ul>
+<li><a href="#data-and-possible-kpis">Data and possible KPIs</a></li>
+<li><a href="#benefits_5">Benefits</a></li>
+<li><a href="#risks_4">Risks</a></li>
+<li><a href="#evaluation-tip">Evaluation tip</a></li>
+</ul>
+</li>
+<li><a href="#14-systems-and-data-risks-methods-and-controls-d1d">14. Systems and data risks, methods and controls (D1d)</a><ul>
+<li><a href="#main-risks">Main risks</a></li>
+<li><a href="#preventive-controls">Preventive controls</a></li>
+<li><a href="#detective-controls">Detective controls</a></li>
+<li><a href="#correctiverecovery-controls">Corrective/recovery controls</a></li>
+<li><a href="#core-security-objectives">Core security objectives</a></li>
+</ul>
+</li>
+<li><a href="#15-lean-management-information-systems-and-the-5-ss-d1e">15. Lean management information systems and the 5 Ss (D1e)</a><ul>
+<li><a href="#the-5-ss-applied-to-information">The 5 Ss applied to information</a></li>
+<li><a href="#information-value">Information value</a></li>
+<li><a href="#implementation-problems">Implementation problems</a></li>
+<li><a href="#examiner-lesson">Examiner lesson</a></li>
+</ul>
+</li>
+<li><a href="#16-core-definitions">16. Core definitions</a></li>
+<li><a href="#17-big-data-and-its-impact-d2a">17. Big data and its impact (D2a)</a><ul>
+<li><a href="#structured-semi-structured-and-unstructured-data">Structured, semi-structured and unstructured data</a></li>
+<li><a href="#internal-data">Internal data</a></li>
+<li><a href="#external-data">External data</a></li>
+<li><a href="#how-big-data-improves-performance-management">How big data improves performance management</a></li>
+<li><a href="#risks-and-challenges">Risks and challenges</a></li>
+<li><a href="#a-balanced-exam-conclusion">A balanced exam conclusion</a></li>
+</ul>
+</li>
+<li><a href="#18-the-data-science-process-d2b">18. The data-science process (D2b)</a><ul>
+<li><a href="#step-1-define-the-business-goal-and-decision">Step 1: Define the business goal and decision</a></li>
+<li><a href="#step-2-select-and-obtain-data">Step 2: Select and obtain data</a></li>
+<li><a href="#step-3-understand-and-assess-data-quality">Step 3: Understand and assess data quality</a></li>
+<li><a href="#step-4-clean-the-data">Step 4: Clean the data</a></li>
+<li><a href="#step-5-transform-and-prepare">Step 5: Transform and prepare</a></li>
+<li><a href="#step-6-store-and-protect">Step 6: Store and protect</a></li>
+<li><a href="#step-7-analysebuild-the-model">Step 7: Analyse/build the model</a></li>
+<li><a href="#step-8-validate-and-challenge">Step 8: Validate and challenge</a></li>
+<li><a href="#step-9-communicate-insights">Step 9: Communicate insights</a></li>
+<li><a href="#step-10-implement-monitor-and-refine">Step 10: Implement, monitor and refine</a></li>
+</ul>
+</li>
+<li><a href="#19-four-types-of-analytics-d2c">19. Four types of analytics (D2c)</a><ul>
+<li><a href="#191-descriptive-analytics-what-happenedis-happening">19.1 Descriptive analytics — What happened/is happening?</a></li>
+<li><a href="#192-diagnostic-analytics-why-did-it-happen">19.2 Diagnostic analytics — Why did it happen?</a></li>
+<li><a href="#193-predictive-analytics-what-is-likely-to-happen">19.3 Predictive analytics — What is likely to happen?</a></li>
+<li><a href="#194-prescriptive-analytics-what-should-we-do">19.4 Prescriptive analytics — What should we do?</a></li>
+<li><a href="#how-the-four-work-together">How the four work together</a></li>
+</ul>
+</li>
+<li><a href="#20-types-of-data-used-in-analytics-d2d">20. Types of data used in analytics (D2d)</a><ul>
+<li><a href="#201-text-analytics">20.1 Text analytics</a></li>
+<li><a href="#202-image-analytics">20.2 Image analytics</a></li>
+<li><a href="#203-video-analytics">20.3 Video analytics</a></li>
+<li><a href="#204-speech-and-voice-analytics">20.4 Speech and voice analytics</a></li>
+<li><a href="#key-exam-evaluation">Key exam evaluation</a></li>
+</ul>
+</li>
+<li><a href="#21-analysing-data-patterns-trends-ranges-and-distributions-d2e">21. Analysing data: patterns, trends, ranges and distributions (D2e)</a><ul>
+<li><a href="#measures-of-central-tendency">Measures of central tendency</a></li>
+<li><a href="#measures-of-spread">Measures of spread</a></li>
+<li><a href="#distribution-and-shape">Distribution and shape</a></li>
+<li><a href="#trends-seasonality-and-patterns">Trends, seasonality and patterns</a></li>
+<li><a href="#biases-to-identify">Biases to identify</a></li>
+</ul>
+</li>
+<li><a href="#22-regression-analysis-d2e">22. Regression analysis (D2e)</a><ul>
+<li><a href="#simple-linear-regression">Simple linear regression</a></li>
+<li><a href="#multiple-regression">Multiple regression</a></li>
+<li><a href="#key-output-to-interpret">Key output to interpret</a></li>
+<li><a href="#questions-to-ask-before-relying-on-regression">Questions to ask before relying on regression</a></li>
+<li><a href="#common-regression-traps">Common regression traps</a></li>
+<li><a href="#exam-style-interpretation">Exam-style interpretation</a></li>
+</ul>
+</li>
+<li><a href="#23-machine-learning-and-ai-for-insight-and-improvement-d2f">23. Machine learning and AI for insight and improvement (D2f)</a><ul>
+<li><a href="#main-forms">Main forms</a></li>
+<li><a href="#common-tasks">Common tasks</a></li>
+<li><a href="#benefits_6">Benefits</a></li>
+<li><a href="#limitations-and-risks">Limitations and risks</a></li>
+<li><a href="#human-in-the-loop">Human-in-the-loop</a></li>
+<li><a href="#performance-measures-for-classification-models">Performance measures for classification models</a></li>
+<li><a href="#performance-measures-for-forecasts">Performance measures for forecasts</a></li>
+</ul>
+</li>
+<li><a href="#24-assessing-and-refining-data-model-output-d2g">24. Assessing and refining data-model output (D2g)</a><ul>
+<li><a href="#full-evaluation-checklist">Full evaluation checklist</a></li>
+<li><a href="#possible-refinements">Possible refinements</a></li>
+</ul>
+</li>
+<li><a href="#25-advising-management-from-model-output-d2h">25. Advising management from model output (D2h)</a><ul>
+<li><a href="#recommended-structure-insight">Recommended structure: INSIGHT</a></li>
+<li><a href="#communicating-uncertainty">Communicating uncertainty</a></li>
+<li><a href="#good-recommendations-are">Good recommendations are</a></li>
+</ul>
+</li>
+<li><a href="#26-ethical-issues-in-information-collection-and-processing-d2i">26. Ethical issues in information collection and processing (D2i)</a><ul>
+<li><a href="#261-core-ethical-principles">26.1 Core ethical principles</a></li>
+<li><a href="#262-algorithmic-bias">26.2 Algorithmic bias</a></li>
+<li><a href="#controls">Controls</a></li>
+<li><a href="#263-black-box-algorithms">26.3 Black-box algorithms</a></li>
+<li><a href="#264-large-scale-collection-and-surveillance">26.4 Large-scale collection and surveillance</a></li>
+<li><a href="#265-ethical-issues-in-employee-analytics">26.5 Ethical issues in employee analytics</a></li>
+<li><a href="#266-ethical-issues-in-customer-analytics-and-dynamic-pricing">26.6 Ethical issues in customer analytics and dynamic pricing</a></li>
+<li><a href="#267-acca-professional-ethics-connection">26.7 ACCA professional ethics connection</a></li>
+</ul>
+</li>
+<li><a href="#27-role-of-the-management-accountant-in-data-science">27. Role of the management accountant in data science</a></li>
+<li><a href="#28-probable-section-d-question-patterns">28. Probable Section D question patterns</a><ul>
+<li><a href="#pattern-1-new-erpunified-database-proposal">Pattern 1: New ERP/unified database proposal</a></li>
+<li><a href="#pattern-2-cloud-migrationcyber-incident">Pattern 2: Cloud migration/cyber incident</a></li>
+<li><a href="#pattern-3-big-data-customer-analytics">Pattern 3: Big-data customer analytics</a></li>
+<li><a href="#pattern-4-four-analytics-methods">Pattern 4: Four analytics methods</a></li>
+<li><a href="#pattern-5-regression-output-and-forecast">Pattern 5: Regression output and forecast</a></li>
+<li><a href="#pattern-6-machine-learning-model">Pattern 6: Machine-learning model</a></li>
+<li><a href="#pattern-7-ethical-algorithmblack-box-decision">Pattern 7: Ethical algorithm/black-box decision</a></li>
+<li><a href="#pattern-8-textimagevideovoice-analytics">Pattern 8: Text/image/video/voice analytics</a></li>
+<li><a href="#pattern-9-lean-information-system5-ss">Pattern 9: Lean information system/5 Ss</a></li>
+<li><a href="#pattern-10-rfidiot-and-operational-performance">Pattern 10: RFID/IoT and operational performance</a></li>
+<li><a href="#pattern-11-crmkms-implementation">Pattern 11: CRM/KMS implementation</a></li>
+<li><a href="#pattern-12-misleading-dashboard-or-model-narrative">Pattern 12: Misleading dashboard or model narrative</a></li>
+</ul>
+</li>
+<li><a href="#29-cross-syllabus-integrations-you-should-expect">29. Cross-syllabus integrations you should expect</a><ul>
+<li><a href="#strategy-csfs-and-kpis">Strategy, CSFs and KPIs</a></li>
+<li><a href="#balanced-scorecard">Balanced Scorecard</a></li>
+<li><a href="#budgeting-and-forecasting">Budgeting and forecasting</a></li>
+<li><a href="#reward-and-behaviour">Reward and behaviour</a></li>
+<li><a href="#performance-improvement">Performance improvement</a></li>
+<li><a href="#services-and-not-for-profits">Services and not-for-profits</a></li>
+<li><a href="#sustainability">Sustainability</a></li>
+</ul>
+</li>
+<li><a href="#30-requirement-verbs-what-the-marker-expects">30. Requirement verbs: what the marker expects</a></li>
+<li><a href="#31-section-b-time-and-mark-strategy">31. Section B time and mark strategy</a></li>
+<li><a href="#32-a-universal-answer-framework">32. A universal answer framework</a></li>
+<li><a href="#33-professional-skills-marks-in-the-section-d-question">33. Professional skills marks in the Section D question</a><ul>
+<li><a href="#331-analysis-and-evaluation">33.1 Analysis and evaluation</a></li>
+<li><a href="#332-scepticism">33.2 Scepticism</a></li>
+<li><a href="#333-commercial-acumen">33.3 Commercial acumen</a></li>
+<li><a href="#334-communication">33.4 Communication</a></li>
+</ul>
+</li>
+<li><a href="#34-model-answer-plans-for-common-requirements">34. Model answer plans for common requirements</a><ul>
+<li><a href="#341-evaluate-the-proposed-use-of-ai-to-forecast-demand">34.1 “Evaluate the proposed use of AI to forecast demand”</a></li>
+<li><a href="#342-assess-the-output-and-recommend-refinements">34.2 “Assess the output and recommend refinements”</a></li>
+<li><a href="#343-advise-on-ethical-issues">34.3 “Advise on ethical issues”</a></li>
+<li><a href="#344-evaluate-erp-for-performance-management">34.4 “Evaluate ERP for performance management”</a></li>
+<li><a href="#345-analyse-regression-output-and-advise-management">34.5 “Analyse regression output and advise management”</a></li>
+</ul>
+</li>
+<li><a href="#35-mini-practice-case-with-model-points">35. Mini practice case with model points</a><ul>
+<li><a href="#scenario">Scenario</a></li>
+<li><a href="#requirement-a-evaluate-the-model-and-proposed-use">Requirement A: Evaluate the model and proposed use</a></li>
+<li><a href="#requirement-b-advise-on-ethical-issues">Requirement B: Advise on ethical issues</a></li>
+<li><a href="#suggested-conclusion">Suggested conclusion</a></li>
+</ul>
+</li>
+<li><a href="#36-common-mistakes-that-lose-marks">36. Common mistakes that lose marks</a></li>
+<li><a href="#37-rapid-revision-sheet">37. Rapid revision sheet</a><ul>
+<li><a href="#technology-mnemonic-d-a-r-e-c">Technology mnemonic: D-A-R-E C</a></li>
+<li><a href="#big-data-5-vs">Big data: 5 Vs</a></li>
+<li><a href="#data-process">Data process</a></li>
+<li><a href="#analytics-ladder">Analytics ladder</a></li>
+<li><a href="#model-evaluation-goals">Model evaluation: GOALS</a></li>
+<li><a href="#management-advice-insight">Management advice: INSIGHT</a></li>
+<li><a href="#paragraph-pair">Paragraph: PAIR</a></li>
+<li><a href="#security">Security</a></li>
+<li><a href="#ethics">Ethics</a></li>
+<li><a href="#5-ss">5 Ss</a></li>
+</ul>
+</li>
+<li><a href="#38-final-pre-exam-checklist">38. Final pre-exam checklist</a></li>
+<li><a href="#39-suggested-study-and-question-practice-sequence">39. Suggested study and question-practice sequence</a></li>
+<li><a href="#40-authoritative-sources">40. Authoritative sources</a></li>
+<li><a href="#41-exact-section-d-syllabus-coverage-map">41. Exact Section D syllabus coverage map</a></li>
+</ul>
+</div>
+</nav>
+    </aside>
+
+    <main class="content" id="study-notes" tabindex="-1">
+      <div class="notice" role="note">
+        <span class="notice-icon" aria-hidden="true">⚑</span>
+        <p><strong>Use this guide actively.</strong> No notes can guarantee full marks. APM rewards scenario application, professional judgement and clear recommendations—not memorised theory alone.</p>
+      </div>
+      <article><h2 id="1-what-has-changed-and-why-it-matters">1. What has changed and why it matters<a class="heading-anchor" href="#1-what-has-changed-and-why-it-matters" title="Permanent link">Link to this section</a></h2>
+<p>The official September 2026–June 2027 syllabus creates a distinct section:</p>
+<p><strong>D. Data science and technology for performance and insights</strong>
+1. Technology and information systems
+2. Data science and analytics</p>
+<p>This is not optional or a minor topic. Under the new exam structure:</p>
+<ul>
+<li>Section A: one 50-mark case study (40 technical + 10 professional skills), mainly drawing across syllabus sections A and B.</li>
+<li>Section B: two compulsory 25-mark scenario questions.</li>
+<li><strong>One Section B question will come from Section C and one will come from Section D.</strong></li>
+<li>Therefore, expect <strong>one compulsory 25-mark data science/technology question</strong>: normally 20 technical marks and 5 professional-skills marks.</li>
+<li>A Section B question examines at least two of: analysis and evaluation, scepticism, and commercial acumen.</li>
+</ul>
+<p>Section D can still integrate foundational ideas from A and B, including strategy, CSFs/KPIs, risk, budgeting, customer performance, quality, sustainability, value creation and performance improvement.</p>
+<h2 id="2-the-golden-rule-for-section-d-answers">2. The golden rule for Section D answers<a class="heading-anchor" href="#2-the-golden-rule-for-section-d-answers" title="Permanent link">Link to this section</a></h2>
+<p>Do not write a generic essay about technology. Every point should follow:</p>
+<p><strong>Issue/feature → application to scenario → performance consequence → judgement/recommendation</strong></p>
+<p>Example:</p>
+<blockquote>
+<p>Real-time RFID data would show the retailer where inventory is located and identify stock-outs sooner. This supports its CSF of product availability and should reduce lost sales. However, the benefit depends on accurate tagging and integration with the ERP system; otherwise inaccurate live data may cause inappropriate replenishment. A pilot in the highest-volume stores, supported by exception reports and periodic physical checks, is therefore preferable.</p>
+</blockquote>
+<p>This earns more than: “RFID gives real-time data and improves efficiency.”</p>
+<hr>
+<h1 id="part-i-technology-and-information-systems">PART I — TECHNOLOGY AND INFORMATION SYSTEMS<a class="heading-anchor" href="#part-i-technology-and-information-systems" title="Permanent link">Link to this section</a></h1>
+<h2 id="3-how-it-developments-influence-performance-management-systems-d1a">3. How IT developments influence performance management systems (D1a)<a class="heading-anchor" href="#3-how-it-developments-influence-performance-management-systems-d1a" title="Permanent link">Link to this section</a></h2>
+<p>Technology changes:</p>
+<ul>
+<li><strong>what</strong> can be measured: financial plus operational, customer, employee, process, environmental and behavioural data;</li>
+<li><strong>when</strong> it can be measured: periodic/batch reporting becomes near-real-time monitoring;</li>
+<li><strong>how much</strong> can be measured: complete populations and detailed transactions rather than small samples;</li>
+<li><strong>where</strong> information can be accessed: remotely and across divisions/supply chains;</li>
+<li><strong>who</strong> can obtain it: operational managers may self-serve rather than wait for finance;</li>
+<li><strong>how decisions are made:</strong> descriptive reporting is supplemented by prediction, optimisation and automation.</li>
+</ul>
+<h3 id="performance-management-benefits">Performance-management benefits<a class="heading-anchor" href="#performance-management-benefits" title="Permanent link">Link to this section</a></h3>
+<ol>
+<li>More timely detection of adverse trends and quicker corrective action.</li>
+<li>Greater accuracy through automated capture and reduced manual re-entry.</li>
+<li>Better integration of financial and non-financial performance.</li>
+<li>More granular analysis by product, customer, channel, location, process or employee.</li>
+<li>Improved forecasting, target setting and resource allocation.</li>
+<li>Exception reporting allows managers to focus on material deviations.</li>
+<li>Better organisational learning and knowledge sharing.</li>
+<li>More consistent KPIs across divisions and locations.</li>
+<li>Better visibility across a value chain or strategic alliance.</li>
+<li>More responsive customer service and personalised offerings.</li>
+</ol>
+<h3 id="risks-and-limitations">Risks and limitations<a class="heading-anchor" href="#risks-and-limitations" title="Permanent link">Link to this section</a></h3>
+<ol>
+<li>Information overload may obscure the few measures critical to strategy.</li>
+<li>Poor-quality data produces misleading analysis: “garbage in, garbage out”.</li>
+<li>Excessive monitoring may damage trust, motivation and organisational culture.</li>
+<li>Automated decisions may lack human context or judgement.</li>
+<li>Greater connectivity raises cyber, privacy and continuity risks.</li>
+<li>Systems may encourage short-term optimisation of measured KPIs at the expense of strategy.</li>
+<li>Significant implementation, training, migration and maintenance cost.</li>
+<li>Resistance to change, skills gaps and job-displacement concerns.</li>
+<li>Vendor dependence and obsolete technology.</li>
+<li>Benefits may be overstated unless they are linked to CSFs, decisions and value creation.</li>
+</ol>
+<h2 id="4-unified-corporate-databases">4. Unified corporate databases<a class="heading-anchor" href="#4-unified-corporate-databases" title="Permanent link">Link to this section</a></h2>
+<p>A <strong>unified corporate database</strong> stores organisation-wide data in a common database accessible by authorised functions and ERP modules. It creates a single source of truth rather than separate departmental records.</p>
+<h3 id="benefits">Benefits<a class="heading-anchor" href="#benefits" title="Permanent link">Link to this section</a></h3>
+<ul>
+<li>One version of customer, supplier, employee, inventory and financial data.</li>
+<li>Less duplicate entry, reconciliation and inconsistency.</li>
+<li>Faster consolidation and reporting across divisions.</li>
+<li>Cross-functional analysis, such as linking complaints, delivery performance and customer profitability.</li>
+<li>Better process management: sales information can trigger production, purchasing and accounting entries.</li>
+<li>Consistent definitions of KPIs and master data.</li>
+<li>Supports real-time dashboards and drill-down.</li>
+</ul>
+<h3 id="problems">Problems<a class="heading-anchor" href="#problems" title="Permanent link">Link to this section</a></h3>
+<ul>
+<li>A single error can spread throughout the organisation.</li>
+<li>A single database may become a critical point of failure or attractive cyber target.</li>
+<li>Integrating legacy systems and standardising data definitions is difficult.</li>
+<li>Divisions may resist giving up local systems or autonomy.</li>
+<li>Access must be restricted; not every user should see all employee/customer data.</li>
+<li>Implementation can be expensive and disruptive.</li>
+</ul>
+<h3 id="exam-judgement">Exam judgement<a class="heading-anchor" href="#exam-judgement" title="Permanent link">Link to this section</a></h3>
+<p>Recommend governance: common data definitions, validation at source, role-based access, segregation of duties, backups, a data owner for each field and staged migration. A unified database is valuable only if reliable and relevant information reaches the right decision-maker.</p>
+<h2 id="5-data-warehouses">5. Data warehouses<a class="heading-anchor" href="#5-data-warehouses" title="Permanent link">Link to this section</a></h2>
+<p>A <strong>data warehouse</strong> is a central repository that collects data from multiple operational systems and external sources for reporting and analysis. Data is normally extracted, transformed and loaded (<strong>ETL</strong>) before analysis.</p>
+<h3 id="difference-from-a-unified-database">Difference from a unified database<a class="heading-anchor" href="#difference-from-a-unified-database" title="Permanent link">Link to this section</a></h3>
+<ul>
+<li>A unified database is normally the common live operational database.</li>
+<li>A data warehouse combines historical data from multiple current/legacy/external sources, optimised for analytics rather than daily transaction processing.</li>
+</ul>
+<h3 id="benefits_1">Benefits<a class="heading-anchor" href="#benefits_1" title="Permanent link">Link to this section</a></h3>
+<ul>
+<li>Consolidates fragmented data without immediately replacing every source system.</li>
+<li>Holds historical information for trends, benchmarking and forecasting.</li>
+<li>Cleaning and transformation improve consistency.</li>
+<li>Allows complex analysis without slowing operational systems.</li>
+<li>Supports dashboards, data mining and machine learning.</li>
+</ul>
+<h3 id="risks">Risks<a class="heading-anchor" href="#risks" title="Permanent link">Link to this section</a></h3>
+<ul>
+<li>Data may be stale if uploads are periodic.</li>
+<li>Transformation rules can introduce error or bias.</li>
+<li>Duplicate, missing or incompatible data may remain.</li>
+<li>Storage of large amounts of personal data creates security, retention and ethical risks.</li>
+<li>Cost may exceed value if no clear decision need exists.</li>
+</ul>
+<h2 id="6-process-automation-and-robotic-process-automation-rpa">6. Process automation and robotic process automation (RPA)<a class="heading-anchor" href="#6-process-automation-and-robotic-process-automation-rpa" title="Permanent link">Link to this section</a></h2>
+<p><strong>Process automation</strong> uses technology to perform activities previously completed manually. <strong>RPA</strong> uses software “bots” to perform repeatable, rules-based computer tasks, such as transferring invoice data or reconciling accounts.</p>
+<h3 id="suitable-activities">Suitable activities<a class="heading-anchor" href="#suitable-activities" title="Permanent link">Link to this section</a></h3>
+<ul>
+<li>high volume;</li>
+<li>repetitive and rules-based;</li>
+<li>stable and standardised;</li>
+<li>based on structured digital inputs;</li>
+<li>low need for judgement;</li>
+<li>measurable error/processing cost.</li>
+</ul>
+<h3 id="benefits_2">Benefits<a class="heading-anchor" href="#benefits_2" title="Permanent link">Link to this section</a></h3>
+<ul>
+<li>faster throughput and 24/7 processing;</li>
+<li>lower labour and error costs;</li>
+<li>consistent performance and stronger audit trail;</li>
+<li>fewer manual hand-offs;</li>
+<li>employees released for analysis and business partnering;</li>
+<li>real-time processing improves reporting timeliness;</li>
+<li>scalability during volume peaks.</li>
+</ul>
+<h3 id="risks_1">Risks<a class="heading-anchor" href="#risks_1" title="Permanent link">Link to this section</a></h3>
+<ul>
+<li>Automation can perform a bad process faster: redesign before automating.</li>
+<li>Bots fail when interfaces, formats or rules change.</li>
+<li>Incorrect rules create systematic errors across many transactions.</li>
+<li>Reduced human review can allow unusual transactions to pass.</li>
+<li>Job losses and fear may cause resistance or reduced morale.</li>
+<li>Setup, maintenance and control cost.</li>
+<li>Automation bias: staff may trust output without challenge.</li>
+</ul>
+<h3 id="controlsrecommendations">Controls/recommendations<a class="heading-anchor" href="#controlsrecommendations" title="Permanent link">Link to this section</a></h3>
+<p>Process mapping; eliminate non-value activities first; pilot; exception reports; human approval for high-risk items; change controls; access restrictions for bot credentials; reconciliations; performance measures such as cost per transaction, cycle time, exception rate and error rate.</p>
+<h2 id="7-artificial-intelligence-ai">7. Artificial intelligence (AI)<a class="heading-anchor" href="#7-artificial-intelligence-ai" title="Permanent link">Link to this section</a></h2>
+<p><strong>AI</strong> is the capability of machines to perform tasks associated with human intelligence, such as recognising patterns, interpreting language, reasoning or recommending decisions.</p>
+<ul>
+<li><strong>Narrow/weak AI:</strong> designed for a specific task; this is what organisations currently use.</li>
+<li><strong>General/strong AI:</strong> human-like intelligence across many tasks; it is not the practical focus of APM.</li>
+</ul>
+<h3 id="performance-management-applications">Performance-management applications<a class="heading-anchor" href="#performance-management-applications" title="Permanent link">Link to this section</a></h3>
+<ul>
+<li>demand, cash-flow and cost forecasting;</li>
+<li>customer churn or default prediction;</li>
+<li>fraud/anomaly detection;</li>
+<li>dynamic pricing and product recommendation;</li>
+<li>predictive maintenance;</li>
+<li>automated classification of invoices or customer messages;</li>
+<li>scenario modelling and resource optimisation;</li>
+<li>generation of management-report summaries, subject to review.</li>
+</ul>
+<h3 id="evaluation">Evaluation<a class="heading-anchor" href="#evaluation" title="Permanent link">Link to this section</a></h3>
+<p>AI may process more variables and detect non-linear patterns humans miss, improving speed and predictive accuracy. But its output depends on relevant, representative, lawful data and a model suited to the objective. Black-box models, bias, concept drift and over-reliance can make decisions worse. Human accountability remains necessary.</p>
+<h2 id="8-rfid-sensors-and-the-internet-of-things">8. RFID, sensors and the Internet of Things<a class="heading-anchor" href="#8-rfid-sensors-and-the-internet-of-things" title="Permanent link">Link to this section</a></h2>
+<p>A <strong>radio-frequency identification device (RFID)</strong> stores identification data in a tag which can be read wirelessly. Unlike a barcode, it may be read without direct line of sight and multiple tags may be scanned quickly.</p>
+<p>The <strong>Internet of Things (IoT)</strong> consists of physical devices/sensors connected to networks that collect and transmit data.</p>
+<h3 id="applications">Applications<a class="heading-anchor" href="#applications" title="Permanent link">Link to this section</a></h3>
+<ul>
+<li>live tracking of inventory, assets and deliveries;</li>
+<li>automatic stock counts and replenishment;</li>
+<li>monitoring temperature in food/pharmaceutical storage;</li>
+<li>monitoring machine vibration, energy use and downtime;</li>
+<li>tracing items across the supply chain;</li>
+<li>tracking patient/equipment location in healthcare;</li>
+<li>measuring footfall and customer movement.</li>
+</ul>
+<h3 id="performance-benefits">Performance benefits<a class="heading-anchor" href="#performance-benefits" title="Permanent link">Link to this section</a></h3>
+<ul>
+<li>improved inventory accuracy and availability;</li>
+<li>reduced theft, waste and stockholding;</li>
+<li>shorter cycle times;</li>
+<li>preventative/predictive maintenance and less downtime;</li>
+<li>better quality and regulatory traceability;</li>
+<li>data for supplier SLAs and sustainability measures.</li>
+</ul>
+<h3 id="risks_2">Risks<a class="heading-anchor" href="#risks_2" title="Permanent link">Link to this section</a></h3>
+<ul>
+<li>tag/sensor and network costs;</li>
+<li>inaccurate, damaged or duplicated readings;</li>
+<li>large volumes of low-value data;</li>
+<li>integration problems;</li>
+<li>cyberattack through insecure devices;</li>
+<li>employee/customer surveillance and privacy concerns;</li>
+<li>reliance on connectivity.</li>
+</ul>
+<h2 id="9-cloud-and-network-technology">9. Cloud and network technology<a class="heading-anchor" href="#9-cloud-and-network-technology" title="Permanent link">Link to this section</a></h2>
+<p><strong>Cloud computing</strong> provides remote computing resources over a network. Common forms are:</p>
+<ul>
+<li><strong>SaaS:</strong> use provider software, e.g. cloud accounting/CRM;</li>
+<li><strong>PaaS:</strong> use a platform to build/deploy applications;</li>
+<li><strong>IaaS:</strong> rent computing, storage and network infrastructure.</li>
+</ul>
+<h3 id="benefits_3">Benefits<a class="heading-anchor" href="#benefits_3" title="Permanent link">Link to this section</a></h3>
+<ul>
+<li>lower upfront capital expenditure and usage-based costs;</li>
+<li>rapid deployment and scalability;</li>
+<li>remote access and collaboration;</li>
+<li>easier standardisation across locations;</li>
+<li>provider-managed upgrades, backup and resilience;</li>
+<li>access to sophisticated tools otherwise unaffordable to smaller organisations.</li>
+</ul>
+<h3 id="risks_3">Risks<a class="heading-anchor" href="#risks_3" title="Permanent link">Link to this section</a></h3>
+<ul>
+<li>internet outages and service-provider failure;</li>
+<li>cybersecurity, confidentiality and data-location concerns;</li>
+<li>vendor lock-in and price increases;</li>
+<li>less direct control over infrastructure;</li>
+<li>contractual issues over service levels, ownership, deletion and recovery;</li>
+<li>migration/integration difficulties;</li>
+<li>variable cost can grow if usage is uncontrolled.</li>
+</ul>
+<h3 id="appropriate-controls">Appropriate controls<a class="heading-anchor" href="#appropriate-controls" title="Permanent link">Link to this section</a></h3>
+<p>Due diligence on provider; service-level agreement; encryption; multifactor authentication; backup/recovery testing; exit plan and data portability; monitoring usage/cost; legal review of data jurisdiction; clear shared-responsibility model.</p>
+<h2 id="10-data-silos-d1b">10. Data silos (D1b)<a class="heading-anchor" href="#10-data-silos-d1b" title="Permanent link">Link to this section</a></h2>
+<p>A <strong>data silo</strong> is a collection of data controlled by one department/system and not readily accessible, integrated or understood elsewhere.</p>
+<h3 id="causes">Causes<a class="heading-anchor" href="#causes" title="Permanent link">Link to this section</a></h3>
+<ul>
+<li>separate legacy systems;</li>
+<li>departmental culture and protection of information;</li>
+<li>inconsistent data formats/definitions;</li>
+<li>acquisitions and geographically dispersed operations;</li>
+<li>poor governance and unclear ownership;</li>
+<li>incompatible software or lack of integration investment.</li>
+</ul>
+<h3 id="problems-for-the-accounting-function">Problems for the accounting function<a class="heading-anchor" href="#problems-for-the-accounting-function" title="Permanent link">Link to this section</a></h3>
+<ol>
+<li>Duplicate data entry and avoidable labour cost.</li>
+<li>Time-consuming reconciliations and month-end delays.</li>
+<li>Conflicting figures undermine confidence in reports.</li>
+<li>Incomplete view of customer, product or process profitability.</li>
+<li>Difficulties linking financial outcomes to operational drivers.</li>
+<li>Inconsistent KPIs and targets between divisions.</li>
+<li>Poor forecasting and resource allocation.</li>
+<li>Errors due to manual spreadsheets and transfers.</li>
+<li>Finance remains a scorekeeper rather than strategic partner.</li>
+<li>Fraud or poor performance may remain hidden between systems.</li>
+<li>Harder regulatory, sustainability and integrated reporting.</li>
+<li>Local optimisation: one department improves its own KPI while harming total performance.</li>
+</ol>
+<h3 id="solutions">Solutions<a class="heading-anchor" href="#solutions" title="Permanent link">Link to this section</a></h3>
+<ul>
+<li>ERP/unified database or data warehouse;</li>
+<li>application programming interfaces (APIs) between systems;</li>
+<li>data dictionary and common KPI definitions;</li>
+<li>master-data management;</li>
+<li>data owners/stewards and governance committee;</li>
+<li>role-based access rather than blanket secrecy;</li>
+<li>reconciliation and data-quality dashboards;</li>
+<li>cultural incentives for collaboration.</li>
+</ul>
+<p>Do not recommend removing all restrictions: legitimate confidentiality and segregation-of-duties controls remain essential.</p>
+<h2 id="11-enterprise-resource-planning-systems-erp-d1c">11. Enterprise resource planning systems (ERP) (D1c)<a class="heading-anchor" href="#11-enterprise-resource-planning-systems-erp-d1c" title="Permanent link">Link to this section</a></h2>
+<p>An <strong>ERP system</strong> integrates core processes and information through linked modules, normally supported by common data.</p>
+<p>Typical modules: finance/general ledger, purchasing, inventory, production/MRP, sales, payroll/HR and CRM.</p>
+<h3 id="performance-management-benefits_1">Performance-management benefits<a class="heading-anchor" href="#performance-management-benefits_1" title="Permanent link">Link to this section</a></h3>
+<ul>
+<li>integrated end-to-end view of processes;</li>
+<li>real-time information and faster closing/reporting;</li>
+<li>fewer duplicate records and reconciliations;</li>
+<li>standard processes and KPIs across locations;</li>
+<li>automated controls and audit trails;</li>
+<li>drill-down from summary KPI to transaction;</li>
+<li>better planning of materials, capacity and cash;</li>
+<li>supports ABC/ABM and process-based management;</li>
+<li>finance can focus on interpretation rather than data production.</li>
+</ul>
+<h3 id="limitationsimplementation-risks">Limitations/implementation risks<a class="heading-anchor" href="#limitationsimplementation-risks" title="Permanent link">Link to this section</a></h3>
+<ul>
+<li>high cost, long implementation and uncertain benefits;</li>
+<li>disruption and project failure risk;</li>
+<li>forcing a standard process may not suit unique operations;</li>
+<li>data migration and master-data errors;</li>
+<li>training needs and employee resistance;</li>
+<li>excessive customisation increases cost and upgrade difficulty;</li>
+<li>dependence on supplier/consultant;</li>
+<li>integrated error/cyberattack has organisation-wide effect.</li>
+</ul>
+<h3 id="recommendation-framework">Recommendation framework<a class="heading-anchor" href="#recommendation-framework" title="Permanent link">Link to this section</a></h3>
+<p>Business case linked to strategy; process redesign; stakeholder consultation; data cleansing; phased rollout; training; clear ownership; parallel run where necessary; post-implementation review using measures such as report lead time, error rate, system availability, user adoption and realised savings.</p>
+<h2 id="12-knowledge-management-systems-kms-d1c">12. Knowledge management systems (KMS) (D1c)<a class="heading-anchor" href="#12-knowledge-management-systems-kms-d1c" title="Permanent link">Link to this section</a></h2>
+<p>A <strong>KMS</strong> captures, organises and shares organisational knowledge.</p>
+<ul>
+<li><strong>Explicit knowledge:</strong> can be documented—manuals, procedures, rules and designs.</li>
+<li><strong>Tacit knowledge:</strong> experience and judgement held by people, harder to codify.</li>
+<li><strong>Codification approach:</strong> information stored in databases, wikis and document libraries.</li>
+<li><strong>Personalisation approach:</strong> connects people through expert directories, forums and communities.</li>
+</ul>
+<h3 id="benefits_4">Benefits<a class="heading-anchor" href="#benefits_4" title="Permanent link">Link to this section</a></h3>
+<ul>
+<li>avoids knowledge loss when staff leave;</li>
+<li>speeds employee training and problem resolution;</li>
+<li>shares good practice between locations;</li>
+<li>reduces duplicated work;</li>
+<li>supports innovation, quality and customer service;</li>
+<li>improves consistency and organisational learning.</li>
+</ul>
+<h3 id="limitationscontrols">Limitations/controls<a class="heading-anchor" href="#limitationscontrols" title="Permanent link">Link to this section</a></h3>
+<p>Information can become obsolete, inaccurate or excessive. Staff may not contribute because of time, lack of reward or fear of losing power. Tacit knowledge may lose context when documented. Use named owners, review dates, version controls, search/tagging, access controls, quality review and incentives for useful contribution. Measure usage, resolution time, repeated-error rate and user satisfaction—not simply documents uploaded.</p>
+<h2 id="13-customer-relationship-management-systems-crm-d1c">13. Customer relationship management systems (CRM) (D1c)<a class="heading-anchor" href="#13-customer-relationship-management-systems-crm-d1c" title="Permanent link">Link to this section</a></h2>
+<p>A <strong>CRM system</strong> manages customer data and interactions through acquisition, conversion, service, retention and extension/cross-selling.</p>
+<h3 id="data-and-possible-kpis">Data and possible KPIs<a class="heading-anchor" href="#data-and-possible-kpis" title="Permanent link">Link to this section</a></h3>
+<ul>
+<li>leads, conversion rate and customer-acquisition cost;</li>
+<li>purchase history and average order value;</li>
+<li>contact/complaint records and resolution time;</li>
+<li>churn/retention and repeat-purchase rate;</li>
+<li>customer lifetime value and customer profitability;</li>
+<li>campaign response and return on marketing expenditure;</li>
+<li>customer satisfaction and net promoter score.</li>
+</ul>
+<h3 id="benefits_5">Benefits<a class="heading-anchor" href="#benefits_5" title="Permanent link">Link to this section</a></h3>
+<ul>
+<li>a complete customer view across channels;</li>
+<li>more targeted marketing and personalised service;</li>
+<li>earlier identification of churn risk;</li>
+<li>better allocation of sales effort;</li>
+<li>improved retention and customer lifetime value;</li>
+<li>links non-financial customer drivers to revenue/profit.</li>
+</ul>
+<h3 id="risks_4">Risks<a class="heading-anchor" href="#risks_4" title="Permanent link">Link to this section</a></h3>
+<ul>
+<li>inaccurate or duplicate customer records;</li>
+<li>excessive contact and reputational damage;</li>
+<li>sales staff may manipulate pipeline data;</li>
+<li>intrusive profiling, consent and privacy concerns;</li>
+<li>biased algorithms may exclude or exploit customers;</li>
+<li>focusing on easy-to-measure transactions can weaken relationships.</li>
+</ul>
+<h3 id="evaluation-tip">Evaluation tip<a class="heading-anchor" href="#evaluation-tip" title="Permanent link">Link to this section</a></h3>
+<p>A CRM is not automatically successful. Assess whether it improves a relevant CSF and creates financial value after implementation, data, training and compliance costs.</p>
+<h2 id="14-systems-and-data-risks-methods-and-controls-d1d">14. Systems and data risks, methods and controls (D1d)<a class="heading-anchor" href="#14-systems-and-data-risks-methods-and-controls-d1d" title="Permanent link">Link to this section</a></h2>
+<p>Use this structure: <strong>risk → impact on performance/information → specific control → residual limitation.</strong></p>
+<h3 id="main-risks">Main risks<a class="heading-anchor" href="#main-risks" title="Permanent link">Link to this section</a></h3>
+<ul>
+<li>unauthorised access and privilege abuse;</li>
+<li>phishing/social engineering and stolen credentials;</li>
+<li>malware/ransomware;</li>
+<li>denial of service and network failure;</li>
+<li>accidental deletion or incorrect entry;</li>
+<li>insider theft/fraud;</li>
+<li>device loss;</li>
+<li>software defects and unauthorised changes;</li>
+<li>third-party/cloud/supply-chain failure;</li>
+<li>physical fire, flood or power loss;</li>
+<li>inadequate backup or disaster recovery;</li>
+<li>privacy breach and unlawful processing;</li>
+<li>inaccurate, incomplete, duplicated, untimely or biased data;</li>
+<li>loss of availability, confidentiality or integrity.</li>
+</ul>
+<h3 id="preventive-controls">Preventive controls<a class="heading-anchor" href="#preventive-controls" title="Permanent link">Link to this section</a></h3>
+<ul>
+<li>least-privilege, role-based access;</li>
+<li>strong passwords and multifactor authentication;</li>
+<li>segregation of duties;</li>
+<li>encryption in transit and at rest;</li>
+<li>firewalls, anti-malware and secure configuration;</li>
+<li>patch management and penetration testing;</li>
+<li>employee awareness and phishing training;</li>
+<li>input validation, mandatory fields and reasonableness checks;</li>
+<li>supplier due diligence and contractual security clauses;</li>
+<li>physical access controls;</li>
+<li>privacy-by-design and data minimisation;</li>
+<li>authorised change-management procedures.</li>
+</ul>
+<h3 id="detective-controls">Detective controls<a class="heading-anchor" href="#detective-controls" title="Permanent link">Link to this section</a></h3>
+<ul>
+<li>audit logs and review of privileged activity;</li>
+<li>intrusion detection and security monitoring;</li>
+<li>exception/anomaly reports;</li>
+<li>reconciliations and control totals;</li>
+<li>data-quality dashboards;</li>
+<li>vulnerability scans;</li>
+<li>periodic access review;</li>
+<li>incident reporting and internal audit.</li>
+</ul>
+<h3 id="correctiverecovery-controls">Corrective/recovery controls<a class="heading-anchor" href="#correctiverecovery-controls" title="Permanent link">Link to this section</a></h3>
+<ul>
+<li>incident-response plan and assigned responsibilities;</li>
+<li>isolated, versioned and tested backups;</li>
+<li>disaster-recovery site and business-continuity plan;</li>
+<li>restore testing, not merely making backups;</li>
+<li>failover/redundancy;</li>
+<li>cyber insurance where cost effective;</li>
+<li>lessons-learned review and remediation;</li>
+<li>lawful notification of regulators/affected persons.</li>
+</ul>
+<h3 id="core-security-objectives">Core security objectives<a class="heading-anchor" href="#core-security-objectives" title="Permanent link">Link to this section</a></h3>
+<ul>
+<li><strong>Confidentiality:</strong> information only seen by authorised users.</li>
+<li><strong>Integrity:</strong> information is complete, accurate and not improperly altered.</li>
+<li><strong>Availability:</strong> systems/data accessible when needed.</li>
+</ul>
+<p>Controls involve cost and cannot eliminate risk. Recommendations should reflect risk appetite, probability, impact, legal duties and the value/sensitivity of information.</p>
+<h2 id="15-lean-management-information-systems-and-the-5-ss-d1e">15. Lean management information systems and the 5 Ss (D1e)<a class="heading-anchor" href="#15-lean-management-information-systems-and-the-5-ss-d1e" title="Permanent link">Link to this section</a></h2>
+<p>A <strong>lean information system</strong> provides only information that adds value to users, at the right time and quality, while eliminating waste. Lean does not mean “cheap” or simply fewer reports.</p>
+<p>Features:</p>
+<ul>
+<li>reports only where they support decisions;</li>
+<li>reports sent only to users who need them;</li>
+<li>timely/real-time processing where its benefit exceeds cost;</li>
+<li>data entered once and reused;</li>
+<li>flexible drill-down and ad-hoc reporting;</li>
+<li>regular review and continuous improvement.</li>
+</ul>
+<h3 id="the-5-ss-applied-to-information">The 5 Ss applied to information<a class="heading-anchor" href="#the-5-ss-applied-to-information" title="Permanent link">Link to this section</a></h3>
+<p>Naming differs slightly across texts, so understand the action rather than memorising one translation:</p>
+<ol>
+<li><strong>Sort (structurise):</strong> identify information essential for planning, control and decisions; remove obsolete, duplicated and unused reports/data. Example: discontinue a weekly report no manager reads.</li>
+<li><strong>Simplify (systemise/set in order):</strong> organise data and communication so users can find and understand it. Use clear dashboards, logical folders, searchable metadata and a single source of truth.</li>
+<li><strong>Scan (sanitise/shine):</strong> regularly clean and audit data, reports and usage. Correct errors; remove obsolete customer/product records; check which reports are actually used.</li>
+<li><strong>Standardise (stabilise):</strong> consistent KPI definitions, report formats, frequency, responsibilities and data-entry rules across the organisation.</li>
+<li><strong>Sustain (self-discipline):</strong> make the first four continuous through ownership, training, review schedules, feedback and performance monitoring.</li>
+</ol>
+<h3 id="information-value">Information value<a class="heading-anchor" href="#information-value" title="Permanent link">Link to this section</a></h3>
+<p>Information is valuable if it is relevant, reliable, timely, understandable, complete enough, comparable, accessible to authorised users and worth more than its cost.</p>
+<p>Questions to ask:</p>
+<ul>
+<li>Which decision will this information change?</li>
+<li>Which strategic objective/CSF does it monitor?</li>
+<li>Who needs it, how often and at what detail?</li>
+<li>Is real-time data worth its extra cost?</li>
+<li>Can users drill down from exceptions?</li>
+<li>Is 90% accurate now more useful than 100% accurate too late?</li>
+<li>Does the report create action, or only administrative work?</li>
+</ul>
+<h3 id="implementation-problems">Implementation problems<a class="heading-anchor" href="#implementation-problems" title="Permanent link">Link to this section</a></h3>
+<ul>
+<li>managers retain familiar reports “just in case”;</li>
+<li>users disagree about what is valuable;</li>
+<li>removal may eliminate data later needed for trends/compliance;</li>
+<li>inconsistent definitions across departments;</li>
+<li>system inflexibility or poor integration;</li>
+<li>poor-quality legacy data;</li>
+<li>lack of senior support and continuous discipline;</li>
+<li>fear that transparency exposes poor performance;</li>
+<li>initial cleansing/training cost.</li>
+</ul>
+<h3 id="examiner-lesson">Examiner lesson<a class="heading-anchor" href="#examiner-lesson" title="Permanent link">Link to this section</a></h3>
+<p>If asked about the 5 Ss, explain each one <strong>in the scenario</strong>, give an example and assess implementation issues. Do not merely list five definitions.</p>
+<hr>
+<h1 id="part-ii-data-science-and-analytics">PART II — DATA SCIENCE AND ANALYTICS<a class="heading-anchor" href="#part-ii-data-science-and-analytics" title="Permanent link">Link to this section</a></h1>
+<h2 id="16-core-definitions">16. Core definitions<a class="heading-anchor" href="#16-core-definitions" title="Permanent link">Link to this section</a></h2>
+<ul>
+<li><strong>Data:</strong> raw facts, observations or signals.</li>
+<li><strong>Information:</strong> data processed and placed in context so it becomes useful.</li>
+<li><strong>Insight:</strong> an interpretation of information that explains an issue or supports action.</li>
+<li><strong>Data analytics:</strong> collecting and examining data to extract meaningful insights for decisions and performance improvement.</li>
+<li><strong>Data science:</strong> a wider, iterative discipline combining business understanding, statistics, computing and domain knowledge to solve problems using data.</li>
+<li><strong>Algorithm:</strong> a defined set of rules/instructions used to solve a problem or complete a task.</li>
+<li><strong>Model:</strong> a simplified quantitative representation that uses input variables to estimate, classify, explain or optimise an outcome.</li>
+<li><strong>Data mining:</strong> examining large datasets to discover patterns, associations, sequences, clusters or anomalies.</li>
+</ul>
+<p>In APM, the purpose is not technical programming. The management accountant should:</p>
+<ol>
+<li>define the performance problem and required decision;</li>
+<li>ensure the data and model are fit for that purpose;</li>
+<li>interpret the output commercially;</li>
+<li>challenge limitations and uncertainty;</li>
+<li>communicate insight clearly;</li>
+<li>recommend proportionate action;</li>
+<li>ensure ethical use and accountability.</li>
+</ol>
+<h2 id="17-big-data-and-its-impact-d2a">17. Big data and its impact (D2a)<a class="heading-anchor" href="#17-big-data-and-its-impact-d2a" title="Permanent link">Link to this section</a></h2>
+<p><strong>Big data</strong> refers to datasets whose size, speed and complexity require enhanced methods of storage, processing and analysis. The familiar characteristics are the <strong>Vs</strong>:</p>
+<ol>
+<li><strong>Volume:</strong> very large quantities of transactions, sensor readings, clicks, messages and other observations.</li>
+<li><strong>Velocity:</strong> data arrives and may need processing rapidly or in real time.</li>
+<li><strong>Variety:</strong> structured and unstructured data from many internal/external sources.</li>
+<li><strong>Veracity:</strong> reliability, accuracy and credibility of the data.</li>
+<li><strong>Value:</strong> whether analysis generates benefits or better decisions exceeding its cost.</li>
+</ol>
+<p>Other useful concerns include variability (changing meaning/patterns), vulnerability (security/privacy risk) and visualisation, but do not force extra Vs into every answer.</p>
+<h3 id="structured-semi-structured-and-unstructured-data">Structured, semi-structured and unstructured data<a class="heading-anchor" href="#structured-semi-structured-and-unstructured-data" title="Permanent link">Link to this section</a></h3>
+<ul>
+<li><strong>Structured:</strong> organised into defined fields and tables, such as sales date, product code, units and price. Easy to query and aggregate.</li>
+<li><strong>Semi-structured:</strong> has tags or some organisation but no fixed relational table, such as JSON, XML or email metadata.</li>
+<li><strong>Unstructured:</strong> free-form text, image, audio, video, documents and social-media content. Rich but harder to process and verify.</li>
+</ul>
+<h3 id="internal-data">Internal data<a class="heading-anchor" href="#internal-data" title="Permanent link">Link to this section</a></h3>
+<p>Sales, costs, ERP transactions, budgets, production, quality, employee data, web activity, CRM interactions and sensor readings. It may be directly relevant and controllable but can reflect existing organisational biases and omit competitors or external change.</p>
+<h3 id="external-data">External data<a class="heading-anchor" href="#external-data" title="Permanent link">Link to this section</a></h3>
+<p>Economic indicators, weather, competitor prices, demographics, market research, social media, satellite/geospatial data and public datasets. It broadens analysis but may have uncertain definitions, provenance, legality, timeliness or reliability.</p>
+<h3 id="how-big-data-improves-performance-management">How big data improves performance management<a class="heading-anchor" href="#how-big-data-improves-performance-management" title="Permanent link">Link to this section</a></h3>
+<ul>
+<li>more detailed customer segmentation and personalisation;</li>
+<li>demand forecasting and dynamic pricing;</li>
+<li>early detection of churn, fraud, defects and machine failure;</li>
+<li>optimisation of inventory, routes, capacity and staffing;</li>
+<li>real-time KPIs and exception management;</li>
+<li>measurement of non-financial drivers before financial effects appear;</li>
+<li>whole-population analysis rather than reliance on samples;</li>
+<li>identification of new products, markets and revenue streams;</li>
+<li>improved customer experience and competitive advantage;</li>
+<li>sustainability measurement through energy, waste and supply-chain data.</li>
+</ul>
+<h3 id="risks-and-challenges">Risks and challenges<a class="heading-anchor" href="#risks-and-challenges" title="Permanent link">Link to this section</a></h3>
+<ol>
+<li><strong>Cost/value:</strong> infrastructure, specialist staff, cleaning and compliance may exceed benefits.</li>
+<li><strong>Veracity:</strong> inaccurate, incomplete, duplicated, stale or manipulated data leads to bad decisions.</li>
+<li><strong>Relevance:</strong> more data is not necessarily more useful; spurious patterns become more likely.</li>
+<li><strong>Integration:</strong> sources use incompatible definitions, formats and time periods.</li>
+<li><strong>Skills:</strong> shortage of data scientists and managers capable of interpretation.</li>
+<li><strong>Security/privacy:</strong> larger datasets are attractive targets and may enable intrusive profiling.</li>
+<li><strong>Regulation:</strong> collection, use, transfer and retention may be restricted.</li>
+<li><strong>Bias:</strong> historic or unrepresentative data embeds unfairness.</li>
+<li><strong>Correlation:</strong> a relationship does not establish cause.</li>
+<li><strong>Model risk:</strong> overfitting, weak assumptions and changing conditions reduce reliability.</li>
+<li><strong>Information overload:</strong> managers lose focus on strategic CSFs.</li>
+<li><strong>Behavioural impact:</strong> surveillance can reduce trust or cause dysfunctional behaviour.</li>
+<li><strong>Reputation:</strong> lawful data use can still be perceived as unfair or intrusive.</li>
+<li><strong>Environmental cost:</strong> large-scale processing consumes energy and resources.</li>
+</ol>
+<h3 id="a-balanced-exam-conclusion">A balanced exam conclusion<a class="heading-anchor" href="#a-balanced-exam-conclusion" title="Permanent link">Link to this section</a></h3>
+<p>Big data has no intrinsic value. It creates value only where reliable and ethically obtained data is converted into relevant insight, action and measurable progress toward strategy. Begin with the decision—not with all available data.</p>
+<h2 id="18-the-data-science-process-d2b">18. The data-science process (D2b)<a class="heading-anchor" href="#18-the-data-science-process-d2b" title="Permanent link">Link to this section</a></h2>
+<p>A strong answer uses an iterative process. A useful memory aid is:</p>
+<p><strong>Goal → Get → Govern → Clean → Transform → Store → Analyse → Validate → Communicate → Act/monitor</strong></p>
+<h3 id="step-1-define-the-business-goal-and-decision">Step 1: Define the business goal and decision<a class="heading-anchor" href="#step-1-define-the-business-goal-and-decision" title="Permanent link">Link to this section</a></h3>
+<ul>
+<li>Start with mission, strategic objectives, CSFs and stakeholder needs.</li>
+<li>State a precise question, e.g. “Which subscribers are at high risk of cancelling next month, so retention offers can be targeted profitably?”</li>
+<li>Define the target/output and success criteria.</li>
+<li>Identify constraints, affected stakeholders, ethical issues and cost-benefit threshold.</li>
+</ul>
+<p>Weak goal: “Use AI to analyse customers.”</p>
+<p>Strong goal: “Reduce controllable customer churn from 8% to 6% without reducing contribution after retention discounts.”</p>
+<h3 id="step-2-select-and-obtain-data">Step 2: Select and obtain data<a class="heading-anchor" href="#step-2-select-and-obtain-data" title="Permanent link">Link to this section</a></h3>
+<ul>
+<li>Determine relevant financial and non-financial variables.</li>
+<li>Select internal/external and structured/unstructured sources.</li>
+<li>Check legal authority, consent, ownership, purpose and provenance.</li>
+<li>Avoid collecting fields merely because they are available.</li>
+<li>Use an appropriate time horizon and sufficiently representative observations.</li>
+</ul>
+<p>Possible churn inputs: tenure, usage, complaints, payment failures, service outages, contract type and prior offers. Protected or proxy characteristics may be ethically inappropriate.</p>
+<h3 id="step-3-understand-and-assess-data-quality">Step 3: Understand and assess data quality<a class="heading-anchor" href="#step-3-understand-and-assess-data-quality" title="Permanent link">Link to this section</a></h3>
+<p>Profile:</p>
+<ul>
+<li>completeness;</li>
+<li>accuracy;</li>
+<li>validity against rules;</li>
+<li>consistency across sources;</li>
+<li>uniqueness/duplicates;</li>
+<li>timeliness;</li>
+<li>representativeness;</li>
+<li>granularity and units;</li>
+<li>possible selection/measurement bias.</li>
+</ul>
+<h3 id="step-4-clean-the-data">Step 4: Clean the data<a class="heading-anchor" href="#step-4-clean-the-data" title="Permanent link">Link to this section</a></h3>
+<ul>
+<li>remove or merge duplicates;</li>
+<li>correct obvious errors and inconsistent coding;</li>
+<li>standardise dates, currencies, names and units;</li>
+<li>investigate outliers rather than automatically deleting them;</li>
+<li>deal transparently with missing values—exclude, obtain, impute or flag;</li>
+<li>reconcile key totals with controlled sources;</li>
+<li>document all changes for reproducibility and audit.</li>
+</ul>
+<p>Cleaning can create bias. For example, deleting all incomplete customer records may disproportionately remove a particular channel or demographic group.</p>
+<h3 id="step-5-transform-and-prepare">Step 5: Transform and prepare<a class="heading-anchor" href="#step-5-transform-and-prepare" title="Permanent link">Link to this section</a></h3>
+<ul>
+<li>aggregate/disaggregate to suitable detail;</li>
+<li>join sources using valid identifiers;</li>
+<li>encode categories;</li>
+<li>scale variables where necessary;</li>
+<li>derive meaningful features, e.g. complaint frequency or days since last purchase;</li>
+<li>anonymise or pseudonymise personal identifiers;</li>
+<li>split data for model training, validation and testing;</li>
+<li>retain lineage from source to output.</li>
+</ul>
+<h3 id="step-6-store-and-protect">Step 6: Store and protect<a class="heading-anchor" href="#step-6-store-and-protect" title="Permanent link">Link to this section</a></h3>
+<p>Choose operational database, warehouse, data lake or cloud according to volume, variety, speed and use. Apply access controls, encryption, backup, retention/deletion rules, version control and data ownership.</p>
+<p>A <strong>data lake</strong> stores large quantities of data in relatively raw form for flexible future analysis. It can become a poorly governed “data swamp” if metadata, quality and ownership are weak.</p>
+<h3 id="step-7-analysebuild-the-model">Step 7: Analyse/build the model<a class="heading-anchor" href="#step-7-analysebuild-the-model" title="Permanent link">Link to this section</a></h3>
+<p>Select descriptive, diagnostic, predictive or prescriptive analysis according to the goal. Keep a simple model where it meets the need; complexity should earn its extra cost and loss of explainability.</p>
+<h3 id="step-8-validate-and-challenge">Step 8: Validate and challenge<a class="heading-anchor" href="#step-8-validate-and-challenge" title="Permanent link">Link to this section</a></h3>
+<ul>
+<li>test on data not used to train the model;</li>
+<li>compare with a baseline/current process;</li>
+<li>assess error rates and business cost of each error;</li>
+<li>check assumptions, sensitivity, bias and plausibility;</li>
+<li>obtain domain-expert and user review;</li>
+<li>document limitations.</li>
+</ul>
+<h3 id="step-9-communicate-insights">Step 9: Communicate insights<a class="heading-anchor" href="#step-9-communicate-insights" title="Permanent link">Link to this section</a></h3>
+<p>Explain in non-technical language:</p>
+<ul>
+<li>what the model says;</li>
+<li>strength and uncertainty of evidence;</li>
+<li>why it matters to objectives/KPIs;</li>
+<li>actions available and costs/risks;</li>
+<li>limitations and further information needed.</li>
+</ul>
+<h3 id="step-10-implement-monitor-and-refine">Step 10: Implement, monitor and refine<a class="heading-anchor" href="#step-10-implement-monitor-and-refine" title="Permanent link">Link to this section</a></h3>
+<p>Use a pilot or controlled experiment where possible. Track realised benefits, unexpected outcomes, data drift and model drift. Establish ownership and review triggers. Models are not “set and forget”.</p>
+<h2 id="19-four-types-of-analytics-d2c">19. Four types of analytics (D2c)<a class="heading-anchor" href="#19-four-types-of-analytics-d2c" title="Permanent link">Link to this section</a></h2>
+<h3 id="191-descriptive-analytics-what-happenedis-happening">19.1 Descriptive analytics — <strong>What happened/is happening?</strong><a class="heading-anchor" href="#191-descriptive-analytics-what-happenedis-happening" title="Permanent link">Link to this section</a></h3>
+<p>Uses current and historic data to summarise performance.</p>
+<p>Methods: totals, averages, ratios, trends, dashboards, distributions and visualisations.</p>
+<p>Examples:</p>
+<ul>
+<li>monthly revenue fell 8%;</li>
+<li>churn is 6%;</li>
+<li>defect rate is highest on line 3;</li>
+<li>customer complaints increased in the north region.</li>
+</ul>
+<p><strong>Benefits:</strong> accessible; timely overview; identifies trends/outliers; supports reporting and benchmarking.</p>
+<p><strong>Limitations:</strong> does not explain cause; aggregation can hide variation; backward-looking; choice of average/graph may mislead.</p>
+<h3 id="192-diagnostic-analytics-why-did-it-happen">19.2 Diagnostic analytics — <strong>Why did it happen?</strong><a class="heading-anchor" href="#192-diagnostic-analytics-why-did-it-happen" title="Permanent link">Link to this section</a></h3>
+<p>Investigates drivers/root causes.</p>
+<p>Methods: drill-down, variance analysis, segmentation, data mining, correlation, regression, time-series analysis, process analysis and “five whys”.</p>
+<p>Example: revenue fell because mobile-site failures raised checkout abandonment, particularly among new customers.</p>
+<p><strong>Benefits:</strong> focuses corrective action on drivers rather than symptoms; combines financial and non-financial information.</p>
+<p><strong>Limitations:</strong> correlation is not causation; omitted variables; historic relationships may not persist; management may select an explanation supporting its interests.</p>
+<h3 id="193-predictive-analytics-what-is-likely-to-happen">19.3 Predictive analytics — <strong>What is likely to happen?</strong><a class="heading-anchor" href="#193-predictive-analytics-what-is-likely-to-happen" title="Permanent link">Link to this section</a></h3>
+<p>Uses historical/current data, statistics and machine learning to estimate future outcomes and probabilities.</p>
+<p>Examples: demand forecast; probability a customer will churn; likelihood of equipment failure; expected credit loss.</p>
+<p><strong>Benefits:</strong> proactive planning; better targets, budgets, inventory and risk management; permits scenarios and early intervention.</p>
+<p><strong>Limitations:</strong> predictions are uncertain; rare shocks/regime change; biased training data; overfitting; false positives/negatives; past patterns may not continue.</p>
+<h3 id="194-prescriptive-analytics-what-should-we-do">19.4 Prescriptive analytics — <strong>What should we do?</strong><a class="heading-anchor" href="#194-prescriptive-analytics-what-should-we-do" title="Permanent link">Link to this section</a></h3>
+<p>Recommends actions, often using optimisation, simulation, business rules and predicted outcomes subject to constraints.</p>
+<p>Examples: optimal price, route, staffing, inventory reorder or retention offer.</p>
+<p><strong>Benefits:</strong> connects insight to action; evaluates trade-offs; may improve resource allocation and consistency.</p>
+<p><strong>Limitations:</strong> recommendation reflects the objective and constraints programmed. Maximising profit may harm service, ethics or resilience. It can create false certainty and reduce human accountability.</p>
+<h3 id="how-the-four-work-together">How the four work together<a class="heading-anchor" href="#how-the-four-work-together" title="Permanent link">Link to this section</a></h3>
+<p>Retail example:</p>
+<ul>
+<li>Descriptive: stock-outs rose to 9%.</li>
+<li>Diagnostic: supplier delay and inaccurate store inventory caused the rise.</li>
+<li>Predictive: model forecasts which products/stores will stock out next week.</li>
+<li>Prescriptive: system recommends transfer/reorder quantities given lead times, storage and margin.</li>
+</ul>
+<p>Always identify which analysis answers the scenario’s question. Do not recommend predictive analytics when management only needs a reliable description of current performance.</p>
+<h2 id="20-types-of-data-used-in-analytics-d2d">20. Types of data used in analytics (D2d)<a class="heading-anchor" href="#20-types-of-data-used-in-analytics-d2d" title="Permanent link">Link to this section</a></h2>
+<h3 id="201-text-analytics">20.1 Text analytics<a class="heading-anchor" href="#201-text-analytics" title="Permanent link">Link to this section</a></h3>
+<p>Converts text—emails, reviews, complaints, social posts, surveys and support tickets—into categories, themes or quantitative measures.</p>
+<p>Applications:</p>
+<ul>
+<li>topic detection and recurring complaint causes;</li>
+<li>sentiment (positive, neutral, negative);</li>
+<li>urgency or complaint routing;</li>
+<li>monitoring brand reputation;</li>
+<li>identifying product defects or employee concerns.</li>
+</ul>
+<p>Benefits: analyses large volumes faster and consistently; captures qualitative customer/employee information; reveals issues before financial effects.</p>
+<p>Risks: sarcasm, dialect, multilingual content and context can be misclassified; vocal minorities may not represent customers; bots/fake reviews; consent and privacy; sentiment is not the same as purchase behaviour.</p>
+<h3 id="202-image-analytics">20.2 Image analytics<a class="heading-anchor" href="#202-image-analytics" title="Permanent link">Link to this section</a></h3>
+<p>Algorithms recognise objects, features or conditions in images.</p>
+<p>Applications: visual quality inspection, damaged-product detection, shelf availability, medical images, crop conditions and document/invoice capture.</p>
+<p>Benefits: speed, consistent inspection, large-scale monitoring and earlier defect detection.</p>
+<p>Risks: lighting/angle/poor images; false classification; privacy/biometric concerns; biased training images; human review needed for high-impact cases.</p>
+<h3 id="203-video-analytics">20.3 Video analytics<a class="heading-anchor" href="#203-video-analytics" title="Permanent link">Link to this section</a></h3>
+<p>Analyses sequences of images, objects and movement.</p>
+<p>Applications: customer flow/queue length; store conversion; process bottlenecks; safety compliance; asset/patient movement; sports/service performance.</p>
+<p>Benefits: adds process context that point-of-sale data cannot show; supports layout, staffing and safety improvements.</p>
+<p>Risks: intrusive surveillance; employee stress; storage/cyber cost; mistaken identification; legal notice/consent; measurements may change behaviour.</p>
+<h3 id="204-speech-and-voice-analytics">20.4 Speech and voice analytics<a class="heading-anchor" href="#204-speech-and-voice-analytics" title="Permanent link">Link to this section</a></h3>
+<ul>
+<li><strong>Speech analytics:</strong> what was said—transcription, keywords and topics.</li>
+<li><strong>Voice analytics:</strong> how it was said—tone, volume, pitch, pace and emotion.</li>
+</ul>
+<p>Applications: complaint themes; agent compliance; real-time prompts; identifying frustrated customers; training and quality control.</p>
+<p>Risks: accents, noise, sarcasm and disability may reduce accuracy; emotion inference can be unreliable; recording consent; sensitive conversations; unfair employee scoring.</p>
+<h3 id="key-exam-evaluation">Key exam evaluation<a class="heading-anchor" href="#key-exam-evaluation" title="Permanent link">Link to this section</a></h3>
+<p>For any data type discuss: relevance to the CSF; representativeness; accuracy; collection cost; timeliness; integration with financial data; consent/privacy; bias; action from the insight; human verification.</p>
+<h2 id="21-analysing-data-patterns-trends-ranges-and-distributions-d2e">21. Analysing data: patterns, trends, ranges and distributions (D2e)<a class="heading-anchor" href="#21-analysing-data-patterns-trends-ranges-and-distributions-d2e" title="Permanent link">Link to this section</a></h2>
+<h3 id="measures-of-central-tendency">Measures of central tendency<a class="heading-anchor" href="#measures-of-central-tendency" title="Permanent link">Link to this section</a></h3>
+<ul>
+<li><strong>Mean:</strong> total divided by number of observations. Uses all data but distorted by extreme values.</li>
+<li><strong>Median:</strong> middle observation. Robust to outliers; useful for skewed data such as salaries or response times.</li>
+<li><strong>Mode:</strong> most frequent category/value. Useful for popular product or common complaint.</li>
+</ul>
+<p>Choosing an average affects the story. “Average waiting time” may appear acceptable while a long tail of customers suffers unacceptable delays.</p>
+<h3 id="measures-of-spread">Measures of spread<a class="heading-anchor" href="#measures-of-spread" title="Permanent link">Link to this section</a></h3>
+<ul>
+<li><strong>Range:</strong> maximum minus minimum. Simple but depends only on two observations.</li>
+<li><strong>Interquartile range:</strong> spread of middle 50%; robust to extremes.</li>
+<li><strong>Variance/standard deviation:</strong> dispersion around the mean. Higher spread means less consistency/riskier prediction.</li>
+</ul>
+<h3 id="distribution-and-shape">Distribution and shape<a class="heading-anchor" href="#distribution-and-shape" title="Permanent link">Link to this section</a></h3>
+<ul>
+<li><strong>Normal/symmetric:</strong> mean and median broadly similar.</li>
+<li><strong>Right-skewed:</strong> long high-value tail; mean exceeds median.</li>
+<li><strong>Left-skewed:</strong> long low-value tail; mean below median.</li>
+<li><strong>Bimodal/multimodal:</strong> may indicate distinct customer/process groups that should be analysed separately.</li>
+</ul>
+<h3 id="trends-seasonality-and-patterns">Trends, seasonality and patterns<a class="heading-anchor" href="#trends-seasonality-and-patterns" title="Permanent link">Link to this section</a></h3>
+<ul>
+<li><strong>Trend:</strong> long-term direction.</li>
+<li><strong>Seasonality:</strong> recurring calendar pattern.</li>
+<li><strong>Cycle:</strong> wider economic/business movement.</li>
+<li><strong>Random variation:</strong> unpredictable noise.</li>
+<li><strong>Outlier:</strong> unusual observation—could be error, fraud, rare event or useful warning.</li>
+</ul>
+<p>Do not automatically remove outliers. Investigate their source and performance significance.</p>
+<h3 id="biases-to-identify">Biases to identify<a class="heading-anchor" href="#biases-to-identify" title="Permanent link">Link to this section</a></h3>
+<ul>
+<li><strong>Selection bias:</strong> sample systematically excludes some population.</li>
+<li><strong>Survivorship bias:</strong> only successful/remaining cases considered.</li>
+<li><strong>Measurement bias:</strong> collection method systematically misstates data.</li>
+<li><strong>Response/self-selection bias:</strong> respondents differ from non-respondents.</li>
+<li><strong>Confirmation bias:</strong> analyst favours evidence supporting an existing view.</li>
+<li><strong>Historical bias:</strong> data reflects past inequality or policies.</li>
+<li><strong>Sampling bias:</strong> sample not representative.</li>
+<li><strong>Automation bias:</strong> unjustified trust in system output.</li>
+<li><strong>Proxy bias:</strong> apparently neutral variable indirectly represents a sensitive trait.</li>
+<li><strong>Aggregation bias/Simpson’s paradox:</strong> overall relationship differs within subgroups.</li>
+<li><strong>Look-ahead/data leakage:</strong> model uses information that would not be available when prediction is made.</li>
+</ul>
+<h2 id="22-regression-analysis-d2e">22. Regression analysis (D2e)<a class="heading-anchor" href="#22-regression-analysis-d2e" title="Permanent link">Link to this section</a></h2>
+<p>Regression estimates the relationship between a dependent outcome and one or more independent/explanatory variables.</p>
+<h3 id="simple-linear-regression">Simple linear regression<a class="heading-anchor" href="#simple-linear-regression" title="Permanent link">Link to this section</a></h3>
+<p><strong>y = a + bx</strong></p>
+<ul>
+<li><strong>y:</strong> predicted dependent variable, e.g. sales.</li>
+<li><strong>x:</strong> explanatory variable, e.g. advertising spend.</li>
+<li><strong>a/intercept:</strong> predicted y when x is zero.</li>
+<li><strong>b/slope/coefficient:</strong> estimated change in y for a one-unit increase in x.</li>
+</ul>
+<p>Example: <strong>Sales (£000) = 200 + 4.5 × advertising (£000)</strong></p>
+<p>Interpretation: within the observed data/model, an additional £1,000 advertising is associated with £4,500 higher sales. It does <strong>not</strong> prove advertising caused the increase.</p>
+<h3 id="multiple-regression">Multiple regression<a class="heading-anchor" href="#multiple-regression" title="Permanent link">Link to this section</a></h3>
+<p><strong>y = a + b₁x₁ + b₂x₂ + … + bₙxₙ</strong></p>
+<p>It estimates the association of each variable with y while holding included variables constant. For demand, variables might include price, advertising, income, season and competitor price.</p>
+<h3 id="key-output-to-interpret">Key output to interpret<a class="heading-anchor" href="#key-output-to-interpret" title="Permanent link">Link to this section</a></h3>
+<ul>
+<li><strong>Coefficient:</strong> direction and size of estimated relationship. Check units and commercial significance.</li>
+<li><strong>R / correlation coefficient:</strong> direction and strength of linear association, from −1 to +1 in simple contexts.</li>
+<li><strong>R² (coefficient of determination):</strong> proportion of variation in y explained by the model. A high R² is not proof of causation, accuracy out of sample or a good decision model.</li>
+<li><strong>Adjusted R²:</strong> penalises unnecessary variables and can help compare multiple models.</li>
+<li><strong>p-value/significance:</strong> evidence against a zero relationship under statistical assumptions. Statistical significance does not equal material business value.</li>
+<li><strong>Confidence interval:</strong> plausible range for a coefficient/estimate; wide intervals signal uncertainty.</li>
+<li><strong>Residual:</strong> actual minus predicted value. Patterns in residuals may reveal model problems.</li>
+<li><strong>Prediction interval:</strong> range for a future observation, normally wider than confidence around an average.</li>
+</ul>
+<h3 id="questions-to-ask-before-relying-on-regression">Questions to ask before relying on regression<a class="heading-anchor" href="#questions-to-ask-before-relying-on-regression" title="Permanent link">Link to this section</a></h3>
+<ol>
+<li>Is the relationship plausible and relevant to the business?</li>
+<li>Is it linear, or is another form needed?</li>
+<li>Does the sample cover the population/time period of the decision?</li>
+<li>Are important variables omitted?</li>
+<li>Are explanatory variables highly related to each other (multicollinearity)?</li>
+<li>Are errors independent and reasonably stable in spread?</li>
+<li>Are outliers driving the equation?</li>
+<li>Has the model been validated out of sample?</li>
+<li>Is management extrapolating beyond observed x values?</li>
+<li>Have price inflation, seasonality or structural change been addressed?</li>
+<li>Does improvement versus a simple baseline justify complexity?</li>
+<li>What are the costs of forecast errors?</li>
+</ol>
+<h3 id="common-regression-traps">Common regression traps<a class="heading-anchor" href="#common-regression-traps" title="Permanent link">Link to this section</a></h3>
+<ul>
+<li><strong>Correlation is not causation:</strong> ice-cream sales and swimming incidents may both rise due to hot weather.</li>
+<li><strong>Spurious correlation:</strong> with many variables, some relationships occur by chance.</li>
+<li><strong>Omitted-variable bias:</strong> a missing factor affects both x and y.</li>
+<li><strong>Reverse causality:</strong> high sales may cause advertising spend, not only the reverse.</li>
+<li><strong>Overfitting:</strong> model fits historic noise and performs poorly on new data.</li>
+<li><strong>Extrapolation:</strong> relationship outside the observed range may not hold.</li>
+<li><strong>Structural break/concept drift:</strong> market, customer or process has changed.</li>
+</ul>
+<h3 id="exam-style-interpretation">Exam-style interpretation<a class="heading-anchor" href="#exam-style-interpretation" title="Permanent link">Link to this section</a></h3>
+<p>Do not merely say “R² is high, so the model is good.” Say:</p>
+<blockquote>
+<p>The model explains 82% of the historic variation in weekly demand, suggesting it could improve inventory planning. However, the remaining 18% and the prediction interval must be considered because stock-outs are costly. The data covers only a stable pre-entry period and may not represent demand after the new competitor launches. Management should validate the model using recent hold-out data, compare forecast errors with the existing method and use scenario ranges rather than a single point forecast.</p>
+</blockquote>
+<h2 id="23-machine-learning-and-ai-for-insight-and-improvement-d2f">23. Machine learning and AI for insight and improvement (D2f)<a class="heading-anchor" href="#23-machine-learning-and-ai-for-insight-and-improvement-d2f" title="Permanent link">Link to this section</a></h2>
+<p><strong>Machine learning (ML)</strong> is a branch of AI in which algorithms learn patterns from data rather than relying only on explicitly programmed decision rules.</p>
+<h3 id="main-forms">Main forms<a class="heading-anchor" href="#main-forms" title="Permanent link">Link to this section</a></h3>
+<ul>
+<li><strong>Supervised learning:</strong> trained using labelled outcomes. Uses include sales prediction, churn, fraud and classification.</li>
+<li><strong>Unsupervised learning:</strong> finds patterns without labelled outcomes. Uses include customer clustering, unusual transaction detection and association analysis.</li>
+<li><strong>Reinforcement learning:</strong> learns actions through rewards/penalties in an environment. Potential uses include dynamic routing or pricing, but control is important.</li>
+</ul>
+<h3 id="common-tasks">Common tasks<a class="heading-anchor" href="#common-tasks" title="Permanent link">Link to this section</a></h3>
+<ul>
+<li><strong>Regression:</strong> predicts a continuous amount, e.g. demand or cost.</li>
+<li><strong>Classification:</strong> predicts a category/probability, e.g. churn/no churn.</li>
+<li><strong>Clustering:</strong> groups similar observations, e.g. customer segments.</li>
+<li><strong>Anomaly detection:</strong> identifies unusual transactions or process readings.</li>
+<li><strong>Recommendation:</strong> predicts items/content a user may prefer.</li>
+<li><strong>Natural language processing:</strong> analyses or generates language.</li>
+<li><strong>Computer vision:</strong> analyses images/video.</li>
+</ul>
+<h3 id="benefits_6">Benefits<a class="heading-anchor" href="#benefits_6" title="Permanent link">Link to this section</a></h3>
+<ul>
+<li>handles large datasets and many variables;</li>
+<li>identifies complex/non-linear patterns;</li>
+<li>improves through retraining with new information;</li>
+<li>enables faster and more personalised decisions;</li>
+<li>supports earlier intervention and efficient resource use;</li>
+<li>automates repetitive analysis;</li>
+<li>can improve forecasting and fraud/defect detection.</li>
+</ul>
+<h3 id="limitations-and-risks">Limitations and risks<a class="heading-anchor" href="#limitations-and-risks" title="Permanent link">Link to this section</a></h3>
+<ul>
+<li>high data, skill and computing requirements;</li>
+<li>black-box lack of explainability;</li>
+<li>biased training data and unfair outcomes;</li>
+<li>overfitting and data leakage;</li>
+<li>false positives and negatives;</li>
+<li>model/concept drift;</li>
+<li>cybersecurity and adversarial manipulation;</li>
+<li>unclear accountability;</li>
+<li>users may over-trust recommendations;</li>
+<li>objective may be too narrow, e.g. maximising clicks rather than value/wellbeing;</li>
+<li>generative AI may invent plausible but false information (“hallucination”), expose confidential input or reproduce intellectual property.</li>
+</ul>
+<h3 id="human-in-the-loop">Human-in-the-loop<a class="heading-anchor" href="#human-in-the-loop" title="Permanent link">Link to this section</a></h3>
+<p>Use human review where decisions are material, unusual, legally sensitive or affect individuals. Human review must be meaningful—not automatic approval. Reviewers need understandable reasons, authority to override and monitoring of override patterns.</p>
+<h3 id="performance-measures-for-classification-models">Performance measures for classification models<a class="heading-anchor" href="#performance-measures-for-classification-models" title="Permanent link">Link to this section</a></h3>
+<p>Use a <strong>confusion matrix</strong>:</p>
+<ul>
+<li><strong>True positive (TP):</strong> correctly predicts the event.</li>
+<li><strong>False positive (FP):</strong> predicts event when it does not occur.</li>
+<li><strong>True negative (TN):</strong> correctly predicts no event.</li>
+<li><strong>False negative (FN):</strong> fails to predict an event.</li>
+</ul>
+<p>Metrics:</p>
+<ul>
+<li><strong>Accuracy = (TP + TN) / all cases.</strong> Misleading for rare events.</li>
+<li><strong>Precision = TP / (TP + FP).</strong> Of predicted positives, how many were correct?</li>
+<li><strong>Recall/sensitivity = TP / (TP + FN).</strong> Of actual positives, how many were found?</li>
+<li><strong>Specificity = TN / (TN + FP).</strong> Of actual negatives, how many were correctly rejected?</li>
+</ul>
+<p>Commercial interpretation matters more than metric memorisation. In fraud detection, a false negative may lose money; too many false positives block genuine customers and damage service. Choose a probability threshold reflecting these asymmetric costs and risk appetite.</p>
+<h3 id="performance-measures-for-forecasts">Performance measures for forecasts<a class="heading-anchor" href="#performance-measures-for-forecasts" title="Permanent link">Link to this section</a></h3>
+<ul>
+<li>mean absolute error (MAE): average absolute error, easy to interpret;</li>
+<li>mean squared/root mean squared error (MSE/RMSE): penalises large errors more;</li>
+<li>mean absolute percentage error (MAPE): percentage interpretation but problematic near zero;</li>
+<li>forecast bias: whether forecasts systematically over/understate;</li>
+<li>operational consequences: stock-outs, waste, idle capacity and contribution lost.</li>
+</ul>
+<h2 id="24-assessing-and-refining-data-model-output-d2g">24. Assessing and refining data-model output (D2g)<a class="heading-anchor" href="#24-assessing-and-refining-data-model-output-d2g" title="Permanent link">Link to this section</a></h2>
+<p>Use the mnemonic <strong>GOALS</strong>:</p>
+<ul>
+<li><strong>G — Goal alignment:</strong> Does output answer the original decision and strategic objective?</li>
+<li><strong>O — Output performance:</strong> Accuracy, error, stability and improvement over baseline.</li>
+<li><strong>A — Assumptions and accountability:</strong> Are assumptions reasonable, explainable and owned?</li>
+<li><strong>L — Legitimacy:</strong> Relevant, representative, lawful and ethical data; bias/fairness checked.</li>
+<li><strong>S — Sustainability:</strong> Cost, skills, integration, security, monitoring and ability to update.</li>
+</ul>
+<h3 id="full-evaluation-checklist">Full evaluation checklist<a class="heading-anchor" href="#full-evaluation-checklist" title="Permanent link">Link to this section</a></h3>
+<ol>
+<li><strong>Purpose:</strong> Is it prediction, explanation, classification or optimisation? A predictive model need not prove causality.</li>
+<li><strong>Relevance:</strong> Does output match the correct customer/process/time horizon and KPI?</li>
+<li><strong>Data quality:</strong> completeness, accuracy, consistency, timeliness and provenance.</li>
+<li><strong>Representativeness:</strong> all affected groups, seasons, regions and conditions included?</li>
+<li><strong>Validation:</strong> tested on independent/hold-out data?</li>
+<li><strong>Baseline:</strong> better than existing method or a simple rule?</li>
+<li><strong>Error trade-off:</strong> operational and ethical costs of false outcomes?</li>
+<li><strong>Uncertainty:</strong> intervals/scenarios shown rather than false precision?</li>
+<li><strong>Robustness:</strong> stable if assumptions or inputs change?</li>
+<li><strong>Explainability:</strong> can management and affected users understand the key drivers?</li>
+<li><strong>Fairness:</strong> systematically different error/outcome rates across groups?</li>
+<li><strong>Causality:</strong> is management incorrectly treating association as cause?</li>
+<li><strong>Actionability:</strong> is there a feasible action that creates value?</li>
+<li><strong>Integration:</strong> fits workflows, controls and existing systems?</li>
+<li><strong>Economics:</strong> expected benefit exceeds full lifecycle cost?</li>
+<li><strong>Monitoring:</strong> owner, frequency, thresholds and retraining defined?</li>
+</ol>
+<h3 id="possible-refinements">Possible refinements<a class="heading-anchor" href="#possible-refinements" title="Permanent link">Link to this section</a></h3>
+<ul>
+<li>obtain more recent or representative data;</li>
+<li>correct data errors or redefine variables;</li>
+<li>add a relevant omitted variable;</li>
+<li>remove leakage, irrelevant/proxy or unstable variables;</li>
+<li>segment populations rather than use one model for all;</li>
+<li>simplify the model for explainability;</li>
+<li>tune thresholds to commercial error costs;</li>
+<li>rebalance training data or apply fairness constraints;</li>
+<li>include external/qualitative evidence;</li>
+<li>use scenario/sensitivity analysis;</li>
+<li>compare alternative models and baseline;</li>
+<li>conduct pilot/A-B test;</li>
+<li>add human review and override controls;</li>
+<li>retrain when drift thresholds are breached.</li>
+</ul>
+<h2 id="25-advising-management-from-model-output-d2h">25. Advising management from model output (D2h)<a class="heading-anchor" href="#25-advising-management-from-model-output-d2h" title="Permanent link">Link to this section</a></h2>
+<p>A high-scoring response does not repeat model numbers. It turns output into decision support.</p>
+<h3 id="recommended-structure-insight">Recommended structure: <strong>INSIGHT</strong><a class="heading-anchor" href="#recommended-structure-insight" title="Permanent link">Link to this section</a></h3>
+<ol>
+<li><strong>I — Issue:</strong> state the decision/problem.</li>
+<li><strong>N — Numerical finding:</strong> quote only the relevant output/trend.</li>
+<li><strong>S — Strategic significance:</strong> connect to objective, CSF, KPI and value.</li>
+<li><strong>I — Interpretation and cause:</strong> explain what it may mean without overstating causation.</li>
+<li><strong>G — Gaps/risks:</strong> uncertainty, assumptions, data limitations and stakeholder effects.</li>
+<li><strong>H — Helpful action:</strong> specific, feasible recommendation with owner/pilot/control.</li>
+<li><strong>T — Track:</strong> KPI, target/time and review trigger.</li>
+</ol>
+<p>Example:</p>
+<blockquote>
+<p>The churn model identifies customers with repeated outages as three times more likely to cancel. Since retention is a CSF and acquiring replacements is expensive, the company should prioritise network repair in the two affected regions and offer service recovery to high-risk, high-lifetime-value customers. The association does not prove every cancellation is caused by outages, and the model underrepresents prepaid customers. A four-week pilot should therefore compare churn and contribution against a control group, with separate error rates monitored by contract type before wider rollout.</p>
+</blockquote>
+<h3 id="communicating-uncertainty">Communicating uncertainty<a class="heading-anchor" href="#communicating-uncertainty" title="Permanent link">Link to this section</a></h3>
+<p>Use “suggests”, “is associated with”, “estimated”, “subject to” and ranges where appropriate. Avoid “proves”, “will definitely” and unexplained decimal precision.</p>
+<h3 id="good-recommendations-are">Good recommendations are<a class="heading-anchor" href="#good-recommendations-are" title="Permanent link">Link to this section</a></h3>
+<ul>
+<li>linked to evidence and strategy;</li>
+<li>specific about what, who and when;</li>
+<li>proportionate to risk and cost;</li>
+<li>sensitive to stakeholders and ethics;</li>
+<li>measurable;</li>
+<li>accompanied by control, pilot or review.</li>
+</ul>
+<h2 id="26-ethical-issues-in-information-collection-and-processing-d2i">26. Ethical issues in information collection and processing (D2i)<a class="heading-anchor" href="#26-ethical-issues-in-information-collection-and-processing-d2i" title="Permanent link">Link to this section</a></h2>
+<p>Data ethics concerns the moral obligations surrounding the collection, protection, analysis and use of data and its effects on people. Legal compliance is a minimum, not the complete ethical test.</p>
+<h3 id="261-core-ethical-principles">26.1 Core ethical principles<a class="heading-anchor" href="#261-core-ethical-principles" title="Permanent link">Link to this section</a></h3>
+<ol>
+<li><strong>Purpose and intention:</strong> define a legitimate purpose before collecting data. Do not collect “just in case”.</li>
+<li><strong>Ownership/control and consent:</strong> individuals should have appropriate control and meaningful choice over personal information. Consent should be informed and freely given where relied upon.</li>
+<li><strong>Transparency:</strong> explain what is collected, from where, why, how long, with whom shared and how automated decisions affect people.</li>
+<li><strong>Privacy and confidentiality:</strong> protect personal and sensitive data from inappropriate access or inference.</li>
+<li><strong>Data minimisation:</strong> collect only data necessary for the stated purpose.</li>
+<li><strong>Accuracy:</strong> allow correction and prevent harmful decisions based on poor data.</li>
+<li><strong>Fairness/non-discrimination:</strong> avoid unjustified disadvantage to individuals or groups.</li>
+<li><strong>Accountability:</strong> a named person/board remains responsible for outcomes; a machine is not accountable.</li>
+<li><strong>Explainability and contestability:</strong> significant decisions should be understandable and challengeable, with human review/redress.</li>
+<li><strong>Security:</strong> safeguards should match sensitivity and harm from breach.</li>
+<li><strong>Retention limitation:</strong> keep information only as long as justified, then securely delete/anonymise.</li>
+<li><strong>Proportionality:</strong> expected benefit should justify intrusion and potential harm.</li>
+<li><strong>Outcome/avoidance of harm:</strong> consider unintended effects even where intentions are good.</li>
+</ol>
+<h3 id="262-algorithmic-bias">26.2 Algorithmic bias<a class="heading-anchor" href="#262-algorithmic-bias" title="Permanent link">Link to this section</a></h3>
+<p>Bias may arise from:</p>
+<ul>
+<li>unrepresentative training samples;</li>
+<li>historic discrimination in labels/outcomes;</li>
+<li>measurement errors;</li>
+<li>choice of target variable;</li>
+<li>proxy variables correlated with protected characteristics;</li>
+<li>feedback loops;</li>
+<li>different data quality across groups;</li>
+<li>design teams lacking diversity/context;</li>
+<li>thresholds prioritising one stakeholder’s cost over another’s harm.</li>
+</ul>
+<p>Example of feedback loop: a model directs more inspections to locations with historically more detected cases; more inspections create more detections, which causes still more future inspections, even if underlying incidence elsewhere is similar.</p>
+<h3 id="controls">Controls<a class="heading-anchor" href="#controls" title="Permanent link">Link to this section</a></h3>
+<ul>
+<li>representative datasets and documented provenance;</li>
+<li>test outcome and error rates across relevant groups;</li>
+<li>remove/reconsider proxy and unnecessary sensitive variables;</li>
+<li>independent ethical/bias review;</li>
+<li>clear objective and fairness criteria;</li>
+<li>explainability and meaningful appeal;</li>
+<li>monitor outcomes after implementation;</li>
+<li>avoid deploying if harm cannot be controlled.</li>
+</ul>
+<p>Merely removing a protected field may not remove bias because postcode, school or purchasing history can act as proxies.</p>
+<h3 id="263-black-box-algorithms">26.3 Black-box algorithms<a class="heading-anchor" href="#263-black-box-algorithms" title="Permanent link">Link to this section</a></h3>
+<p>A black-box model’s internal reasoning is difficult for users, auditors or affected individuals to understand.</p>
+<p>Risks:</p>
+<ul>
+<li>errors/bias remain hidden;</li>
+<li>management cannot justify a decision;</li>
+<li>difficult audit and regulatory challenge;</li>
+<li>loss of trust;</li>
+<li>unclear responsibility;</li>
+<li>managers cannot know whether changed conditions invalidate the model.</li>
+</ul>
+<p>Responses:</p>
+<ul>
+<li>prefer interpretable model for high-impact decisions where performance difference is small;</li>
+<li>use explainability tools and reason codes;</li>
+<li>maintain model documentation, data lineage and logs;</li>
+<li>independent validation and audit;</li>
+<li>human oversight/appeal;</li>
+<li>restrict autonomous decisions;</li>
+<li>monitor drift and disparate outcomes.</li>
+</ul>
+<h3 id="264-large-scale-collection-and-surveillance">26.4 Large-scale collection and surveillance<a class="heading-anchor" href="#264-large-scale-collection-and-surveillance" title="Permanent link">Link to this section</a></h3>
+<p>Problems include lack of genuine consent, secondary use beyond original purpose, re-identification of “anonymous” data, chilling effects on employees/customers, power imbalance, security risk and inference of sensitive traits.</p>
+<p>Ask:</p>
+<ul>
+<li>Is every field necessary?</li>
+<li>Would individuals reasonably expect this use?</li>
+<li>Could the objective be met with aggregated/anonymised data?</li>
+<li>Is monitoring proportionate?</li>
+<li>Who benefits and who bears risk?</li>
+<li>Can individuals opt out without unfair penalty?</li>
+</ul>
+<h3 id="265-ethical-issues-in-employee-analytics">26.5 Ethical issues in employee analytics<a class="heading-anchor" href="#265-ethical-issues-in-employee-analytics" title="Permanent link">Link to this section</a></h3>
+<p>Potential benefit: improve safety, workloads, training and wellbeing.</p>
+<p>Risks: intrusive monitoring, inaccurate productivity scores, loss of trust, work intensification, discrimination, manipulation to improve measured behaviour and use outside the original purpose.</p>
+<p>Recommendations: consult employees; collect minimum data; distinguish support from punishment; allow correction/appeal; avoid one-dimensional algorithmic targets; assess team/process causes; limit manager access; review behavioural consequences.</p>
+<h3 id="266-ethical-issues-in-customer-analytics-and-dynamic-pricing">26.6 Ethical issues in customer analytics and dynamic pricing<a class="heading-anchor" href="#266-ethical-issues-in-customer-analytics-and-dynamic-pricing" title="Permanent link">Link to this section</a></h3>
+<p>Personalisation can improve relevance and capacity use, but may:</p>
+<ul>
+<li>exploit vulnerability or urgency;</li>
+<li>discriminate through proxies;</li>
+<li>charge different prices without understandable justification;</li>
+<li>manipulate choices;</li>
+<li>create filter bubbles;</li>
+<li>use personal data beyond customer expectations.</li>
+</ul>
+<p>Evaluate transparency, fairness, necessity, customer value, reputation and long-term trust—not profit alone.</p>
+<h3 id="267-acca-professional-ethics-connection">26.7 ACCA professional ethics connection<a class="heading-anchor" href="#267-acca-professional-ethics-connection" title="Permanent link">Link to this section</a></h3>
+<p>Apply the fundamental principles:</p>
+<ul>
+<li><strong>Integrity:</strong> do not manipulate data/models or conceal adverse output.</li>
+<li><strong>Objectivity:</strong> resist management bias, conflicts and undue influence.</li>
+<li><strong>Professional competence and due care:</strong> understand limitations; use specialists; validate before advice.</li>
+<li><strong>Confidentiality:</strong> protect data and do not misuse it.</li>
+<li><strong>Professional behaviour:</strong> comply with law and avoid conduct discrediting the profession.</li>
+</ul>
+<p>Threats may include self-interest (bonus depends on model result), self-review (designer validates own model), advocacy, familiarity and intimidation. Safeguards include independent validation, transparent assumptions, audit trail, escalation, ethical review and declining association with misleading analysis.</p>
+<h2 id="27-role-of-the-management-accountant-in-data-science">27. Role of the management accountant in data science<a class="heading-anchor" href="#27-role-of-the-management-accountant-in-data-science" title="Permanent link">Link to this section</a></h2>
+<p>The management accountant does not need to be the programmer. The strategic role is to bridge technical specialists and decision-makers by:</p>
+<ul>
+<li>translating strategy into analytics questions and measurable outcomes;</li>
+<li>defining CSFs, KPIs and decision constraints;</li>
+<li>challenging data quality, assumptions and causality;</li>
+<li>combining financial with operational/customer information;</li>
+<li>assessing cost, benefit, risk and stakeholder impact;</li>
+<li>interpreting output with commercial acumen;</li>
+<li>communicating uncertainty clearly;</li>
+<li>ensuring controls, governance and ethics;</li>
+<li>measuring whether recommendations create sustainable value;</li>
+<li>resisting automation bias and preserving accountability.</li>
+</ul>
+<hr>
+<h1 id="part-iii-what-could-be-examined">PART III — WHAT COULD BE EXAMINED?<a class="heading-anchor" href="#part-iii-what-could-be-examined" title="Permanent link">Link to this section</a></h1>
+<h2 id="28-probable-section-d-question-patterns">28. Probable Section D question patterns<a class="heading-anchor" href="#28-probable-section-d-question-patterns" title="Permanent link">Link to this section</a></h2>
+<p>ACCA can combine topics in many ways; these are plausible patterns, not predictions. A question will be scenario-based and likely supported by exhibits such as a board proposal, dataset, consultant report, dashboard, regression/model output, email or system specification.</p>
+<h3 id="pattern-1-new-erpunified-database-proposal">Pattern 1: New ERP/unified database proposal<a class="heading-anchor" href="#pattern-1-new-erpunified-database-proposal" title="Permanent link">Link to this section</a></h3>
+<p>Possible requirements:</p>
+<ul>
+<li>evaluate how the ERP would improve performance management;</li>
+<li>assess data-silo problems;</li>
+<li>evaluate implementation risks;</li>
+<li>recommend controls and implementation approach.</li>
+</ul>
+<p>High-value scenario clues: inconsistent divisional KPIs, duplicate entry, late consolidation, reconciliation differences, local autonomy, poor master data, weak training.</p>
+<h3 id="pattern-2-cloud-migrationcyber-incident">Pattern 2: Cloud migration/cyber incident<a class="heading-anchor" href="#pattern-2-cloud-migrationcyber-incident" title="Permanent link">Link to this section</a></h3>
+<p>Possible requirements:</p>
+<ul>
+<li>assess cloud benefits and risks;</li>
+<li>evaluate effects of a system outage/data breach;</li>
+<li>recommend controls and continuity measures;</li>
+<li>advise whether migration supports strategy.</li>
+</ul>
+<p>Apply provider dependency, SLA, scalability, data jurisdiction, confidentiality/integrity/availability, backups, recovery tests, MFA, access and exit plan.</p>
+<h3 id="pattern-3-big-data-customer-analytics">Pattern 3: Big-data customer analytics<a class="heading-anchor" href="#pattern-3-big-data-customer-analytics" title="Permanent link">Link to this section</a></h3>
+<p>Possible requirements:</p>
+<ul>
+<li>evaluate the value and challenges of big data;</li>
+<li>recommend suitable data sources;</li>
+<li>explain the data-science process;</li>
+<li>identify privacy and ethical problems.</li>
+</ul>
+<p>Apply customer acquisition, retention, extension, lifetime value, contribution, churn, complaints and service quality. Challenge whether intrusive collection is necessary.</p>
+<h3 id="pattern-4-four-analytics-methods">Pattern 4: Four analytics methods<a class="heading-anchor" href="#pattern-4-four-analytics-methods" title="Permanent link">Link to this section</a></h3>
+<p>Possible requirements:</p>
+<ul>
+<li>classify examples as descriptive, diagnostic, predictive or prescriptive;</li>
+<li>explain how each improves performance;</li>
+<li>recommend an analytical sequence for a stated problem.</li>
+</ul>
+<p>Do not only define. For each: identify data, resulting insight, decision/KPI, benefit and limitation.</p>
+<h3 id="pattern-5-regression-output-and-forecast">Pattern 5: Regression output and forecast<a class="heading-anchor" href="#pattern-5-regression-output-and-forecast" title="Permanent link">Link to this section</a></h3>
+<p>Possible requirements:</p>
+<ul>
+<li>interpret coefficients, R², ranges/distribution and trends;</li>
+<li>assess the suitability of the model;</li>
+<li>advise management on the forecast and action.</li>
+</ul>
+<p>Challenge causality, sample period, extrapolation, omitted variables, outliers, seasonality, external change, uncertainty and business impact of errors.</p>
+<h3 id="pattern-6-machine-learning-model">Pattern 6: Machine-learning model<a class="heading-anchor" href="#pattern-6-machine-learning-model" title="Permanent link">Link to this section</a></h3>
+<p>Possible requirements:</p>
+<ul>
+<li>assess AI/ML use for churn, fraud, demand or maintenance;</li>
+<li>evaluate model output and error rates;</li>
+<li>recommend refinements;</li>
+<li>explain model insight to the board.</li>
+</ul>
+<p>Discuss validation, baseline, false positives/negatives, thresholds, explainability, drift, human oversight and commercial costs.</p>
+<h3 id="pattern-7-ethical-algorithmblack-box-decision">Pattern 7: Ethical algorithm/black-box decision<a class="heading-anchor" href="#pattern-7-ethical-algorithmblack-box-decision" title="Permanent link">Link to this section</a></h3>
+<p>Possible requirements:</p>
+<ul>
+<li>assess ethics of data capture and algorithm use;</li>
+<li>challenge a claim that “the algorithm is objective”;</li>
+<li>recommend governance and controls.</li>
+</ul>
+<p>Apply consent/control, transparency, minimisation, privacy, security, representativeness, bias/proxies, explainability, contestability, outcome harm and accountability. Connect to ACCA ethical principles.</p>
+<h3 id="pattern-8-textimagevideovoice-analytics">Pattern 8: Text/image/video/voice analytics<a class="heading-anchor" href="#pattern-8-textimagevideovoice-analytics" title="Permanent link">Link to this section</a></h3>
+<p>Possible requirements:</p>
+<ul>
+<li>evaluate a proposal to analyse calls, cameras, reviews or images;</li>
+<li>explain possible performance insight;</li>
+<li>assess limitations and ethics.</li>
+</ul>
+<p>Distinguish speech (what is said) from voice (how it is said). Evaluate accuracy, representativeness, actionability, employee/customer privacy and human verification.</p>
+<h3 id="pattern-9-lean-information-system5-ss">Pattern 9: Lean information system/5 Ss<a class="heading-anchor" href="#pattern-9-lean-information-system5-ss" title="Permanent link">Link to this section</a></h3>
+<p>Possible requirements:</p>
+<ul>
+<li>apply each of the 5 Ss to a proposed information system;</li>
+<li>assess implementation difficulties;</li>
+<li>evaluate whether information/reports add value.</li>
+</ul>
+<p>This has already been examined in APM. Cover all five separately and use scenario examples.</p>
+<h3 id="pattern-10-rfidiot-and-operational-performance">Pattern 10: RFID/IoT and operational performance<a class="heading-anchor" href="#pattern-10-rfidiot-and-operational-performance" title="Permanent link">Link to this section</a></h3>
+<p>Possible requirements:</p>
+<ul>
+<li>assess how sensor/RFID data improves inventory, maintenance, quality or sustainability;</li>
+<li>develop relevant KPIs;</li>
+<li>assess data/security risks.</li>
+</ul>
+<p>Possible KPIs: stock accuracy, stock-out rate, inventory days, shrinkage, downtime, mean time between failures, energy per unit, spoilage and delivery accuracy.</p>
+<h3 id="pattern-11-crmkms-implementation">Pattern 11: CRM/KMS implementation<a class="heading-anchor" href="#pattern-11-crmkms-implementation" title="Permanent link">Link to this section</a></h3>
+<p>Possible requirements:</p>
+<ul>
+<li>evaluate the system for performance management;</li>
+<li>recommend KPIs and controls;</li>
+<li>discuss behavioural/implementation issues.</li>
+</ul>
+<p>Avoid equating system activity with success: documents uploaded or customer contacts made are weak measures unless they improve resolution, retention, profitability or another strategic outcome.</p>
+<h3 id="pattern-12-misleading-dashboard-or-model-narrative">Pattern 12: Misleading dashboard or model narrative<a class="heading-anchor" href="#pattern-12-misleading-dashboard-or-model-narrative" title="Permanent link">Link to this section</a></h3>
+<p>This could integrate Section C foundations:</p>
+<ul>
+<li>identify misleading use/presentation of data;</li>
+<li>recommend better visualisation/commentary;</li>
+<li>challenge selective claims made by management.</li>
+</ul>
+<p>Look for truncated axes, inappropriate scale, cherry-picked periods, averages hiding dispersion, percentages without absolute values, omitted comparators, dual axes, inconsistent definitions, causality claims and false precision.</p>
+<h2 id="29-cross-syllabus-integrations-you-should-expect">29. Cross-syllabus integrations you should expect<a class="heading-anchor" href="#29-cross-syllabus-integrations-you-should-expect" title="Permanent link">Link to this section</a></h2>
+<h3 id="strategy-csfs-and-kpis">Strategy, CSFs and KPIs<a class="heading-anchor" href="#strategy-csfs-and-kpis" title="Permanent link">Link to this section</a></h3>
+<p>Technology is a means, not an objective. Ask which mission/objective it supports. Convert analytical insight into leading and lagging KPIs.</p>
+<p>Example: strategy is reliable delivery. Relevant outputs/KPIs include predicted late deliveries, on-time-in-full rate, average delay, complaint rate, repeat purchases and contribution lost.</p>
+<h3 id="balanced-scorecard">Balanced Scorecard<a class="heading-anchor" href="#balanced-scorecard" title="Permanent link">Link to this section</a></h3>
+<ul>
+<li><strong>Financial:</strong> margin, cash conversion, system ROI and cost-to-serve.</li>
+<li><strong>Customer:</strong> retention, satisfaction, NPS, service response.</li>
+<li><strong>Internal process:</strong> cycle time, error/defect rate, downtime.</li>
+<li><strong>Learning and growth:</strong> digital skills, KMS usage, innovation and employee engagement.</li>
+</ul>
+<p>Analytics can show links between perspectives, e.g. training → fewer errors → satisfaction → retention → profit. Test rather than assume the causal chain.</p>
+<h3 id="budgeting-and-forecasting">Budgeting and forecasting<a class="heading-anchor" href="#budgeting-and-forecasting" title="Permanent link">Link to this section</a></h3>
+<p>Predictive analytics can create rolling, driver-based forecasts and scenarios. Benefits are speed and responsiveness; risks include false precision, unstable historic relationships and managers losing understanding/ownership of assumptions.</p>
+<h3 id="reward-and-behaviour">Reward and behaviour<a class="heading-anchor" href="#reward-and-behaviour" title="Permanent link">Link to this section</a></h3>
+<p>Algorithmic KPIs can intensify “what gets measured gets done”. Risks: gaming, data manipulation, tunnel vision, short-termism, controllability problems and unfair rewards from inaccurate models. Use balanced measures, controllable factors, review/appeal and avoid sole reliance on one metric.</p>
+<h3 id="performance-improvement">Performance improvement<a class="heading-anchor" href="#performance-improvement" title="Permanent link">Link to this section</a></h3>
+<ul>
+<li>sensor data supports JIT but dependency increases disruption risk;</li>
+<li>analytics can identify non-value activities for ABM/BPR;</li>
+<li>machine learning can support Six Sigma defect analysis;</li>
+<li>text analytics can convert voice of customer into quality improvement;</li>
+<li>automation should follow process simplification, not preserve waste.</li>
+</ul>
+<h3 id="services-and-not-for-profits">Services and not-for-profits<a class="heading-anchor" href="#services-and-not-for-profits" title="Permanent link">Link to this section</a></h3>
+<p>Use analytics to measure access, waiting time, quality, outcome and equity—not only cost. Data collection in healthcare, education and public services is particularly sensitive. A model may improve efficiency while reducing effectiveness or fair access.</p>
+<h3 id="sustainability">Sustainability<a class="heading-anchor" href="#sustainability" title="Permanent link">Link to this section</a></h3>
+<p>IoT and analytics can measure energy, waste, emissions and supply-chain performance. Challenge completeness, boundaries, estimation assumptions and greenwashing. Processing and storage also have environmental costs.</p>
+<h2 id="30-requirement-verbs-what-the-marker-expects">30. Requirement verbs: what the marker expects<a class="heading-anchor" href="#30-requirement-verbs-what-the-marker-expects" title="Permanent link">Link to this section</a></h2>
+<ul>
+<li><strong>Explain:</strong> show how/why, not merely state.</li>
+<li><strong>Apply:</strong> use the scenario’s facts and organisation.</li>
+<li><strong>Analyse:</strong> break down evidence, calculate/interpret relationships and identify reasons/consequences.</li>
+<li><strong>Assess:</strong> weigh significance, strength and limitations before a judgement.</li>
+<li><strong>Evaluate:</strong> balanced advantages/disadvantages in the specific context, ending with a supported conclusion.</li>
+<li><strong>Advise/recommend:</strong> state what management should do, why, how and subject to which safeguards.</li>
+<li><strong>Identify:</strong> concise recognition may be enough, but scenario relevance still matters.</li>
+</ul>
+<p>If the verb is “evaluate”, generic benefits alone cannot score highly. If “advise”, a list of risks without action is incomplete.</p>
+<h2 id="31-section-b-time-and-mark-strategy">31. Section B time and mark strategy<a class="heading-anchor" href="#31-section-b-time-and-mark-strategy" title="Permanent link">Link to this section</a></h2>
+<p>The full exam is 195 minutes for 100 marks: approximately <strong>1.95 minutes per mark</strong>. A 25-mark question therefore deserves about <strong>49 minutes</strong>, including reading and planning.</p>
+<p>A practical allocation:</p>
+<ol>
+<li><strong>6–8 minutes:</strong> read requirements first, then exhibits; highlight role, audience, verbs and deliverables.</li>
+<li><strong>3–4 minutes:</strong> make a brief answer plan by requirement and mark allocation.</li>
+<li><strong>34–37 minutes:</strong> write focused points with evidence and judgement.</li>
+<li><strong>2–3 minutes:</strong> review that every requirement and professional skill is addressed.</li>
+</ol>
+<p>Do not spend 15 minutes producing a perfect definition. Use mark allocation to judge breadth: a substantial 10-mark requirement normally needs several developed, distinct points.</p>
+<h2 id="32-a-universal-answer-framework">32. A universal answer framework<a class="heading-anchor" href="#32-a-universal-answer-framework" title="Permanent link">Link to this section</a></h2>
+<p>Use <strong>P–A–I–R</strong> for each paragraph:</p>
+<ul>
+<li><strong>P — Point:</strong> identify the relevant issue/benefit/risk.</li>
+<li><strong>A — Apply:</strong> use a fact from the exhibit.</li>
+<li><strong>I — Impact:</strong> explain effect on strategy, KPI, stakeholder, cost, risk or decision.</li>
+<li><strong>R — Recommend/Reach judgement:</strong> conclude, control, refinement or action.</li>
+</ul>
+<p>Example:</p>
+<blockquote>
+<p>The consultant’s training sample excludes cash customers (Point). They represent 35% of the retailer’s transactions and have different purchasing patterns (Apply). The demand model may therefore understate low-value products and produce stock-outs, reducing availability and customer satisfaction (Impact). Cash transactions should be included or a separate segment model developed and validated before rollout (Recommend).</p>
+</blockquote>
+<p>One well-developed paragraph is normally more valuable than several unexplained buzzwords.</p>
+<h2 id="33-professional-skills-marks-in-the-section-d-question">33. Professional skills marks in the Section D question<a class="heading-anchor" href="#33-professional-skills-marks-in-the-section-d-question" title="Permanent link">Link to this section</a></h2>
+<p>The 25 marks are expected to comprise 20 technical and 5 professional-skills marks. At least two skills from analysis and evaluation, scepticism and commercial acumen will be examined.</p>
+<h3 id="331-analysis-and-evaluation">33.1 Analysis and evaluation<a class="heading-anchor" href="#331-analysis-and-evaluation" title="Permanent link">Link to this section</a></h3>
+<p>Demonstrate by:</p>
+<ul>
+<li>selecting relevant exhibit data rather than copying it all;</li>
+<li>calculating/interpreting trends, proportions or model metrics;</li>
+<li>linking cause, consequence and strategic objective;</li>
+<li>weighing benefits against cost/risk;</li>
+<li>prioritising material issues;</li>
+<li>reaching a reasoned judgement.</li>
+</ul>
+<p>Weak: “AI increases accuracy.”</p>
+<p>Strong: “Although model accuracy is 92%, only 2% of transactions are fraudulent, so accuracy may mainly reflect correctly classifying non-fraud. Recall, false-positive cost and loss prevented are more relevant before replacing manual review.”</p>
+<h3 id="332-scepticism">33.2 Scepticism<a class="heading-anchor" href="#332-scepticism" title="Permanent link">Link to this section</a></h3>
+<p>Demonstrate by:</p>
+<ul>
+<li>challenging unsupported management/consultant claims;</li>
+<li>distinguishing correlation from causality;</li>
+<li>questioning source, completeness, assumptions and incentives;</li>
+<li>identifying contradictory evidence;</li>
+<li>requesting further evidence;</li>
+<li>refining, rather than automatically accepting/rejecting, a proposal.</li>
+</ul>
+<p>Useful questions:</p>
+<ul>
+<li>Who produced this output and what incentives do they have?</li>
+<li>What data or stakeholder is missing?</li>
+<li>Is the comparison like-for-like?</li>
+<li>Does the metric measure the objective or only convenient activity?</li>
+<li>What alternative explanation exists?</li>
+<li>How was the model validated?</li>
+</ul>
+<h3 id="333-commercial-acumen">33.3 Commercial acumen<a class="heading-anchor" href="#333-commercial-acumen" title="Permanent link">Link to this section</a></h3>
+<p>Demonstrate by:</p>
+<ul>
+<li>understanding how the organisation creates value;</li>
+<li>balancing full cost, benefit, risk and implementation feasibility;</li>
+<li>considering customers, competitors, capacity, culture and regulation;</li>
+<li>recommending prioritised and practical actions;</li>
+<li>protecting long-term trust rather than chasing a short-term metric.</li>
+</ul>
+<p>Strong recommendations include pilot, owner, timescale, KPI and review threshold.</p>
+<h3 id="334-communication">33.4 Communication<a class="heading-anchor" href="#334-communication" title="Permanent link">Link to this section</a></h3>
+<p>Although the Section B skills are selected from the three above, communicate professionally throughout:</p>
+<ul>
+<li>follow the required format and audience;</li>
+<li>use clear headings matching requirements;</li>
+<li>concise paragraphs and relevant tables where useful;</li>
+<li>explain technical output in plain language;</li>
+<li>avoid unexplained abbreviations;</li>
+<li>state a conclusion.</li>
+</ul>
+<h2 id="34-model-answer-plans-for-common-requirements">34. Model answer plans for common requirements<a class="heading-anchor" href="#34-model-answer-plans-for-common-requirements" title="Permanent link">Link to this section</a></h2>
+<h3 id="341-evaluate-the-proposed-use-of-ai-to-forecast-demand">34.1 “Evaluate the proposed use of AI to forecast demand”<a class="heading-anchor" href="#341-evaluate-the-proposed-use-of-ai-to-forecast-demand" title="Permanent link">Link to this section</a></h3>
+<p>Plan:</p>
+<ol>
+<li>Strategic need: reduce stock-outs/waste and improve margins/service.</li>
+<li>Benefits: variables/volume, speed, non-linear patterns, granular forecasts, scenarios.</li>
+<li>Data: sales, price, promotions, weather, events, competitor activity; quality and representativeness.</li>
+<li>Model: validation, baseline comparison, error measures, uncertainty, overfitting/drift.</li>
+<li>Operations: integration with ordering, manager override, supplier/capacity constraints.</li>
+<li>Financial case: contribution saved less implementation/lifecycle cost.</li>
+<li>Ethics/security where customer-level data used.</li>
+<li>Recommendation: pilot high-volume category, compare with current forecast, track MAE/stock-outs/waste, retain review.</li>
+</ol>
+<h3 id="342-assess-the-output-and-recommend-refinements">34.2 “Assess the output and recommend refinements”<a class="heading-anchor" href="#342-assess-the-output-and-recommend-refinements" title="Permanent link">Link to this section</a></h3>
+<p>Plan:</p>
+<ol>
+<li>Restate purpose and success metric.</li>
+<li>Interpret output, including direction, magnitude and uncertainty.</li>
+<li>Compare performance with baseline and business tolerance.</li>
+<li>Identify segment/time weaknesses and false error costs.</li>
+<li>Challenge causality, data/sample and assumptions.</li>
+<li>Assess fairness/explainability/actionability.</li>
+<li>Refine data, model, threshold, segmentation, controls or pilot.</li>
+<li>Establish monitoring/retraining.</li>
+</ol>
+<h3 id="343-advise-on-ethical-issues">34.3 “Advise on ethical issues”<a class="heading-anchor" href="#343-advise-on-ethical-issues" title="Permanent link">Link to this section</a></h3>
+<p>Plan:</p>
+<ol>
+<li>Data purpose/necessity and affected stakeholders.</li>
+<li>Consent/control and reasonable expectation.</li>
+<li>Transparency and ability to understand/challenge.</li>
+<li>Privacy, confidentiality, security and retention.</li>
+<li>Bias, representativeness, proxies and feedback loops.</li>
+<li>Harm/outcomes and proportionality.</li>
+<li>Accountability and human oversight.</li>
+<li>Safeguards and recommendation.</li>
+<li>Link to integrity, objectivity, competence, confidentiality and professional behaviour.</li>
+</ol>
+<h3 id="344-evaluate-erp-for-performance-management">34.4 “Evaluate ERP for performance management”<a class="heading-anchor" href="#344-evaluate-erp-for-performance-management" title="Permanent link">Link to this section</a></h3>
+<p>Plan:</p>
+<ol>
+<li>Current silo/inconsistency problem from scenario.</li>
+<li>Single data source, automation, timeliness, process integration and drill-down.</li>
+<li>Better decisions/KPIs tied to strategy.</li>
+<li>Cost, disruption, migration, standardisation, skills, resistance and cyber risk.</li>
+<li>Whether standard system suits operations.</li>
+<li>Business case and staged implementation.</li>
+<li>Data governance, training, access, reconciliation and post-implementation KPIs.</li>
+</ol>
+<h3 id="345-analyse-regression-output-and-advise-management">34.5 “Analyse regression output and advise management”<a class="heading-anchor" href="#345-analyse-regression-output-and-advise-management" title="Permanent link">Link to this section</a></h3>
+<p>Plan:</p>
+<ol>
+<li>Define dependent/independent variables and business purpose.</li>
+<li>Interpret signs and coefficients with units.</li>
+<li>Explain R²/other output without overclaiming.</li>
+<li>Discuss trend, spread, outliers and sample.</li>
+<li>Challenge causality, omitted variables, extrapolation and structural change.</li>
+<li>Explain forecast uncertainty and operational error costs.</li>
+<li>Recommend validation, further variables/data, scenarios and controlled action.</li>
+</ol>
+<h2 id="35-mini-practice-case-with-model-points">35. Mini practice case with model points<a class="heading-anchor" href="#35-mini-practice-case-with-model-points" title="Permanent link">Link to this section</a></h2>
+<h3 id="scenario">Scenario<a class="heading-anchor" href="#scenario" title="Permanent link">Link to this section</a></h3>
+<p>FreshBox delivers subscription meal kits. Churn has increased from 5% to 9%. A consultant has built a black-box model using customer age, postcode, order history, complaints, app clicks and recorded customer-service calls. It claims 94% accuracy and recommends automatically offering a 30% discount to customers predicted to leave. The model was trained on active customers who paid by card during the last 12 months; cash and recently cancelled customers were excluded. Managers propose recording all calls without a specific notification because the terms and conditions permit “service monitoring”.</p>
+<h3 id="requirement-a-evaluate-the-model-and-proposed-use">Requirement A: Evaluate the model and proposed use<a class="heading-anchor" href="#requirement-a-evaluate-the-model-and-proposed-use" title="Permanent link">Link to this section</a></h3>
+<p>Strong points:</p>
+<ul>
+<li>A churn model is relevant to retention and recurring revenue, but success should be incremental contribution retained, not accuracy alone.</li>
+<li>94% accuracy may be misleading if most customers do not churn; require confusion matrix, recall, precision and segment error rates.</li>
+<li>Excluding cancelled customers is severe survivorship/selection bias because these are the clearest churn outcomes.</li>
+<li>Excluding cash customers means the model may not represent the whole customer base.</li>
+<li>Twelve months may not capture seasonality or changing economic conditions.</li>
+<li>Postcode may proxy income, ethnicity or other sensitive characteristics and cause unfair treatment.</li>
+<li>App clicks may be useful leading indicators, but could reflect device/access differences rather than dissatisfaction.</li>
+<li>A black box limits explanation, audit and challenge; seek reason codes or a simpler model.</li>
+<li>A universal 30% discount may retain unprofitable customers, reduce margin and train customers to threaten cancellation.</li>
+<li>Target high-risk <strong>and high-value</strong> customers with tailored service recovery; solve root causes such as complaints.</li>
+<li>Test against a control group and compare contribution, retention, discount cost and customer fairness.</li>
+<li>Retain human approval for unusual/high-value cases and monitor drift.</li>
+</ul>
+<h3 id="requirement-b-advise-on-ethical-issues">Requirement B: Advise on ethical issues<a class="heading-anchor" href="#requirement-b-advise-on-ethical-issues" title="Permanent link">Link to this section</a></h3>
+<p>Strong points:</p>
+<ul>
+<li>Broad legal wording does not ensure customers reasonably understand AI analysis of calls; provide specific, accessible notice.</li>
+<li>Recording and emotional inference may be disproportionate; collect only necessary data.</li>
+<li>Protect recordings with encryption, restricted access, short retention and deletion.</li>
+<li>Assess whether call data can be anonymised or converted to limited themes.</li>
+<li>Audit model outcomes and error rates across groups; postcode and age can produce discrimination.</li>
+<li>Explain significant decisions and allow customers to contest/correct data.</li>
+<li>Board remains accountable; consultant/model cannot bear ethical responsibility.</li>
+<li>Evaluate trust and reputation: covert-feeling monitoring may worsen churn.</li>
+</ul>
+<h3 id="suggested-conclusion">Suggested conclusion<a class="heading-anchor" href="#suggested-conclusion" title="Permanent link">Link to this section</a></h3>
+<p>Do not deploy automatic discounts in the current form. Rebuild/validate using representative outcomes, use a transparent value-based intervention policy, run a controlled pilot and introduce clear privacy, fairness and human-review safeguards.</p>
+<h2 id="36-common-mistakes-that-lose-marks">36. Common mistakes that lose marks<a class="heading-anchor" href="#36-common-mistakes-that-lose-marks" title="Permanent link">Link to this section</a></h2>
+<ol>
+<li>Writing definitions with no scenario application.</li>
+<li>Treating technology as automatically beneficial.</li>
+<li>Listing every advantage/disadvantage regardless of the requirement.</li>
+<li>Repeating exhibit facts without explaining significance.</li>
+<li>Confusing data volume with data value.</li>
+<li>Claiming correlation proves causation.</li>
+<li>Saying a high R² or accuracy proves a model is reliable.</li>
+<li>Ignoring base rates and false-positive/false-negative costs.</li>
+<li>Recommending more data without purpose, consent or cost.</li>
+<li>Giving “improve security” as a control without specificity.</li>
+<li>Discussing ethics only as legal compliance.</li>
+<li>Assuming anonymisation always prevents identification.</li>
+<li>Saying remove sensitive variables and assuming bias disappears.</li>
+<li>Failing to give a conclusion or recommendation.</li>
+<li>Ignoring implementation, people and culture.</li>
+<li>Ignoring financial value and commercial feasibility.</li>
+<li>Using generic AI buzzwords not found in the scenario.</li>
+<li>Spending too long on one requirement.</li>
+<li>Missing the required report/memo/advice format.</li>
+<li>Not addressing professional skills explicitly through the quality of analysis.</li>
+</ol>
+<h2 id="37-rapid-revision-sheet">37. Rapid revision sheet<a class="heading-anchor" href="#37-rapid-revision-sheet" title="Permanent link">Link to this section</a></h2>
+<h3 id="technology-mnemonic-d-a-r-e-c">Technology mnemonic: <strong>D-A-R-E C</strong><a class="heading-anchor" href="#technology-mnemonic-d-a-r-e-c" title="Permanent link">Link to this section</a></h3>
+<p>When evaluating technology:</p>
+<ul>
+<li><strong>D — Decision/data:</strong> what information and decision improve?</li>
+<li><strong>A — Alignment/adoption:</strong> strategy, users, culture and skills.</li>
+<li><strong>R — Return/risk:</strong> benefit versus full cost; cyber/privacy/continuity.</li>
+<li><strong>E — Execution:</strong> integration, migration, pilot, controls and ownership.</li>
+<li><strong>C — Continuous review:</strong> KPIs, feedback, updates and realised benefits.</li>
+</ul>
+<h3 id="big-data-5-vs">Big data: <strong>5 Vs</strong><a class="heading-anchor" href="#big-data-5-vs" title="Permanent link">Link to this section</a></h3>
+<p>Volume, Velocity, Variety, Veracity, Value.</p>
+<h3 id="data-process">Data process<a class="heading-anchor" href="#data-process" title="Permanent link">Link to this section</a></h3>
+<p>Goal → Get → Govern → Clean → Transform → Store → Analyse → Validate → Communicate → Act/monitor.</p>
+<h3 id="analytics-ladder">Analytics ladder<a class="heading-anchor" href="#analytics-ladder" title="Permanent link">Link to this section</a></h3>
+<ul>
+<li>Descriptive: what?</li>
+<li>Diagnostic: why?</li>
+<li>Predictive: what next?</li>
+<li>Prescriptive: what action?</li>
+</ul>
+<h3 id="model-evaluation-goals">Model evaluation: <strong>GOALS</strong><a class="heading-anchor" href="#model-evaluation-goals" title="Permanent link">Link to this section</a></h3>
+<p>Goal alignment; Output performance; Assumptions/accountability; Legitimacy; Sustainability.</p>
+<h3 id="management-advice-insight">Management advice: <strong>INSIGHT</strong><a class="heading-anchor" href="#management-advice-insight" title="Permanent link">Link to this section</a></h3>
+<p>Issue; Numerical finding; Strategic significance; Interpretation; Gaps; Helpful action; Track.</p>
+<h3 id="paragraph-pair">Paragraph: <strong>PAIR</strong><a class="heading-anchor" href="#paragraph-pair" title="Permanent link">Link to this section</a></h3>
+<p>Point; Apply; Impact; Recommend.</p>
+<h3 id="security">Security<a class="heading-anchor" href="#security" title="Permanent link">Link to this section</a></h3>
+<p>Confidentiality, Integrity, Availability; preventive, detective and corrective controls.</p>
+<h3 id="ethics">Ethics<a class="heading-anchor" href="#ethics" title="Permanent link">Link to this section</a></h3>
+<p>Purpose; consent/control; transparency; privacy/security; minimisation; accuracy; fairness; explainability/contestability; accountability; retention; outcomes/proportionality.</p>
+<h3 id="5-ss">5 Ss<a class="heading-anchor" href="#5-ss" title="Permanent link">Link to this section</a></h3>
+<p>Sort; Simplify; Scan; Standardise; Sustain.</p>
+<h2 id="38-final-pre-exam-checklist">38. Final pre-exam checklist<a class="heading-anchor" href="#38-final-pre-exam-checklist" title="Permanent link">Link to this section</a></h2>
+<p>You are ready only if you can, without notes:</p>
+<ul>
+<li>explain how unified databases, warehouses, automation, AI, RFID, cloud and networks affect performance;</li>
+<li>diagnose data silos and propose proportionate solutions;</li>
+<li>evaluate ERP, KMS and CRM with scenario-specific KPIs;</li>
+<li>map system/data risks to preventive, detective and corrective controls;</li>
+<li>apply every one of the 5 Ss to an information system;</li>
+<li>explain big data through volume, velocity, variety, veracity and value;</li>
+<li>describe the complete data-science process and its governance;</li>
+<li>apply all four types of analytics to one scenario;</li>
+<li>evaluate text, image, video, speech and voice analytics;</li>
+<li>analyse averages, ranges, distributions, trends, outliers and bias;</li>
+<li>interpret coefficients and R² while challenging causality and extrapolation;</li>
+<li>explain ML uses, errors, validation, drift and human oversight;</li>
+<li>assess model output and propose refinements;</li>
+<li>convert model output into practical, measurable management advice;</li>
+<li>discuss black boxes, large-scale collection, bias, privacy and ethical outcomes;</li>
+<li>apply ACCA ethical principles;</li>
+<li>produce a focused 25-mark answer in approximately 49 minutes.</li>
+</ul>
+<h2 id="39-suggested-study-and-question-practice-sequence">39. Suggested study and question-practice sequence<a class="heading-anchor" href="#39-suggested-study-and-question-practice-sequence" title="Permanent link">Link to this section</a></h2>
+<ol>
+<li>Learn the D1/D2 map and rapid-revision mnemonics.</li>
+<li>Read the official ACCA data analytics and IT articles.</li>
+<li>Practise one 5 Ss/lean-systems question because it has already appeared and exposes the required application level.</li>
+<li>Create short examples for retail, manufacturing, services and not-for-profit contexts.</li>
+<li>Practise interpreting one regression output and one classification model.</li>
+<li>Attempt ethical scenarios using the full principles, not a generic privacy paragraph.</li>
+<li>Attempt complete 25-mark questions to time on the ACCA Practice Platform.</li>
+<li>Compare with model answers/examiner reports: record missed application, judgement and professional-skill points.</li>
+<li>Reattempt weak questions from a blank screen.</li>
+<li>In the final week, revise frameworks but prioritise timed application over passive rereading.</li>
+</ol>
+<h2 id="40-authoritative-sources">40. Authoritative sources<a class="heading-anchor" href="#40-authoritative-sources" title="Permanent link">Link to this section</a></h2>
+<ul>
+<li><a href="https://www.accaglobal.com/content/dam/acca/global/PDF-students/acca/p5/studyguides/apm_s26_j27_syllabus_and_study_guide.pdf">Official ACCA APM syllabus and study guide, September 2026–June 2027</a></li>
+<li><a href="https://www.accaglobal.com/gb/en/student/exam-support-resources/professional-exams-study-resources/p5/technical-articles.html">ACCA APM technical articles and topic explainers</a></li>
+<li><a href="https://www.accaglobal.com/uk/en/student/exam-support-resources/professional-exams-study-resources/p5/technical-articles/data-analytics-1.html">ACCA Data analytics—types of analytics, part 1</a></li>
+<li><a href="https://www.accaglobal.com/gb/en/student/exam-support-resources/professional-exams-study-resources/p5/technical-articles/data-analytics-2.html">ACCA Data analytics—methods and ethical issues, part 2</a></li>
+<li><a href="https://www.accaglobal.com/uk/en/student/exam-support-resources/professional-exams-study-resources/p5/technical-articles/it-developments.html">ACCA Developments in IT and performance management, part 1</a></li>
+<li><a href="https://www.accaglobal.com/uk/en/student/exam-support-resources/professional-exams-study-resources/p5/technical-articles/it-developments2.html">ACCA Developments in IT and performance management, part 2</a></li>
+<li><a href="https://www.accaglobal.com/uk/en/student/exam-support-resources/professional-exams-study-resources/p5/technical-articles/lean.html">ACCA Lean enterprises and lean information systems</a></li>
+<li><a href="https://www.accaglobal.com/in/en/student/exam-support-resources/fundamentals-exams-study-resources/f5/technical-articles/big-data.html">ACCA Big data</a></li>
+<li><a href="https://www.accaglobal.com/uk/en/student/exam-support-resources/professional-exams-study-resources/p5/technical-articles/data-analytics.html">ACCA Data analytics and the role of the management accountant</a></li>
+</ul>
+<p><em>Internet-source content has been synthesised and rephrased for compliance with licensing restrictions. Always check ACCA’s website for later examinable-document updates before the September 2026 sitting.</em></p>
+<h2 id="41-exact-section-d-syllabus-coverage-map">41. Exact Section D syllabus coverage map<a class="heading-anchor" href="#41-exact-section-d-syllabus-coverage-map" title="Permanent link">Link to this section</a></h2>
+<table>
+<thead>
+<tr>
+<th>Official learning outcome</th>
+<th>Where covered in these notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>D1(a) IT developments: unified databases, warehouses, automation, AI, RFID, cloud/network technology</td>
+<td>Sections 3–9</td>
+</tr>
+<tr>
+<td>D1(b) Data silos and problems for accounting</td>
+<td>Section 10</td>
+</tr>
+<tr>
+<td>D1(c) ERP, KMS and CRM for managing performance</td>
+<td>Sections 11–13</td>
+</tr>
+<tr>
+<td>D1(d) Systems/data risks and protective controls</td>
+<td>Section 14</td>
+</tr>
+<tr>
+<td>D1(e) Lean information systems and 5 Ss</td>
+<td>Section 15</td>
+</tr>
+<tr>
+<td>D2(a) Big data, impact, risks and challenges</td>
+<td>Section 17</td>
+</tr>
+<tr>
+<td>D2(b) Data-science methods/process: goals, selection, cleaning, transformation and storage</td>
+<td>Section 18</td>
+</tr>
+<tr>
+<td>D2(c) Descriptive, diagnostic, predictive and prescriptive analytics</td>
+<td>Section 19</td>
+</tr>
+<tr>
+<td>D2(d) Text, image, video and voice data</td>
+<td>Section 20</td>
+</tr>
+<tr>
+<td>D2(e) Regression, biases, patterns, trends, ranges and distributions</td>
+<td>Sections 21–22</td>
+</tr>
+<tr>
+<td>D2(f) Machine learning and AI for insights/improvements</td>
+<td>Section 23</td>
+</tr>
+<tr>
+<td>D2(g) Assessing model output and refinements</td>
+<td>Section 24</td>
+</tr>
+<tr>
+<td>D2(h) Advising management from output and recommending action</td>
+<td>Section 25</td>
+</tr>
+<tr>
+<td>D2(i) Ethical issues, black-box algorithms and large-scale data collection</td>
+<td>Section 26</td>
+</tr>
+</tbody>
+</table>
+<p>All 14 official Section D learning outcomes are covered. Sections 28–39 convert that knowledge into likely question patterns, answer plans, professional-skills technique and revision practice.</p></article>
+      <footer class="site-footer"><strong>ACCA APM study guide</strong><br>Based on the official September 2026–June 2027 syllabus and ACCA technical articles. Always check ACCA for later examinable-document updates.</footer>
+    </main>
+  </div>
+
+  <div class="nav-scrim" id="nav-scrim" aria-hidden="true"></div>
+  <button class="back-to-top" id="back-to-top" type="button" aria-label="Back to top">↑</button>
+  <script>
+(() => {
+  const root = document.documentElement;
+  const themeButton = document.getElementById('theme-toggle');
+  const savedTheme = localStorage.getItem('apm-theme');
+  const initialTheme = savedTheme || (matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+
+  function setTheme(theme) {
+    root.dataset.theme = theme;
+    themeButton.setAttribute('aria-pressed', String(theme === 'dark'));
+    themeButton.title = theme === 'dark' ? 'Use light theme' : 'Use dark theme';
+  }
+  setTheme(initialTheme);
+  themeButton.addEventListener('click', () => {
+    const next = root.dataset.theme === 'dark' ? 'light' : 'dark';
+    setTheme(next);
+    localStorage.setItem('apm-theme', next);
+  });
+
+  document.getElementById('print-guide').addEventListener('click', () => window.print());
+
+  const menuButton = document.getElementById('menu-toggle');
+  const sidebar = document.getElementById('study-navigation');
+  const scrim = document.getElementById('nav-scrim');
+  function setMenu(open) {
+    sidebar.classList.toggle('open', open);
+    scrim.classList.toggle('open', open);
+    menuButton.setAttribute('aria-expanded', String(open));
+    document.body.style.overflow = open ? 'hidden' : '';
+  }
+  menuButton.addEventListener('click', () => setMenu(!sidebar.classList.contains('open')));
+  scrim.addEventListener('click', () => setMenu(false));
+  sidebar.addEventListener('click', event => {
+    if (event.target.closest('a') && innerWidth <= 980) setMenu(false);
+  });
+  addEventListener('keydown', event => { if (event.key === 'Escape') setMenu(false); });
+
+  const progress = document.getElementById('progress-bar');
+  const topButton = document.getElementById('back-to-top');
+  function updateScroll() {
+    const max = document.documentElement.scrollHeight - innerHeight;
+    progress.style.width = (max > 0 ? scrollY / max * 100 : 0) + '%';
+    topButton.classList.toggle('visible', scrollY > 700);
+  }
+  addEventListener('scroll', updateScroll, { passive: true });
+  addEventListener('resize', updateScroll);
+  updateScroll();
+  topButton.addEventListener('click', () => scrollTo({ top: 0, behavior: 'smooth' }));
+
+  const tocLinks = [...document.querySelectorAll('.toc a')];
+  const linkById = new Map(tocLinks.map(link => [decodeURIComponent(link.hash.slice(1)), link]));
+  const headings = [...document.querySelectorAll('#study-notes h2[id], #study-notes h3[id]')];
+  const observer = new IntersectionObserver(entries => {
+    const visible = entries.filter(entry => entry.isIntersecting).sort((a, b) => a.boundingClientRect.top - b.boundingClientRect.top);
+    if (!visible.length) return;
+    tocLinks.forEach(link => link.classList.remove('active'));
+    const active = linkById.get(visible[0].target.id);
+    if (active) {
+      active.classList.add('active');
+      active.scrollIntoView({ block: 'nearest' });
+    }
+  }, { rootMargin: '-12% 0px -76% 0px', threshold: 0 });
+  headings.forEach(heading => observer.observe(heading));
+
+  const search = document.getElementById('topic-search');
+  const status = document.getElementById('search-status');
+  search.addEventListener('input', () => {
+    const query = search.value.trim().toLowerCase();
+    let visibleCount = 0;
+    document.querySelectorAll('.toc li').forEach(item => {
+      const ownLink = item.querySelector(':scope > a');
+      if (!ownLink) return;
+      const ownMatch = !query || ownLink.textContent.toLowerCase().includes(query);
+      const childMatch = [...item.querySelectorAll(':scope > ul a')].some(link => !query || link.textContent.toLowerCase().includes(query));
+      const visible = ownMatch || childMatch;
+      item.classList.toggle('search-hidden', !visible);
+      if (visible && ownMatch) visibleCount++;
+    });
+    status.textContent = query ? `${visibleCount} matching topic${visibleCount === 1 ? '' : 's'}` : 'Filter the table of contents';
+  });
+
+  // Make the final revision checklist interactive and persist progress locally.
+  const checklistHeading = document.getElementById('38-final-pre-exam-checklist');
+  if (checklistHeading) {
+    const list = checklistHeading.nextElementSibling && checklistHeading.nextElementSibling.tagName === 'P'
+      ? checklistHeading.nextElementSibling.nextElementSibling
+      : checklistHeading.nextElementSibling;
+    if (list && list.tagName === 'UL') {
+      list.classList.add('interactive-checklist');
+      [...list.children].forEach((item, index) => {
+        const key = `apm-check-${index}`;
+        const checkbox = document.createElement('input');
+        checkbox.type = 'checkbox';
+        checkbox.checked = localStorage.getItem(key) === '1';
+        checkbox.setAttribute('aria-label', `Mark checklist item ${index + 1} complete`);
+        checkbox.addEventListener('change', () => localStorage.setItem(key, checkbox.checked ? '1' : '0'));
+        item.prepend(checkbox);
+      });
+    }
+  }
+})();
+</script>
+</body>
+</html>
