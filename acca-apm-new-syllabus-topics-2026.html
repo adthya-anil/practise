@@ -1,0 +1,1675 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Complete ACCA APM guide to the new and expanded non-data-science syllabus topics for September 2026 to June 2027.">
+  <meta name="theme-color" content="#071b2b">
+  <title>ACCA APM — New &amp; Expanded Topics Study Guide</title>
+  <style>
+:root {
+  color-scheme: light;
+  --navy-950: #071b2b;
+  --navy-900: #0b263b;
+  --navy-800: #123a55;
+  --teal-700: #087b77;
+  --teal-600: #0b918a;
+  --teal-100: #dff6f2;
+  --teal-50: #effbf9;
+  --gold-500: #f1b84b;
+  --gold-100: #fff2d1;
+  --ink: #17212b;
+  --muted: #5c6975;
+  --surface: #ffffff;
+  --surface-soft: #f5f8fa;
+  --surface-raised: #ffffff;
+  --border: #d8e1e7;
+  --code: #eef3f6;
+  --danger-soft: #fff2ef;
+  --danger: #a13c2d;
+  --shadow: 0 18px 48px rgba(7, 27, 43, .10);
+  --radius-lg: 22px;
+  --radius-md: 14px;
+  --content: 860px;
+  --sidebar: 300px;
+}
+
+[data-theme='dark'] {
+  color-scheme: dark;
+  --ink: #eaf2f6;
+  --muted: #afbec8;
+  --surface: #0b1d2a;
+  --surface-soft: #102837;
+  --surface-raised: #122b3a;
+  --border: #284758;
+  --code: #193746;
+  --teal-700: #73ded3;
+  --teal-600: #4ac8bd;
+  --teal-100: #123c3b;
+  --teal-50: #102f31;
+  --gold-100: #46391c;
+  --danger-soft: #3b2423;
+  --danger: #ffac9e;
+  --shadow: 0 18px 48px rgba(0, 0, 0, .3);
+}
+
+* { box-sizing: border-box; }
+.sr-only {
+  position: absolute !important;
+  width: 1px !important;
+  height: 1px !important;
+  padding: 0 !important;
+  margin: -1px !important;
+  overflow: hidden !important;
+  clip: rect(0, 0, 0, 0) !important;
+  white-space: nowrap !important;
+  border: 0 !important;
+}
+html { scroll-behavior: smooth; scroll-padding-top: 86px; }
+body {
+  margin: 0;
+  background: var(--surface-soft);
+  color: var(--ink);
+  font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  font-size: 16px;
+  line-height: 1.72;
+  text-rendering: optimizeLegibility;
+}
+a { color: var(--teal-700); text-underline-offset: .16em; }
+a:hover { text-decoration-thickness: 2px; }
+button, input { font: inherit; }
+button { cursor: pointer; }
+
+.skip-link {
+  position: fixed;
+  left: 16px;
+  top: -80px;
+  z-index: 1000;
+  border-radius: 8px;
+  background: var(--gold-500);
+  color: #17212b;
+  font-weight: 800;
+  padding: 10px 14px;
+  transition: top .15s ease;
+}
+.skip-link:focus { top: 16px; }
+:focus-visible { outline: 3px solid var(--gold-500); outline-offset: 3px; }
+
+.reading-progress {
+  position: fixed;
+  inset: 0 0 auto;
+  z-index: 999;
+  height: 4px;
+  background: transparent;
+}
+.reading-progress span {
+  display: block;
+  width: 0;
+  height: 100%;
+  background: linear-gradient(90deg, var(--gold-500), #55d7c8);
+}
+
+.utility-bar {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  min-height: 62px;
+  padding: 9px clamp(16px, 4vw, 52px);
+  border-bottom: 1px solid rgba(255,255,255,.14);
+  background: rgba(7, 27, 43, .94);
+  color: #fff;
+  backdrop-filter: blur(14px);
+}
+.brand { display: flex; align-items: center; gap: 10px; font-weight: 850; letter-spacing: -.01em; }
+.brand-mark {
+  display: grid;
+  width: 36px;
+  height: 36px;
+  place-items: center;
+  border-radius: 10px;
+  background: var(--gold-500);
+  color: #17212b;
+  font-size: .82rem;
+  letter-spacing: .03em;
+}
+.toolbar { display: flex; gap: 8px; }
+.tool-button, .menu-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+  min-height: 40px;
+  padding: 8px 12px;
+  border: 1px solid rgba(255,255,255,.22);
+  border-radius: 10px;
+  background: rgba(255,255,255,.07);
+  color: #fff;
+  font-weight: 700;
+}
+.tool-button:hover, .menu-button:hover { background: rgba(255,255,255,.14); }
+.tool-button svg, .menu-button svg {
+  width: 18px;
+  height: 18px;
+  flex: 0 0 auto;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+.menu-button { display: none; }
+
+.hero {
+  position: relative;
+  overflow: hidden;
+  padding: clamp(54px, 8vw, 98px) clamp(18px, 6vw, 72px) clamp(48px, 7vw, 82px);
+  background:
+    radial-gradient(circle at 82% 22%, rgba(85,215,200,.2), transparent 26%),
+    radial-gradient(circle at 12% 88%, rgba(241,184,75,.14), transparent 30%),
+    linear-gradient(145deg, var(--navy-950), var(--navy-800));
+  color: #fff;
+}
+.hero-inner { width: min(1100px, 100%); margin: 0 auto; }
+.eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin: 0 0 17px;
+  color: #91e4da;
+  font-size: .82rem;
+  font-weight: 850;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+}
+.eyebrow::before { content: ''; width: 28px; height: 2px; background: var(--gold-500); }
+.hero h1 {
+  max-width: 820px;
+  margin: 0;
+  color: #fff;
+  font-size: clamp(2.35rem, 6vw, 4.7rem);
+  line-height: 1.02;
+  letter-spacing: -.055em;
+}
+.hero-lede {
+  max-width: 700px;
+  margin: 22px 0 0;
+  color: #d5e5ed;
+  font-size: clamp(1.05rem, 2vw, 1.28rem);
+  line-height: 1.55;
+}
+.hero-badges { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 28px; }
+.badge {
+  border: 1px solid rgba(255,255,255,.2);
+  border-radius: 999px;
+  background: rgba(255,255,255,.08);
+  color: #ecf7fa;
+  padding: 7px 12px;
+  font-size: .86rem;
+  font-weight: 750;
+}
+
+.exam-strip {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  width: min(1100px, calc(100% - 32px));
+  margin: -30px auto 36px;
+  position: relative;
+  z-index: 2;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  background: var(--surface-raised);
+  box-shadow: var(--shadow);
+}
+.exam-fact { padding: 19px 22px; border-right: 1px solid var(--border); }
+.exam-fact:last-child { border-right: 0; }
+.exam-fact strong { display: block; color: var(--teal-700); font-size: 1.4rem; line-height: 1.2; }
+.exam-fact span { display: block; margin-top: 5px; color: var(--muted); font-size: .82rem; font-weight: 700; }
+
+.layout {
+  display: grid;
+  grid-template-columns: var(--sidebar) minmax(0, var(--content));
+  gap: clamp(28px, 4vw, 54px);
+  justify-content: center;
+  width: min(1240px, calc(100% - 32px));
+  margin: 0 auto;
+  align-items: start;
+}
+.sidebar {
+  position: sticky;
+  top: 82px;
+  max-height: calc(100vh - 102px);
+  overflow: hidden;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  background: var(--surface-raised);
+  box-shadow: 0 8px 24px rgba(7, 27, 43, .06);
+}
+.sidebar-head { padding: 17px 17px 12px; border-bottom: 1px solid var(--border); }
+.sidebar-title { margin: 0 0 10px; font-size: .8rem; font-weight: 850; letter-spacing: .1em; text-transform: uppercase; }
+.search-wrap { position: relative; }
+.search-wrap span { position: absolute; left: 11px; top: 8px; color: var(--muted); }
+#topic-search {
+  width: 100%;
+  height: 40px;
+  padding: 7px 10px 7px 34px;
+  border: 1px solid var(--border);
+  border-radius: 9px;
+  background: var(--surface-soft);
+  color: var(--ink);
+}
+.search-status { min-height: 1.3em; margin: 7px 1px 0; color: var(--muted); font-size: .75rem; }
+.toc-scroll { max-height: calc(100vh - 216px); overflow: auto; padding: 10px 10px 18px; scrollbar-width: thin; }
+.toc { font-size: .83rem; line-height: 1.38; }
+.toc ul { margin: 0; padding: 0; list-style: none; }
+.toc ul ul { padding-left: 10px; margin: 3px 0 8px 7px; border-left: 1px solid var(--border); }
+.toc li { margin: 1px 0; }
+.toc a {
+  display: block;
+  padding: 7px 9px;
+  border-radius: 8px;
+  color: var(--muted);
+  text-decoration: none;
+}
+.toc ul ul a { padding-top: 5px; padding-bottom: 5px; font-size: .78rem; }
+.toc a:hover { background: var(--surface-soft); color: var(--ink); }
+.toc a.active { background: var(--teal-100); color: var(--teal-700); font-weight: 800; }
+.toc li.search-hidden { display: none; }
+
+.content { min-width: 0; padding-bottom: 90px; }
+.notice {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 14px;
+  margin-bottom: 28px;
+  padding: 18px 20px;
+  border: 1px solid #edcf7d;
+  border-radius: var(--radius-md);
+  background: var(--gold-100);
+}
+.notice-icon { font-size: 1.35rem; }
+.notice p { margin: 0; }
+.notice strong { display: block; margin-bottom: 2px; }
+
+article {
+  padding: clamp(24px, 5vw, 58px);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  background: var(--surface-raised);
+  box-shadow: 0 8px 28px rgba(7, 27, 43, .055);
+}
+article > :first-child { margin-top: 0; }
+article h1 {
+  margin: 70px calc(clamp(24px, 5vw, 58px) * -1) 28px;
+  padding: 25px clamp(24px, 5vw, 58px);
+  background: linear-gradient(130deg, var(--navy-900), var(--navy-800));
+  color: #fff;
+  font-size: clamp(1.45rem, 3vw, 2rem);
+  line-height: 1.25;
+  letter-spacing: -.025em;
+}
+article h1:first-of-type { margin-top: 48px; }
+article h2 {
+  margin: 64px 0 22px;
+  padding-top: 12px;
+  border-top: 1px solid var(--border);
+  color: var(--navy-800);
+  font-size: clamp(1.55rem, 3vw, 2.05rem);
+  line-height: 1.23;
+  letter-spacing: -.035em;
+}
+[data-theme='dark'] article h2 { color: #7adfd3; }
+article h3 { margin: 38px 0 14px; color: var(--teal-700); font-size: 1.25rem; line-height: 1.35; }
+article h4 { margin: 28px 0 10px; font-size: 1.04rem; }
+article p { margin: 0 0 18px; }
+article ul, article ol { margin: 0 0 22px; padding-left: 1.45rem; }
+article li { margin: 0 0 8px; padding-left: .25rem; }
+article li::marker { color: var(--teal-600); font-weight: 800; }
+.interactive-checklist { padding-left: 0; list-style: none; }
+.interactive-checklist li {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 10px;
+  align-items: start;
+  padding: 9px 11px;
+  border-radius: 9px;
+  background: var(--surface-soft);
+}
+.interactive-checklist input {
+  width: 18px;
+  height: 18px;
+  margin: 4px 0 0;
+  accent-color: var(--teal-600);
+}
+.interactive-checklist li:has(input:checked) { color: var(--muted); text-decoration: line-through; }
+article strong { color: inherit; font-weight: 800; }
+article blockquote {
+  margin: 24px 0;
+  padding: 17px 20px;
+  border: 0;
+  border-left: 5px solid var(--teal-600);
+  border-radius: 0 var(--radius-md) var(--radius-md) 0;
+  background: var(--teal-50);
+}
+article blockquote p:last-child { margin-bottom: 0; }
+article hr { margin: 62px 0; border: 0; border-top: 1px solid var(--border); }
+article code { border-radius: 5px; background: var(--code); padding: .12em .34em; font-size: .9em; }
+article table {
+  display: block;
+  width: 100%;
+  margin: 24px 0;
+  overflow-x: auto;
+  border-collapse: collapse;
+  font-size: .9rem;
+}
+article th, article td { min-width: 180px; padding: 11px 13px; border: 1px solid var(--border); text-align: left; vertical-align: top; }
+article th { background: var(--teal-100); color: var(--ink); }
+.heading-anchor {
+  margin-left: 7px;
+  color: var(--muted);
+  font-size: .62em;
+  font-weight: 500;
+  opacity: 0;
+  text-decoration: none;
+}
+h2:hover .heading-anchor, h3:hover .heading-anchor, .heading-anchor:focus { opacity: 1; }
+
+.back-to-top {
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+  z-index: 30;
+  display: grid;
+  width: 45px;
+  height: 45px;
+  place-items: center;
+  border: 1px solid var(--border);
+  border-radius: 50%;
+  background: var(--surface-raised);
+  color: var(--ink);
+  box-shadow: var(--shadow);
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(8px);
+  transition: .2s ease;
+}
+.back-to-top.visible { opacity: 1; pointer-events: auto; transform: none; }
+
+.site-footer {
+  margin-top: 42px;
+  padding: 28px 18px 46px;
+  color: var(--muted);
+  text-align: center;
+  font-size: .86rem;
+}
+.site-footer strong { color: var(--ink); }
+
+@media (max-width: 980px) {
+  .layout { grid-template-columns: minmax(0, var(--content)); }
+  .menu-button { display: inline-flex; }
+  .sidebar {
+    position: fixed;
+    inset: 66px auto 0 0;
+    z-index: 45;
+    width: min(340px, 88vw);
+    max-height: none;
+    border-radius: 0 var(--radius-md) 0 0;
+    transform: translateX(-105%);
+    transition: transform .2s ease;
+  }
+  .sidebar.open { transform: translateX(0); }
+  .toc-scroll { max-height: calc(100vh - 195px); }
+  .nav-scrim { position: fixed; inset: 62px 0 0; z-index: 40; background: rgba(3,14,22,.6); display: none; }
+  .nav-scrim.open { display: block; }
+}
+@media (max-width: 720px) {
+  .utility-bar { padding-inline: 12px; }
+  .brand-label { display: none; }
+  .tool-label { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); }
+  .exam-strip { grid-template-columns: repeat(2, 1fr); }
+  .exam-fact:nth-child(2) { border-right: 0; }
+  .exam-fact:nth-child(-n+2) { border-bottom: 1px solid var(--border); }
+  article { padding: 23px 18px; border-radius: var(--radius-md); }
+  article h1 { margin-inline: -18px; padding-inline: 18px; }
+  article h2 { font-size: 1.48rem; }
+}
+@media (max-width: 430px) {
+  .hero { padding-inline: 18px; }
+  .exam-strip { width: calc(100% - 20px); }
+  .exam-fact { padding: 15px; }
+  .exam-fact strong { font-size: 1.12rem; }
+  .layout { width: calc(100% - 20px); }
+}
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after { transition-duration: .01ms !important; animation-duration: .01ms !important; }
+}
+@media print {
+  :root { --ink: #111; --muted: #444; --surface-raised: #fff; --border: #bbb; }
+  body { background: #fff; font-size: 10pt; line-height: 1.45; }
+  .utility-bar, .sidebar, .reading-progress, .back-to-top, .nav-scrim { display: none !important; }
+  .hero { padding: 32px 0; background: none; color: #111; }
+  .hero h1 { color: #111; font-size: 30pt; }
+  .hero-lede, .eyebrow { color: #333; }
+  .hero-badges .badge { border-color: #777; color: #222; }
+  .exam-strip { width: 100%; margin: 0 0 18px; box-shadow: none; }
+  .layout { display: block; width: 100%; }
+  .notice { break-inside: avoid; }
+  article { padding: 0; border: 0; box-shadow: none; }
+  article h1 { margin-inline: 0; padding: 12px; background: #eee; color: #111; }
+  article h2, article h3 { break-after: avoid; }
+  article blockquote, article table, article li { break-inside: avoid; }
+  .heading-anchor { display: none; }
+  a { color: inherit; text-decoration: none; }
+  a[href^='http']::after { content: ' (' attr(href) ')'; font-size: 8pt; overflow-wrap: anywhere; }
+  .site-footer { padding-bottom: 0; }
+  @page { size: A4; margin: 16mm; }
+}
+</style>
+</head>
+<body>
+  <a class="skip-link" href="#study-notes">Skip to study notes</a>
+  <div class="reading-progress" aria-hidden="true"><span id="progress-bar"></span></div>
+
+  <div class="utility-bar">
+    <div class="brand"><span class="brand-mark">APM</span><span class="brand-label">New Syllabus Topics Study Guide</span></div>
+    <div class="toolbar">
+      <button class="menu-button" id="menu-toggle" type="button" aria-expanded="false" aria-controls="study-navigation"><svg aria-hidden="true" viewBox="0 0 24 24"><path d="M4 6h16M4 12h16M4 18h16"/></svg><span class="tool-label">Topics</span></button>
+      <button class="tool-button" id="print-guide" type="button"><svg aria-hidden="true" viewBox="0 0 24 24"><path d="M6 9V3h12v6M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2M6 14h12v7H6z"/></svg><span class="tool-label">Print / Save PDF</span></button>
+      <button class="tool-button" id="theme-toggle" type="button" aria-pressed="false"><svg class="theme-icon" aria-hidden="true" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.42 1.42M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.42-1.42M17.66 6.34l1.41-1.41"/></svg><span class="tool-label">Theme</span></button>
+    </div>
+  </div>
+
+  <header class="hero">
+    <div class="hero-inner">
+      <p class="eyebrow">ACCA Advanced Performance Management</p>
+      <h1>New &amp; Expanded<br>APM Topics</h1>
+      <p class="hero-lede">Exam-focused coverage of TSR, NPS, sustainability, environmental costs, lifecycle costing, SHIP, SLAs, narrative commentary and strategic change.</p>
+      <div class="hero-badges" aria-label="Guide features">
+        <span class="badge">Exact 2026 additions</span>
+        <span class="badge">Worked calculations</span>
+        <span class="badge">Exam answer frameworks</span>
+        <span class="badge">Works offline</span>
+      </div>
+    </div>
+  </header>
+
+  <section class="exam-strip" aria-label="Key exam facts">
+    <div class="exam-fact"><strong>9 areas</strong><span>New or materially expanded</span></div>
+    <div class="exam-fact"><strong>TSR + NPS</strong><span>Core new performance measures</span></div>
+    <div class="exam-fact"><strong>3Ps + IR</strong><span>Sustainability and reporting</span></div>
+    <div class="exam-fact"><strong>SHIP + SLA</strong><span>Service performance focus</span></div>
+  </section>
+
+  <div class="layout">
+    <aside class="sidebar" id="study-navigation" aria-label="Study guide navigation">
+      <div class="sidebar-head">
+        <p class="sidebar-title">Study topics</p>
+        <label class="search-wrap"><span aria-hidden="true">⌕</span><input id="topic-search" type="search" placeholder="Filter topics…" autocomplete="off"><span class="sr-only">Filter study topics</span></label>
+        <p class="search-status" id="search-status" aria-live="polite">Filter the table of contents</p>
+      </div>
+      <nav class="toc-scroll" aria-label="Table of contents"><div class="toc">
+<ul>
+<li><a href="#1-exactly-what-is-new-or-expanded">1. Exactly what is new or expanded?</a></li>
+<li><a href="#2-how-acca-is-likely-to-test-these-areas">2. How ACCA is likely to test these areas</a></li>
+<li><a href="#3-changing-structure-culture-and-strategy-a1i">3. Changing structure, culture and strategy (A1i)</a><ul>
+<li><a href="#31-structure">3.1 Structure</a></li>
+<li><a href="#32-culture">3.2 Culture</a></li>
+<li><a href="#33-strategy">3.3 Strategy</a></li>
+<li><a href="#34-exam-framework-sparc">3.4 Exam framework: SPARC</a></li>
+<li><a href="#35-likely-requirement">3.5 Likely requirement</a></li>
+</ul>
+</li>
+<li><a href="#4-total-shareholder-return-tsr-a3biv">4. Total shareholder return (TSR) (A3biv)</a><ul>
+<li><a href="#41-formula">4.1 Formula</a></li>
+<li><a href="#42-worked-example">4.2 Worked example</a></li>
+<li><a href="#43-why-tsr-is-useful">4.3 Why TSR is useful</a></li>
+<li><a href="#44-limitations">4.4 Limitations</a></li>
+<li><a href="#45-tsr-versus-eps">4.5 TSR versus EPS</a></li>
+<li><a href="#46-how-acca-may-ask-it">4.6 How ACCA may ask it</a></li>
+<li><a href="#47-high-scoring-interpretation">4.7 High-scoring interpretation</a></li>
+</ul>
+</li>
+<li><a href="#5-net-promoter-score-nps-a4b">5. Net promoter score (NPS) (A4b)</a><ul>
+<li><a href="#51-formula">5.1 Formula</a></li>
+<li><a href="#52-worked-example">5.2 Worked example</a></li>
+<li><a href="#53-benefits">5.3 Benefits</a></li>
+<li><a href="#54-limitations-and-scepticism">5.4 Limitations and scepticism</a></li>
+<li><a href="#55-how-to-use-nps-properly">5.5 How to use NPS properly</a></li>
+<li><a href="#56-likely-requirement">5.6 Likely requirement</a></li>
+</ul>
+</li>
+<li><a href="#6-sustainability-in-strategic-performance-management-a5ab">6. Sustainability in strategic performance management (A5a–b)</a><ul>
+<li><a href="#61-the-3ps-triple-bottom-line">6.1 The 3Ps / triple bottom line</a></li>
+<li><a href="#62-translating-sustainability-into-performance-management">6.2 Translating sustainability into performance management</a></li>
+<li><a href="#63-sustainability-and-the-balanced-scorecard">6.3 Sustainability and the Balanced Scorecard</a></li>
+</ul>
+</li>
+<li><a href="#7-sustainability-targets-and-kpis">7. Sustainability targets and KPIs</a><ul>
+<li><a href="#environmental-indicators">Environmental indicators</a></li>
+<li><a href="#social-indicators">Social indicators</a></li>
+<li><a href="#economic-indicators">Economic indicators</a></li>
+<li><a href="#evaluate-kpi-quality-using-bound">Evaluate KPI quality using BOUND</a></li>
+</ul>
+</li>
+<li><a href="#8-sustainability-and-integrated-reporting-a5b">8. Sustainability and integrated reporting (A5b)</a><ul>
+<li><a href="#81-six-capitals">8.1 Six capitals</a></li>
+<li><a href="#82-core-integrated-report-content">8.2 Core integrated-report content</a></li>
+<li><a href="#83-key-principles">8.3 Key principles</a></li>
+<li><a href="#84-benefits">8.4 Benefits</a></li>
+<li><a href="#85-limitations-and-risks">8.5 Limitations and risks</a></li>
+<li><a href="#86-how-acca-may-ask-sustainability-reporting">8.6 How ACCA may ask sustainability reporting</a></li>
+</ul>
+</li>
+<li><a href="#9-environmental-cost-categories-a5c">9. Environmental cost categories (A5c)</a><ul>
+<li><a href="#91-conventional-costs">9.1 Conventional costs</a></li>
+<li><a href="#92-hidden-costs">9.2 Hidden costs</a></li>
+<li><a href="#93-contingent-costs">9.3 Contingent costs</a></li>
+<li><a href="#94-reputationalimage-and-relationship-costs">9.4 Reputational/image and relationship costs</a></li>
+<li><a href="#95-exam-calculation-and-interpretation">9.5 Exam calculation and interpretation</a></li>
+</ul>
+</li>
+<li><a href="#10-environmental-management-accounting-techniques-a5de">10. Environmental management accounting techniques (A5d–e)</a><ul>
+<li><a href="#101-lifecycle-costing">10.1 Lifecycle costing</a></li>
+<li><a href="#102-inputoutput-analysis">10.2 Input–output analysis</a></li>
+<li><a href="#103-activity-based-costing-abc">10.3 Activity-based costing (ABC)</a></li>
+<li><a href="#104-interpretation-and-action">10.4 Interpretation and action</a></li>
+</ul>
+</li>
+<li><a href="#11-lifecycle-costing-b3diii">11. Lifecycle costing (B3diii)</a><ul>
+<li><a href="#111-lifecycle-stages-and-costs">11.1 Lifecycle stages and costs</a></li>
+<li><a href="#112-formula">11.2 Formula</a></li>
+<li><a href="#113-committed-versus-incurred-costs">11.3 Committed versus incurred costs</a></li>
+<li><a href="#114-worked-example">11.4 Worked example</a></li>
+<li><a href="#115-benefits">11.5 Benefits</a></li>
+<li><a href="#116-limitations">11.6 Limitations</a></li>
+<li><a href="#117-likely-requirement">11.7 Likely requirement</a></li>
+</ul>
+</li>
+<li><a href="#12-ship-characteristics-b4a">12. SHIP characteristics (B4a)</a><ul>
+<li><a href="#121-simultaneity">12.1 Simultaneity</a></li>
+<li><a href="#122-heterogeneity">12.2 Heterogeneity</a></li>
+<li><a href="#123-intangibility">12.3 Intangibility</a></li>
+<li><a href="#124-perishability">12.4 Perishability</a></li>
+<li><a href="#125-apm-evaluation-warning">12.5 APM evaluation warning</a></li>
+<li><a href="#126-link-to-fitzgerald-and-moon">12.6 Link to Fitzgerald and Moon</a></li>
+</ul>
+</li>
+<li><a href="#13-service-level-agreements-b4i">13. Service level agreements (B4i)</a><ul>
+<li><a href="#131-essential-content">13.1 Essential content</a></li>
+<li><a href="#132-good-sla-measures">13.2 Good SLA measures</a></li>
+<li><a href="#133-benefits">13.3 Benefits</a></li>
+<li><a href="#134-problems-and-behavioural-risks">13.4 Problems and behavioural risks</a></li>
+<li><a href="#135-implementation-and-management">13.5 Implementation and management</a></li>
+<li><a href="#136-internal-sla-versus-external-contract">13.6 Internal SLA versus external contract</a></li>
+<li><a href="#137-likely-requirement">13.7 Likely requirement</a></li>
+</ul>
+</li>
+<li><a href="#14-how-narrative-commentary-can-mislead-c1d">14. How narrative commentary can mislead (C1d)</a><ul>
+<li><a href="#141-common-manipulation-methods">14.1 Common manipulation methods</a></li>
+<li><a href="#142-professional-scepticism-checklist-clear">14.2 Professional scepticism checklist: CLEAR</a></li>
+</ul>
+</li>
+<li><a href="#15-preparing-useful-narrative-commentary-c1e">15. Preparing useful narrative commentary (C1e)</a><ul>
+<li><a href="#151-structure-whatwhyso-whatnow-what">15.1 Structure: WHAT–WHY–SO WHAT–NOW WHAT</a></li>
+<li><a href="#152-example">15.2 Example</a></li>
+<li><a href="#153-good-commentary-qualities">15.3 Good commentary qualities</a></li>
+<li><a href="#154-likely-section-b-question">15.4 Likely Section B question</a></li>
+</ul>
+</li>
+<li><a href="#16-likely-question-combinations">16. Likely question combinations</a><ul>
+<li><a href="#161-listed-company-and-shareholder-value">16.1 Listed company and shareholder value</a></li>
+<li><a href="#162-sustainability-strategy">16.2 Sustainability strategy</a></li>
+<li><a href="#163-service-organisation">16.3 Service organisation</a></li>
+<li><a href="#164-product-launch">16.4 Product launch</a></li>
+<li><a href="#165-reporting-question">16.5 Reporting question</a></li>
+<li><a href="#166-organisational-transformation">16.6 Organisational transformation</a></li>
+</ul>
+</li>
+<li><a href="#17-professional-skills-for-these-topics">17. Professional skills for these topics</a><ul>
+<li><a href="#analysis-and-evaluation">Analysis and evaluation</a></li>
+<li><a href="#scepticism">Scepticism</a></li>
+<li><a href="#commercial-acumen">Commercial acumen</a></li>
+<li><a href="#communication">Communication</a></li>
+</ul>
+</li>
+<li><a href="#18-universal-paragraph-and-requirement-plans">18. Universal paragraph and requirement plans</a><ul>
+<li><a href="#181-pair-paragraph">18.1 PAIR paragraph</a></li>
+<li><a href="#182-evaluate-a-measure">18.2 “Evaluate a measure”</a></li>
+<li><a href="#183-recommend-kpis">18.3 “Recommend KPIs”</a></li>
+<li><a href="#184-advise-on-a-proposal">18.4 “Advise on a proposal”</a></li>
+</ul>
+</li>
+<li><a href="#19-mini-integrated-case">19. Mini integrated case</a><ul>
+<li><a href="#scenario">Scenario</a></li>
+<li><a href="#model-points">Model points</a></li>
+</ul>
+</li>
+<li><a href="#20-common-mistakes-that-lose-marks">20. Common mistakes that lose marks</a></li>
+<li><a href="#21-rapid-revision-sheet">21. Rapid revision sheet</a><ul>
+<li><a href="#tsr_1">TSR</a></li>
+<li><a href="#nps_1">NPS</a></li>
+<li><a href="#3ps">3Ps</a></li>
+<li><a href="#six-capitals">Six capitals</a></li>
+<li><a href="#environmental-costs">Environmental costs</a></li>
+<li><a href="#ship">SHIP</a></li>
+<li><a href="#sla_1">SLA</a></li>
+<li><a href="#commentary_1">Commentary</a></li>
+<li><a href="#strategic-change">Strategic change</a></li>
+</ul>
+</li>
+<li><a href="#22-final-readiness-checklist">22. Final readiness checklist</a></li>
+<li><a href="#23-authoritative-acca-sources">23. Authoritative ACCA sources</a></li>
+</ul>
+</div>
+</nav>
+    </aside>
+
+    <main class="content" id="study-notes" tabindex="-1">
+      <div class="notice" role="note">
+        <span class="notice-icon" aria-hidden="true">⚑</span>
+        <p><strong>Use this guide actively.</strong> No notes can guarantee full marks. APM rewards scenario application, professional judgement and clear recommendations—not memorised theory alone.</p>
+      </div>
+      <article><h2 id="1-exactly-what-is-new-or-expanded">1. Exactly what is new or expanded?<a class="heading-anchor" href="#1-exactly-what-is-new-or-expanded" title="Permanent link">Link to this section</a></h2>
+<table>
+<thead>
+<tr>
+<th>Syllabus outcome</th>
+<th>Change</th>
+<th>What to prepare</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>A1(i)</td>
+<td>New</td>
+<td>Effects of changing structure, culture and strategy on processes, systems and people</td>
+</tr>
+<tr>
+<td>A3(b)(iv)</td>
+<td>TSR added</td>
+<td>Calculate and evaluate total shareholder return alongside EPS</td>
+</tr>
+<tr>
+<td>A4(b)</td>
+<td>NPS added</td>
+<td>Calculate and assess net promoter score and customer measures</td>
+</tr>
+<tr>
+<td>A5(a)–(b)</td>
+<td>Consolidated/expanded</td>
+<td>Sustainability in strategy, objectives, targets, measurement and reporting, including integrated reporting and the 3Ps</td>
+</tr>
+<tr>
+<td>A5(c)</td>
+<td>New</td>
+<td>Analyse conventional, hidden, contingent and reputational environmental costs</td>
+</tr>
+<tr>
+<td>B3(d)(iii)</td>
+<td>New in this optimisation list</td>
+<td>Apply lifecycle costing to optimise performance</td>
+</tr>
+<tr>
+<td>B4(a)</td>
+<td>New</td>
+<td>Assess how SHIP characteristics affect service performance measurement and management</td>
+</tr>
+<tr>
+<td>B4(i)</td>
+<td>New</td>
+<td>Advise on content, implementation and management of service level agreements (SLAs)</td>
+</tr>
+<tr>
+<td>C1(d)</td>
+<td>New</td>
+<td>Advise how narrative commentary can mislead users</td>
+</tr>
+<tr>
+<td>C1(e)</td>
+<td>New</td>
+<td>Prepare useful narrative commentary from performance data</td>
+</tr>
+</tbody>
+</table>
+<p>The following remain important but are not wholly new: integrated reporting, lifecycle costing for environmental management, data visualisation, numerical-data manipulation and sustainability itself. ACCA can now combine them differently under the restructured exam.</p>
+<h2 id="2-how-acca-is-likely-to-test-these-areas">2. How ACCA is likely to test these areas<a class="heading-anchor" href="#2-how-acca-is-likely-to-test-these-areas" title="Permanent link">Link to this section</a></h2>
+<p>Section A is a 50-mark case mainly from syllabus A and B. This means TSR, NPS, sustainability, environmental costs, lifecycle costing, SHIP, SLAs and organisational change can appear together in a large case. Section C narrative commentary is expected mainly in one compulsory 25-mark Section B question on performance reporting.</p>
+<p>APM does not reward isolated definitions. For each issue, use:</p>
+<p><strong>Evidence → technical analysis/calculation → objective or stakeholder impact → judgement → practical action</strong></p>
+<p>A strong paragraph answers:</p>
+<ol>
+<li>What does the scenario show?</li>
+<li>Why does it matter to performance or value creation?</li>
+<li>Is the measure/system fit for purpose?</li>
+<li>What should management do?</li>
+<li>What risk, behaviour or limitation remains?</li>
+</ol>
+<hr>
+<h1 id="part-i-strategic-change-and-performance-systems">PART I — STRATEGIC CHANGE AND PERFORMANCE SYSTEMS<a class="heading-anchor" href="#part-i-strategic-change-and-performance-systems" title="Permanent link">Link to this section</a></h1>
+<h2 id="3-changing-structure-culture-and-strategy-a1i">3. Changing structure, culture and strategy (A1i)<a class="heading-anchor" href="#3-changing-structure-culture-and-strategy-a1i" title="Permanent link">Link to this section</a></h2>
+<p>The new learning outcome asks you to assess how changing organisational <strong>structure, culture and strategy affects processes, systems and people</strong>. It is not a request for generic change-management theory. Start with the proposed change and trace its performance-management consequences.</p>
+<h3 id="31-structure">3.1 Structure<a class="heading-anchor" href="#31-structure" title="Permanent link">Link to this section</a></h3>
+<p>Possible structural changes include centralisation/decentralisation, functional to divisional/process structure, outsourcing, shared services, matrix working, strategic alliances and virtual/network structures.</p>
+<h4 id="effect-on-processes">Effect on processes<a class="heading-anchor" href="#effect-on-processes" title="Permanent link">Link to this section</a></h4>
+<ul>
+<li>Decision rights, approvals and accountability change.</li>
+<li>Cross-functional processes may replace departmental hand-offs.</li>
+<li>Standardisation may improve efficiency but reduce local responsiveness.</li>
+<li>Outsourcing creates interfaces, contracts and supplier-monitoring processes.</li>
+<li>Decentralisation speeds local decisions but can duplicate activities.</li>
+</ul>
+<h4 id="effect-on-systems">Effect on systems<a class="heading-anchor" href="#effect-on-systems" title="Permanent link">Link to this section</a></h4>
+<ul>
+<li>Reporting lines and responsibility centres must match the new structure.</li>
+<li>KPIs, budgets and transfer prices may require redesign.</li>
+<li>Integrated information may be needed across divisions or partners.</li>
+<li>Access rights, master data and reporting frequency must change.</li>
+<li>Existing reports can become misleading if old cost centres or comparators remain.</li>
+</ul>
+<h4 id="effect-on-people">Effect on people<a class="heading-anchor" href="#effect-on-people" title="Permanent link">Link to this section</a></h4>
+<ul>
+<li>Roles, skills, workload and career paths change.</li>
+<li>Managers may gain or lose autonomy and resist the change.</li>
+<li>Accountability without controllability demotivates employees.</li>
+<li>Training and communication are needed before new targets are enforced.</li>
+<li>Redundancy, redeployment and perceived unfairness can damage morale.</li>
+</ul>
+<h3 id="32-culture">3.2 Culture<a class="heading-anchor" href="#32-culture" title="Permanent link">Link to this section</a></h3>
+<p>Culture is the shared assumptions, norms and behaviours that influence how work is done.</p>
+<p>A collaborative culture supports shared KPIs, knowledge exchange and process improvement. A blame culture encourages concealment, gaming and risk avoidance. An innovative culture needs tolerance of controlled failure and measures of learning, not only short-term profit. A strong cost culture may support efficiency but harm quality, innovation or customer experience.</p>
+<p>When strategy or systems conflict with culture, formal measures may not change actual behaviour. Management should align leadership behaviour, recruitment, training, rewards, controls and narratives with the desired culture.</p>
+<h3 id="33-strategy">3.3 Strategy<a class="heading-anchor" href="#33-strategy" title="Permanent link">Link to this section</a></h3>
+<p>A new strategy changes critical success factors (CSFs), which should change objectives, KPIs, targets, information and rewards.</p>
+<p>Examples:</p>
+<ul>
+<li>Cost leadership: unit cost, productivity, capacity use and process time—but safeguard quality and innovation.</li>
+<li>Differentiation: quality, innovation, brand, service and customer retention—not only volume.</li>
+<li>Sustainability: lifecycle emissions, waste, supplier compliance and long-term resource resilience.</li>
+<li>Digital growth: conversion, retention, availability and customer experience alongside profitability.</li>
+</ul>
+<h3 id="34-exam-framework-sparc">3.4 Exam framework: <strong>SPARC</strong><a class="heading-anchor" href="#34-exam-framework-sparc" title="Permanent link">Link to this section</a></h3>
+<ul>
+<li><strong>S — Strategic coherence:</strong> does the proposed structure/culture support the strategy?</li>
+<li><strong>P — Processes:</strong> what workflows, controls and decision rights change?</li>
+<li><strong>A — Architecture of information:</strong> which systems, reports and data are required?</li>
+<li><strong>R — Roles and rewards:</strong> who owns performance, and are measures controllable?</li>
+<li><strong>C — Change risk:</strong> skills, resistance, disruption, cost and review.</li>
+</ul>
+<h3 id="35-likely-requirement">3.5 Likely requirement<a class="heading-anchor" href="#35-likely-requirement" title="Permanent link">Link to this section</a></h3>
+<blockquote>
+<p>Assess how the proposed move from regional divisions to centralised shared services will affect the organisation's processes, systems and people.</p>
+</blockquote>
+<p>Do not merely list advantages of centralisation. Apply central processing savings, loss of regional knowledge, new service standards, ERP integration, changed responsibility, transition disruption and employee resistance to the scenario.</p>
+<hr>
+<h1 id="part-ii-total-shareholder-return">PART II — TOTAL SHAREHOLDER RETURN<a class="heading-anchor" href="#part-ii-total-shareholder-return" title="Permanent link">Link to this section</a></h1>
+<h2 id="4-total-shareholder-return-tsr-a3biv">4. Total shareholder return (TSR) (A3biv)<a class="heading-anchor" href="#4-total-shareholder-return-tsr-a3biv" title="Permanent link">Link to this section</a></h2>
+<p>TSR measures the total return earned by a shareholder from both <strong>capital gain/loss</strong> and <strong>dividends</strong> over a period.</p>
+<h3 id="41-formula">4.1 Formula<a class="heading-anchor" href="#41-formula" title="Permanent link">Link to this section</a></h3>
+<p><strong>TSR = (Closing share price − Opening share price + Dividend per share) / Opening share price × 100%</strong></p>
+<p>If dividends are reinvested or there are several periods, use the information/method required by the question. Unless instructed otherwise, the one-period formula above is the standard approach.</p>
+<h3 id="42-worked-example">4.2 Worked example<a class="heading-anchor" href="#42-worked-example" title="Permanent link">Link to this section</a></h3>
+<p>Opening share price = $4.80<br>
+Closing share price = $5.25<br>
+Dividend per share = $0.18</p>
+<p>Capital gain = $5.25 − $4.80 = $0.45<br>
+Total shareholder return per share = $0.45 + $0.18 = $0.63</p>
+<p><strong>TSR = $0.63 / $4.80 × 100 = 13.125%, approximately 13.1%</strong></p>
+<p>Separate the components if useful:</p>
+<ul>
+<li>Capital gain yield = $0.45 / $4.80 = 9.4%</li>
+<li>Dividend yield = $0.18 / $4.80 = 3.8%</li>
+<li>Total = 13.1%</li>
+</ul>
+<h3 id="43-why-tsr-is-useful">4.3 Why TSR is useful<a class="heading-anchor" href="#43-why-tsr-is-useful" title="Permanent link">Link to this section</a></h3>
+<ul>
+<li>Directly reflects return actually available to shareholders.</li>
+<li>Combines income and capital growth; dividend yield alone is incomplete.</li>
+<li>Market based and forward looking because share price reflects expectations.</li>
+<li>Allows comparison with competitors, an index and shareholder required return.</li>
+<li>Connects to value-based management better than accounting profit alone.</li>
+<li>Useful for long-term executive rewards when measured relatively and over several years.</li>
+</ul>
+<h3 id="44-limitations">4.4 Limitations<a class="heading-anchor" href="#44-limitations" title="Permanent link">Link to this section</a></h3>
+<ul>
+<li>Share price is affected by economy, interest rates, market sentiment and sector events outside management control.</li>
+<li>A short measurement window may be volatile and encourage timing manipulation.</li>
+<li>Market value can overreact or underreact and may not represent underlying performance.</li>
+<li>A private or unlisted company has no observable market price.</li>
+<li>TSR says that value changed but not why; operational drivers remain necessary.</li>
+<li>High dividends can improve current TSR while reducing funds for positive-NPV investment.</li>
+<li>Comparison is misleading unless period, currency, dividend treatment and risk are consistent.</li>
+<li>Absolute TSR can be positive while underperforming the market; relative TSR may be more informative.</li>
+</ul>
+<h3 id="45-tsr-versus-eps">4.5 TSR versus EPS<a class="heading-anchor" href="#45-tsr-versus-eps" title="Permanent link">Link to this section</a></h3>
+<table>
+<thead>
+<tr>
+<th>EPS</th>
+<th>TSR</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Accounting profit per ordinary share</td>
+<td>Market return to shareholders</td>
+</tr>
+<tr>
+<td>Historical and affected by accounting policy</td>
+<td>Includes market expectations and dividends</td>
+</tr>
+<tr>
+<td>Can rise through share buybacks without operating improvement</td>
+<td>Reflects price response but also external market factors</td>
+</tr>
+<tr>
+<td>Does not charge for equity capital</td>
+<td>Can be compared with required return/market benchmark</td>
+</tr>
+<tr>
+<td>Useful indicator of profitability</td>
+<td>Better direct indicator of shareholder wealth</td>
+</tr>
+</tbody>
+</table>
+<p>Do not say TSR replaces EPS. Use a balanced package: TSR for shareholder outcome; EPS/profitability for accounting performance; cash flow, EVA/RI and operational drivers for explanation.</p>
+<h3 id="46-how-acca-may-ask-it">4.6 How ACCA may ask it<a class="heading-anchor" href="#46-how-acca-may-ask-it" title="Permanent link">Link to this section</a></h3>
+<ul>
+<li>Calculate TSR and interpret movement against a comparator.</li>
+<li>Evaluate TSR as a board or executive-reward measure.</li>
+<li>Explain why profit/EPS growth did not create shareholder value.</li>
+<li>Recommend a balanced set of shareholder measures.</li>
+</ul>
+<h3 id="47-high-scoring-interpretation">4.7 High-scoring interpretation<a class="heading-anchor" href="#47-high-scoring-interpretation" title="Permanent link">Link to this section</a></h3>
+<p>Weak: “TSR is 13.1%, so performance is good.”</p>
+<p>Strong: “TSR of 13.1% is positive, mainly from a 9.4% capital gain. It cannot be judged good without the sector return and shareholders' required return. If the market rose 18%, the company destroyed relative value despite its positive absolute TSR. Management should therefore compare multi-year relative TSR and explain the operational value drivers rather than using one year's return alone.”</p>
+<hr>
+<h1 id="part-iii-net-promoter-score">PART III — NET PROMOTER SCORE<a class="heading-anchor" href="#part-iii-net-promoter-score" title="Permanent link">Link to this section</a></h1>
+<h2 id="5-net-promoter-score-nps-a4b">5. Net promoter score (NPS) (A4b)<a class="heading-anchor" href="#5-net-promoter-score-nps-a4b" title="Permanent link">Link to this section</a></h2>
+<p>NPS is based on asking customers how likely they are to recommend the organisation/product, commonly on a scale from 0 to 10.</p>
+<ul>
+<li><strong>Promoters:</strong> 9–10</li>
+<li><strong>Passives:</strong> 7–8</li>
+<li><strong>Detractors:</strong> 0–6</li>
+</ul>
+<h3 id="51-formula">5.1 Formula<a class="heading-anchor" href="#51-formula" title="Permanent link">Link to this section</a></h3>
+<p><strong>NPS = Percentage of promoters − Percentage of detractors</strong></p>
+<p>Passives are included in total respondents when calculating percentages but are not subtracted or added directly. NPS ranges from <strong>−100 to +100</strong>; it is not itself a percentage despite being calculated from percentages.</p>
+<h3 id="52-worked-example">5.2 Worked example<a class="heading-anchor" href="#52-worked-example" title="Permanent link">Link to this section</a></h3>
+<p>From 500 responses:</p>
+<ul>
+<li>Promoters = 280 = 56%</li>
+<li>Passives = 110 = 22%</li>
+<li>Detractors = 110 = 22%</li>
+</ul>
+<p><strong>NPS = 56 − 22 = +34</strong></p>
+<p>Do not calculate 280 − 110 or divide only by promoters plus detractors.</p>
+<h3 id="53-benefits">5.3 Benefits<a class="heading-anchor" href="#53-benefits" title="Permanent link">Link to this section</a></h3>
+<ul>
+<li>Simple and easily communicated.</li>
+<li>Provides a consistent trend measure of customer advocacy.</li>
+<li>Can be benchmarked by branch, channel, product and competitor where methodology is comparable.</li>
+<li>Encourages attention to customer experience and retention.</li>
+<li>May be a leading indicator of repeat business, referrals and revenue.</li>
+</ul>
+<h3 id="54-limitations-and-scepticism">5.4 Limitations and scepticism<a class="heading-anchor" href="#54-limitations-and-scepticism" title="Permanent link">Link to this section</a></h3>
+<ul>
+<li>Recommendation intention may not become actual recommendation or purchase.</li>
+<li>Response rate and sampling can create bias; dissatisfied or highly engaged customers may dominate.</li>
+<li>Cultural differences affect scoring behaviour.</li>
+<li>A single number hides the reason for the score and distribution of responses.</li>
+<li>Different collection points (immediately after service vs later) are not comparable.</li>
+<li>Staff can game it by asking only satisfied customers or pressuring them for high scores.</li>
+<li>Small branch samples can create volatile rankings.</li>
+<li>NPS may not correlate with profitability: promoters may be low-margin customers.</li>
+<li>A rising aggregate NPS may hide deterioration in a strategically important segment.</li>
+</ul>
+<h3 id="55-how-to-use-nps-properly">5.5 How to use NPS properly<a class="heading-anchor" href="#55-how-to-use-nps-properly" title="Permanent link">Link to this section</a></h3>
+<ul>
+<li>Report response number/rate, method and confidence alongside the score.</li>
+<li>Track trend using consistent questions and timing.</li>
+<li>Segment by customer type, product, channel and region.</li>
+<li>Analyse free-text reasons and complaint data.</li>
+<li>Link NPS with retention, repeat purchase, customer lifetime value and contribution.</li>
+<li>Do not reward employees on NPS alone; combine with quality and behavioural safeguards.</li>
+</ul>
+<h3 id="56-likely-requirement">5.6 Likely requirement<a class="heading-anchor" href="#56-likely-requirement" title="Permanent link">Link to this section</a></h3>
+<blockquote>
+<p>Evaluate whether the proposed NPS is a suitable KPI for customer loyalty.</p>
+</blockquote>
+<p>Apply its relevance to the strategy, collection method, sample, controllability, gaming risk and whether it is connected to actual retention/profit.</p>
+<hr>
+<h1 id="part-iv-sustainability-reporting-and-environmental-costs">PART IV — SUSTAINABILITY, REPORTING AND ENVIRONMENTAL COSTS<a class="heading-anchor" href="#part-iv-sustainability-reporting-and-environmental-costs" title="Permanent link">Link to this section</a></h1>
+<h2 id="6-sustainability-in-strategic-performance-management-a5ab">6. Sustainability in strategic performance management (A5a–b)<a class="heading-anchor" href="#6-sustainability-in-strategic-performance-management-a5ab" title="Permanent link">Link to this section</a></h2>
+<p>Sustainability means meeting present needs without compromising future generations' ability to meet theirs. For APM, it is a strategic performance issue, not a public-relations appendix.</p>
+<h3 id="61-the-3ps-triple-bottom-line">6.1 The 3Ps / triple bottom line<a class="heading-anchor" href="#61-the-3ps-triple-bottom-line" title="Permanent link">Link to this section</a></h3>
+<ul>
+<li><strong>People:</strong> employees, customers, suppliers and communities; health and safety, fair work, diversity, access and social impact.</li>
+<li><strong>Planet:</strong> energy, water, materials, emissions, biodiversity, waste and pollution.</li>
+<li><strong>Profit/prosperity:</strong> financial resilience and wider economic value, including jobs, taxes, innovation and infrastructure.</li>
+</ul>
+<p>The 3Ps interact. Lower material/energy use can reduce both environmental harm and cost. Better safety can reduce absence, claims and disruption. Poor supplier labour standards can damage reputation and sales.</p>
+<h3 id="62-translating-sustainability-into-performance-management">6.2 Translating sustainability into performance management<a class="heading-anchor" href="#62-translating-sustainability-into-performance-management" title="Permanent link">Link to this section</a></h3>
+<p>Use a clear hierarchy:</p>
+<p><strong>Mission/values → strategic sustainability goal → objective → CSF → KPI → target → initiative → owner → review</strong></p>
+<p>Example:</p>
+<ul>
+<li>Goal: reduce environmental impact while growing profitably.</li>
+<li>Objective: reduce lifecycle carbon intensity by 30% by 20X8.</li>
+<li>CSFs: energy-efficient production and lower-carbon supply chain.</li>
+<li>KPIs: tonnes CO2e per unit; renewable energy percentage; supplier emissions coverage.</li>
+<li>Target: defined baseline, boundary and date.</li>
+<li>Initiatives: equipment upgrade, design change and supplier programme.</li>
+<li>Controls: consistent methodology, assurance and corrective action.</li>
+</ul>
+<h3 id="63-sustainability-and-the-balanced-scorecard">6.3 Sustainability and the Balanced Scorecard<a class="heading-anchor" href="#63-sustainability-and-the-balanced-scorecard" title="Permanent link">Link to this section</a></h3>
+<p>Sustainability can be embedded within existing perspectives rather than treated as a disconnected fifth perspective:</p>
+<ul>
+<li>Financial: energy cost savings, carbon cost exposure, sustainable-product margin.</li>
+<li>Customer: demand for sustainable products, trust and complaints.</li>
+<li>Internal process: waste yield, emissions, water, responsible sourcing.</li>
+<li>Learning and growth: sustainability training, innovation and culture.</li>
+</ul>
+<p>A separate sustainability perspective may highlight strategic importance but can create a silo. Judge which design better integrates sustainability into daily decisions.</p>
+<h2 id="7-sustainability-targets-and-kpis">7. Sustainability targets and KPIs<a class="heading-anchor" href="#7-sustainability-targets-and-kpis" title="Permanent link">Link to this section</a></h2>
+<h3 id="environmental-indicators">Environmental indicators<a class="heading-anchor" href="#environmental-indicators" title="Permanent link">Link to this section</a></h3>
+<ul>
+<li>Absolute greenhouse gas emissions and emissions per unit/revenue.</li>
+<li>Energy consumption and percentage renewable.</li>
+<li>Material yield, recycled input and product recyclability.</li>
+<li>Water withdrawal, consumption and recycling in water-stressed locations.</li>
+<li>Waste by type, waste intensity and landfill diversion.</li>
+<li>Supplier sustainability compliance and supply-chain miles.</li>
+</ul>
+<h3 id="social-indicators">Social indicators<a class="heading-anchor" href="#social-indicators" title="Permanent link">Link to this section</a></h3>
+<ul>
+<li>Lost-time injury frequency/severity.</li>
+<li>Employee turnover, absence, engagement and training.</li>
+<li>Pay equity, diversity and promotion rates.</li>
+<li>Supplier labour audits and corrective-action closure.</li>
+<li>Customer access, affordability, complaints and safety.</li>
+<li>Community investment and measurable outcomes.</li>
+</ul>
+<h3 id="economic-indicators">Economic indicators<a class="heading-anchor" href="#economic-indicators" title="Permanent link">Link to this section</a></h3>
+<ul>
+<li>Sustainable-product revenue/margin.</li>
+<li>Tax and jobs supported.</li>
+<li>Long-term investment and R&amp;D.</li>
+<li>Value distributed to stakeholders.</li>
+<li>Supply-chain resilience and local sourcing where relevant.</li>
+</ul>
+<h3 id="evaluate-kpi-quality-using-bound">Evaluate KPI quality using <strong>BOUND</strong><a class="heading-anchor" href="#evaluate-kpi-quality-using-bound" title="Permanent link">Link to this section</a></h3>
+<ul>
+<li><strong>B — Boundary:</strong> which entity, sites, activities and supply-chain stages?</li>
+<li><strong>O — Objective linkage:</strong> does it measure the strategic sustainability goal?</li>
+<li><strong>U — Units and normalisation:</strong> absolute amount, intensity or both?</li>
+<li><strong>N — Neutrality:</strong> balanced good/bad news; no cherry-picking or greenwashing?</li>
+<li><strong>D — Data reliability:</strong> definitions, source, estimates, consistency and assurance?</li>
+</ul>
+<p>Absolute and intensity measures should often be presented together. Emissions per unit may fall while total emissions rise due to growth.</p>
+<h2 id="8-sustainability-and-integrated-reporting-a5b">8. Sustainability and integrated reporting (A5b)<a class="heading-anchor" href="#8-sustainability-and-integrated-reporting-a5b" title="Permanent link">Link to this section</a></h2>
+<p>Integrated reporting (IR) explains how an organisation's strategy, governance, performance and prospects create value over the short, medium and long term. It promotes integrated thinking rather than simply combining an annual report with a sustainability report.</p>
+<h3 id="81-six-capitals">8.1 Six capitals<a class="heading-anchor" href="#81-six-capitals" title="Permanent link">Link to this section</a></h3>
+<ol>
+<li>Financial</li>
+<li>Manufactured</li>
+<li>Intellectual</li>
+<li>Human</li>
+<li>Social and relationship</li>
+<li>Natural</li>
+</ol>
+<p>The capitals are inputs to the business model, are transformed by activities and may increase, decrease or be converted. Value is not only financial value for shareholders; activities affect stakeholders and future access to resources.</p>
+<h3 id="82-core-integrated-report-content">8.2 Core integrated-report content<a class="heading-anchor" href="#82-core-integrated-report-content" title="Permanent link">Link to this section</a></h3>
+<ul>
+<li>Organisational overview and external environment.</li>
+<li>Governance.</li>
+<li>Business model: inputs, activities, outputs and outcomes.</li>
+<li>Risks and opportunities.</li>
+<li>Strategy and resource allocation.</li>
+<li>Performance.</li>
+<li>Outlook.</li>
+<li>Basis of preparation and presentation.</li>
+</ul>
+<h3 id="83-key-principles">8.3 Key principles<a class="heading-anchor" href="#83-key-principles" title="Permanent link">Link to this section</a></h3>
+<ul>
+<li>Strategic focus and future orientation.</li>
+<li>Connectivity of information.</li>
+<li>Stakeholder relationships.</li>
+<li>Materiality.</li>
+<li>Conciseness.</li>
+<li>Reliability and completeness.</li>
+<li>Consistency and comparability.</li>
+</ul>
+<h3 id="84-benefits">8.4 Benefits<a class="heading-anchor" href="#84-benefits" title="Permanent link">Link to this section</a></h3>
+<ul>
+<li>Connects strategy, risks, resources, non-financial drivers and financial outcomes.</li>
+<li>Encourages long-term decisions and reduces functional silos.</li>
+<li>Improves board understanding of trade-offs among capitals.</li>
+<li>Helps investors understand future value drivers not visible in financial statements.</li>
+<li>Can improve internal data, accountability and resource allocation.</li>
+</ul>
+<h3 id="85-limitations-and-risks">8.5 Limitations and risks<a class="heading-anchor" href="#85-limitations-and-risks" title="Permanent link">Link to this section</a></h3>
+<ul>
+<li>Judgement over materiality and boundaries reduces comparability.</li>
+<li>Non-financial data may be estimated, inconsistent or weakly controlled.</li>
+<li>Cost of systems, expertise and assurance.</li>
+<li>Commercial sensitivity and report overload.</li>
+<li>Management may use selective positive stories: greenwashing or impression management.</li>
+<li>Quantifying some capital/outcomes is difficult and monetisation can create false precision.</li>
+<li>Producing a report without integrated decision-making is mere compliance.</li>
+</ul>
+<h3 id="86-how-acca-may-ask-sustainability-reporting">8.6 How ACCA may ask sustainability reporting<a class="heading-anchor" href="#86-how-acca-may-ask-sustainability-reporting" title="Permanent link">Link to this section</a></h3>
+<ul>
+<li>Evaluate whether current sustainability measures are fit for strategic objectives.</li>
+<li>Recommend KPIs and targets from scenario impacts.</li>
+<li>Assess the value/limitations of integrated reporting.</li>
+<li>Identify greenwashing, inconsistent boundaries or missing bad news.</li>
+<li>Link sustainability initiatives to cost, risk, customers and long-term value.</li>
+</ul>
+<h2 id="9-environmental-cost-categories-a5c">9. Environmental cost categories (A5c)<a class="heading-anchor" href="#9-environmental-cost-categories-a5c" title="Permanent link">Link to this section</a></h2>
+<p>The syllabus names four categories:</p>
+<h3 id="91-conventional-costs">9.1 Conventional costs<a class="heading-anchor" href="#91-conventional-costs" title="Permanent link">Link to this section</a></h3>
+<p>Normal raw material, energy, water, labour and equipment costs that have environmental relevance.</p>
+<p>Examples: energy used by inefficient machinery; material that becomes scrap; water purchased and treated.</p>
+<p>These costs are visible in accounts but may not be recognised as environmental. Reducing waste can reduce them immediately.</p>
+<h3 id="92-hidden-costs">9.2 Hidden costs<a class="heading-anchor" href="#92-hidden-costs" title="Permanent link">Link to this section</a></h3>
+<p>Environment-related costs lost within general overhead or another account, so managers cannot see the activity/product causing them.</p>
+<p>Examples: environmental monitoring, permits, waste administration, training, compliance staff, reporting and handling.</p>
+<p>Use ABC, separate accounts and process analysis to reveal and allocate them appropriately.</p>
+<h3 id="93-contingent-costs">9.3 Contingent costs<a class="heading-anchor" href="#93-contingent-costs" title="Permanent link">Link to this section</a></h3>
+<p>Potential future costs dependent on uncertain events.</p>
+<p>Examples: cleanup/remediation, fines, litigation, decommissioning, restoration, carbon-price exposure and product take-back.</p>
+<p>Assess probability, magnitude, timing, scenarios and risk. A cost not recognised as an accounting provision can still be strategically important.</p>
+<h3 id="94-reputationalimage-and-relationship-costs">9.4 Reputational/image and relationship costs<a class="heading-anchor" href="#94-reputationalimage-and-relationship-costs" title="Permanent link">Link to this section</a></h3>
+<p>Costs/benefits arising from stakeholder perceptions and relationships, often intangible and difficult to quantify.</p>
+<p>Examples: lost sales, boycott, higher recruitment cost, financing/insurance difficulty, brand recovery, community engagement and sustainability reporting.</p>
+<p>Do not assume intangible means immaterial. Use indicators such as customer loss, media sentiment, employee turnover and cost of capital, while acknowledging attribution uncertainty.</p>
+<h3 id="95-exam-calculation-and-interpretation">9.5 Exam calculation and interpretation<a class="heading-anchor" href="#95-exam-calculation-and-interpretation" title="Permanent link">Link to this section</a></h3>
+<p>If given environmental costs, classify them, total by category, calculate percentage of revenue/operating cost and compare trends. Then explain action.</p>
+<p>Example:</p>
+<table>
+<thead>
+<tr>
+<th>Category</th>
+<th style="text-align: right;">20X4</th>
+<th style="text-align: right;">20X5</th>
+<th style="text-align: right;">Change</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Conventional energy/material waste</td>
+<td style="text-align: right;">$800k</td>
+<td style="text-align: right;">$960k</td>
+<td style="text-align: right;">+20%</td>
+</tr>
+<tr>
+<td>Hidden compliance/monitoring</td>
+<td style="text-align: right;">$180k</td>
+<td style="text-align: right;">$270k</td>
+<td style="text-align: right;">+50%</td>
+</tr>
+<tr>
+<td>Expected contingent remediation</td>
+<td style="text-align: right;">$100k</td>
+<td style="text-align: right;">$300k</td>
+<td style="text-align: right;">+200%</td>
+</tr>
+<tr>
+<td>Reputational response</td>
+<td style="text-align: right;">$60k</td>
+<td style="text-align: right;">$150k</td>
+<td style="text-align: right;">+150%</td>
+</tr>
+</tbody>
+</table>
+<p>Do not conclude only that total cost increased. Investigate whether output rose, identify cost drivers, distinguish prevention investment from failure cost, and prioritise the contingent/reputational escalation because it may signal control failure.</p>
+<h2 id="10-environmental-management-accounting-techniques-a5de">10. Environmental management accounting techniques (A5d–e)<a class="heading-anchor" href="#10-environmental-management-accounting-techniques-a5de" title="Permanent link">Link to this section</a></h2>
+<h3 id="101-lifecycle-costing">10.1 Lifecycle costing<a class="heading-anchor" href="#101-lifecycle-costing" title="Permanent link">Link to this section</a></h3>
+<p>Include costs and environmental consequences from research/design through production, distribution, use, after-sales and disposal (“cradle to grave”; where circularity applies, consider reuse/recovery).</p>
+<p>Use it to compare design alternatives and avoid shifting cost or harm to another lifecycle stage.</p>
+<h3 id="102-inputoutput-analysis">10.2 Input–output analysis<a class="heading-anchor" href="#102-inputoutput-analysis" title="Permanent link">Link to this section</a></h3>
+<p>Physical mass/energy balance: inputs must become saleable output, by-product, stored material, emissions or waste.</p>
+<p><strong>Material loss = input − useful output − saleable/recoverable by-product</strong></p>
+<p>Value wasted material at purchase cost and add processing/disposal cost where relevant. The method exposes both physical inefficiency and hidden cost.</p>
+<p>Example: 10,000 kg input; 8,400 kg product; 600 kg saleable scrap; 1,000 kg waste. Material yield = 84%. Waste rate = 10%. Management should trace the process cause and assess whether design, supplier quality or process control can improve yield.</p>
+<h3 id="103-activity-based-costing-abc">10.3 Activity-based costing (ABC)<a class="heading-anchor" href="#103-activity-based-costing-abc" title="Permanent link">Link to this section</a></h3>
+<p>Identify environmental activities, cost pools and drivers; allocate costs to the products/processes that cause them.</p>
+<p>Examples:</p>
+<ul>
+<li>Waste handling driven by kg of hazardous waste.</li>
+<li>Emissions testing driven by production batches.</li>
+<li>Water treatment driven by litres/contaminant load.</li>
+<li>Supplier audits driven by number/risk of suppliers.</li>
+</ul>
+<p>ABC avoids cross-subsidisation and improves product, pricing, process and discontinuation decisions. It costs more to operate and driver relationships may still be imperfect.</p>
+<h3 id="104-interpretation-and-action">10.4 Interpretation and action<a class="heading-anchor" href="#104-interpretation-and-action" title="Permanent link">Link to this section</a></h3>
+<p>For every calculation answer:</p>
+<ul>
+<li>Which product/process causes the cost?</li>
+<li>Is the issue prevention, detection or failure?</li>
+<li>What operational change is available?</li>
+<li>What cost, quality, customer or sustainability trade-off follows?</li>
+<li>Which KPI will confirm improvement?</li>
+</ul>
+<hr>
+<h1 id="part-v-lifecycle-costing-for-performance-optimisation">PART V — LIFECYCLE COSTING FOR PERFORMANCE OPTIMISATION<a class="heading-anchor" href="#part-v-lifecycle-costing-for-performance-optimisation" title="Permanent link">Link to this section</a></h1>
+<h2 id="11-lifecycle-costing-b3diii">11. Lifecycle costing (B3diii)<a class="heading-anchor" href="#11-lifecycle-costing-b3diii" title="Permanent link">Link to this section</a></h2>
+<p>Lifecycle costing now explicitly appears among techniques used to optimise performance. It includes all costs over a product/service life, not just current manufacturing cost.</p>
+<h3 id="111-lifecycle-stages-and-costs">11.1 Lifecycle stages and costs<a class="heading-anchor" href="#111-lifecycle-stages-and-costs" title="Permanent link">Link to this section</a></h3>
+<ol>
+<li>Research, market analysis and concept.</li>
+<li>Design, development and testing.</li>
+<li>Production/service delivery.</li>
+<li>Marketing, distribution and customer support.</li>
+<li>Warranty, maintenance and returns.</li>
+<li>Withdrawal, decommissioning, disposal and remediation.</li>
+</ol>
+<h3 id="112-formula">11.2 Formula<a class="heading-anchor" href="#112-formula" title="Permanent link">Link to this section</a></h3>
+<p><strong>Lifecycle cost per unit = Total whole-life costs / Expected lifetime units</strong></p>
+<p><strong>Lifecycle profit = Total lifetime revenue − Total lifetime costs</strong></p>
+<p>Use discounting/NPV when timing is material and the question provides the rate or requires it.</p>
+<h3 id="113-committed-versus-incurred-costs">11.3 Committed versus incurred costs<a class="heading-anchor" href="#113-committed-versus-incurred-costs" title="Permanent link">Link to this section</a></h3>
+<p>Costs are incurred when resources are used, but many are committed by earlier decisions. Design commonly locks in most later material, production, warranty and disposal cost. Therefore the greatest optimisation opportunity is often before production.</p>
+<h3 id="114-worked-example">11.4 Worked example<a class="heading-anchor" href="#114-worked-example" title="Permanent link">Link to this section</a></h3>
+<p>Expected volume: 40,000 units<br>
+Design/R&amp;D: $1,200,000<br>
+Production: $42 per unit<br>
+Marketing/distribution: $9 per unit<br>
+Warranty: $240,000<br>
+End-of-life: $160,000</p>
+<p>Total cost = $1,200,000 + ($42 × 40,000) + ($9 × 40,000) + $240,000 + $160,000<br>
+= $3,640,000</p>
+<p><strong>Lifecycle cost per unit = $3,640,000 / 40,000 = $91</strong></p>
+<p>At selling price $105, lifecycle profit per unit = $14 and total profit = $560,000.</p>
+<p>If extra design spending of $200,000 cuts production cost by $7 per unit, saving = $280,000; net lifecycle saving = $80,000 before time value and risk. Recommend it only if quality, timing and demand assumptions remain acceptable.</p>
+<h3 id="115-benefits">11.5 Benefits<a class="heading-anchor" href="#115-benefits" title="Permanent link">Link to this section</a></h3>
+<ul>
+<li>Prevents apparently profitable products hiding pre/post-production costs.</li>
+<li>Encourages early design intervention and cross-functional decisions.</li>
+<li>Aligns pricing and target costing with long-term profitability.</li>
+<li>Exposes warranty, service, environmental and withdrawal consequences.</li>
+<li>Supports product mix, make/buy and discontinuation decisions.</li>
+</ul>
+<h3 id="116-limitations">11.6 Limitations<a class="heading-anchor" href="#116-limitations" title="Permanent link">Link to this section</a></h3>
+<ul>
+<li>Long-term volume, price and cost estimates are uncertain.</li>
+<li>Shared costs and end-of-life obligations are difficult to allocate.</li>
+<li>Product changes and inflation reduce forecast reliability.</li>
+<li>Detailed modelling can be expensive.</li>
+<li>Managers rewarded annually may resist upfront cost for future benefits.</li>
+<li>Average lifecycle cost can hide customer/product variants.</li>
+</ul>
+<h3 id="117-likely-requirement">11.7 Likely requirement<a class="heading-anchor" href="#117-likely-requirement" title="Permanent link">Link to this section</a></h3>
+<ul>
+<li>Calculate lifecycle cost/profit and advise whether to launch/redesign.</li>
+<li>Evaluate lifecycle costing versus annual/conventional costing.</li>
+<li>Recommend actions to optimise cost across stages.</li>
+<li>Integrate environmental effects, target costing and NPV.</li>
+</ul>
+<hr>
+<h1 id="part-vi-service-businesses-and-ship">PART VI — SERVICE BUSINESSES AND SHIP<a class="heading-anchor" href="#part-vi-service-businesses-and-ship" title="Permanent link">Link to this section</a></h1>
+<h2 id="12-ship-characteristics-b4a">12. SHIP characteristics (B4a)<a class="heading-anchor" href="#12-ship-characteristics-b4a" title="Permanent link">Link to this section</a></h2>
+<p>SHIP summarises characteristics that make services difficult to measure and manage:</p>
+<h3 id="121-simultaneity">12.1 Simultaneity<a class="heading-anchor" href="#121-simultaneity" title="Permanent link">Link to this section</a></h3>
+<p>Production and consumption often occur together, with customer participation.</p>
+<p>Implications:</p>
+<ul>
+<li>Limited opportunity to inspect before delivery.</li>
+<li>Employee/customer interaction strongly affects quality.</li>
+<li>Failure is visible immediately and service recovery matters.</li>
+<li>Demand and staffing must be coordinated in real time.</li>
+</ul>
+<p>Measures: first-time resolution, waiting time, service recovery, customer satisfaction, abandonment and employee competence.</p>
+<h3 id="122-heterogeneity">12.2 Heterogeneity<a class="heading-anchor" href="#122-heterogeneity" title="Permanent link">Link to this section</a></h3>
+<p>Service quality varies by employee, customer, time and location.</p>
+<p>Implications:</p>
+<ul>
+<li>Standardisation and comparison are difficult.</li>
+<li>Customer needs legitimately produce variation.</li>
+<li>Training, scripts and systems can improve consistency but excessive standardisation reduces personalisation.</li>
+</ul>
+<p>Measures: variation/range, error/rework, complaints by employee/branch, mystery shopping, quality audits and satisfaction distribution—not only average.</p>
+<h3 id="123-intangibility">12.3 Intangibility<a class="heading-anchor" href="#123-intangibility" title="Permanent link">Link to this section</a></h3>
+<p>Services cannot usually be touched, stored or inspected like physical goods; customers assess experience and outcomes.</p>
+<p>Implications:</p>
+<ul>
+<li>Quality and output may be subjective.</li>
+<li>Harder to communicate value and compare providers.</li>
+<li>Brand, trust and physical evidence become important.</li>
+<li>Input/activity measures may be easier than true outcomes but can mislead.</li>
+</ul>
+<p>Measures: outcomes, customer-reported experience, retention, referrals/NPS, professional quality review and complaint resolution.</p>
+<h3 id="124-perishability">12.4 Perishability<a class="heading-anchor" href="#124-perishability" title="Permanent link">Link to this section</a></h3>
+<p>Unused service capacity cannot be inventoried for later sale.</p>
+<p>Implications:</p>
+<ul>
+<li>Empty hotel rooms/airline seats/consultant hours are lost revenue.</li>
+<li>Peaks create queues and quality pressure; troughs create idle cost.</li>
+<li>Capacity, appointments, flexible staffing, reservations and pricing are central.</li>
+</ul>
+<p>Measures: capacity utilisation, occupancy/load factor, no-show rate, waiting time, revenue per available capacity unit and demand forecast accuracy.</p>
+<h3 id="125-apm-evaluation-warning">12.5 APM evaluation warning<a class="heading-anchor" href="#125-apm-evaluation-warning" title="Permanent link">Link to this section</a></h3>
+<p>Never write four definitions only. For each characteristic explain:</p>
+<p><strong>scenario feature → measurement/control problem → relevant measure/action → trade-off</strong></p>
+<p>Example: raising hospital bed utilisation may improve efficiency but reduce emergency resilience and effectiveness. Measure utilisation with waiting time, cancellation, outcome and safety.</p>
+<h3 id="126-link-to-fitzgerald-and-moon">12.6 Link to Fitzgerald and Moon<a class="heading-anchor" href="#126-link-to-fitzgerald-and-moon" title="Permanent link">Link to this section</a></h3>
+<p>Service performance can be evaluated through:</p>
+<ul>
+<li>Results: financial performance and competitiveness.</li>
+<li>Determinants: quality, flexibility, resource utilisation and innovation.</li>
+<li>Standards: ownership, achievability and equity.</li>
+<li>Rewards: clarity, motivation and controllability.</li>
+</ul>
+<p>SHIP explains why the determinants and well-designed standards are particularly important in services.</p>
+<hr>
+<h1 id="part-vii-service-level-agreements">PART VII — SERVICE LEVEL AGREEMENTS<a class="heading-anchor" href="#part-vii-service-level-agreements" title="Permanent link">Link to this section</a></h1>
+<h2 id="13-service-level-agreements-b4i">13. Service level agreements (B4i)<a class="heading-anchor" href="#13-service-level-agreements-b4i" title="Permanent link">Link to this section</a></h2>
+<p>An SLA is an agreed specification of service, responsibilities, performance standards, reporting and remedies between provider and customer/internal parties. It converts expectations into controllable, measurable commitments.</p>
+<h3 id="131-essential-content">13.1 Essential content<a class="heading-anchor" href="#131-essential-content" title="Permanent link">Link to this section</a></h3>
+<ol>
+<li>Parties, purpose, scope and excluded services.</li>
+<li>Clear service definitions and operating hours.</li>
+<li>Roles, responsibilities, dependencies and customer obligations.</li>
+<li>KPIs with exact definitions, data source and calculation.</li>
+<li>Target/service levels, tolerance and priority classes.</li>
+<li>Measurement period, reporting frequency and access to evidence.</li>
+<li>Incident logging, response, resolution and escalation.</li>
+<li>Availability, continuity, security, privacy and recovery requirements.</li>
+<li>Change-control process.</li>
+<li>Charges, incentives, service credits/penalties and limits.</li>
+<li>Governance meetings, dispute resolution and audit rights.</li>
+<li>Review, renewal, termination and exit/data-transfer provisions.</li>
+<li>Ethical, legal and sustainability standards where relevant.</li>
+</ol>
+<h3 id="132-good-sla-measures">13.2 Good SLA measures<a class="heading-anchor" href="#132-good-sla-measures" title="Permanent link">Link to this section</a></h3>
+<ul>
+<li>Availability = available service time / agreed service time.</li>
+<li>On-time delivery percentage.</li>
+<li>Response and resolution time by severity.</li>
+<li>First-contact resolution.</li>
+<li>Defect/rejection or rework rate.</li>
+<li>Customer satisfaction/complaint rate.</li>
+<li>Recovery time and data-loss tolerance.</li>
+</ul>
+<p>Define exclusions carefully. A provider could game availability by classifying outages as planned maintenance or excluding peak periods.</p>
+<h3 id="133-benefits">13.3 Benefits<a class="heading-anchor" href="#133-benefits" title="Permanent link">Link to this section</a></h3>
+<ul>
+<li>Clarifies expectations and accountability.</li>
+<li>Enables objective monitoring of an external/internal service.</li>
+<li>Aligns capacity and service priorities with customer need.</li>
+<li>Provides evidence and escalation when performance fails.</li>
+<li>Supports supplier comparison, continuous improvement and risk control.</li>
+</ul>
+<h3 id="134-problems-and-behavioural-risks">13.4 Problems and behavioural risks<a class="heading-anchor" href="#134-problems-and-behavioural-risks" title="Permanent link">Link to this section</a></h3>
+<ul>
+<li>What is measurable may replace what is valuable.</li>
+<li>Provider may meet targets while customer outcomes remain poor.</li>
+<li>Aggressive penalties create concealment, defensive behaviour or risk premium.</li>
+<li>Too many KPIs increase cost and dilute priorities.</li>
+<li>Responsibility disputes occur where several partners affect one outcome.</li>
+<li>Provider may optimise the average while severe cases fail.</li>
+<li>Fixed SLA becomes obsolete as strategy, demand or technology changes.</li>
+<li>Monitoring data may be controlled by the provider and require audit.</li>
+</ul>
+<h3 id="135-implementation-and-management">13.5 Implementation and management<a class="heading-anchor" href="#135-implementation-and-management" title="Permanent link">Link to this section</a></h3>
+<ul>
+<li>Consult users and process owners; identify CSFs and risks.</li>
+<li>Establish baseline and realistic targets.</li>
+<li>Use a small balanced set of outcome, quality, time and risk measures.</li>
+<li>Assign owners and agree data definitions before signing.</li>
+<li>Pilot where possible and train both parties.</li>
+<li>Use dashboards, exception reports and regular service reviews.</li>
+<li>Perform root-cause analysis, not only impose penalties.</li>
+<li>Update targets and scope through controlled review.</li>
+<li>Maintain contingency/exit plans for critical outsourced services.</li>
+</ul>
+<h3 id="136-internal-sla-versus-external-contract">13.6 Internal SLA versus external contract<a class="heading-anchor" href="#136-internal-sla-versus-external-contract" title="Permanent link">Link to this section</a></h3>
+<p>An internal SLA may not be legally enforceable but clarifies shared-service accountability and chargeback. An external SLA sits within a contract and should include commercial/legal remedies. In both, partnership and shared objectives often create better long-term performance than punishment alone.</p>
+<h3 id="137-likely-requirement">13.7 Likely requirement<a class="heading-anchor" href="#137-likely-requirement" title="Permanent link">Link to this section</a></h3>
+<blockquote>
+<p>Advise on the content and management of an SLA for an outsourced logistics/cloud/customer-service provider.</p>
+</blockquote>
+<p>Select scenario-specific standards. Do not reproduce a generic list without linking the provider failure to customers, strategy, cost and risk.</p>
+<hr>
+<h1 id="part-viii-narrative-performance-commentary">PART VIII — NARRATIVE PERFORMANCE COMMENTARY<a class="heading-anchor" href="#part-viii-narrative-performance-commentary" title="Permanent link">Link to this section</a></h1>
+<h2 id="14-how-narrative-commentary-can-mislead-c1d">14. How narrative commentary can mislead (C1d)<a class="heading-anchor" href="#14-how-narrative-commentary-can-mislead-c1d" title="Permanent link">Link to this section</a></h2>
+<p>Narrative can mislead even where every number is technically correct.</p>
+<h3 id="141-common-manipulation-methods">14.1 Common manipulation methods<a class="heading-anchor" href="#141-common-manipulation-methods" title="Permanent link">Link to this section</a></h3>
+<ul>
+<li>Selective emphasis on good news and omission/burying of bad news.</li>
+<li>Vague claims: “strong”, “significant”, “industry-leading” without evidence.</li>
+<li>Claiming causation from correlation.</li>
+<li>Attributing bad outcomes to external factors but good outcomes to management.</li>
+<li>Changing definitions, periods or comparators without disclosure.</li>
+<li>Using percentage changes without absolute amount/base.</li>
+<li>Discussing revenue growth while ignoring margin/cash decline.</li>
+<li>Cherry-picking one favourable segment or start date.</li>
+<li>Presenting adjusted measures without reconciliation.</li>
+<li>Using averages that hide dispersion/outliers.</li>
+<li>Describing targets as achieved despite lowered/revised targets.</li>
+<li>Excessive volume/technical language that obscures key issues.</li>
+<li>Greenwashing: broad sustainability claims without boundaries, data or balanced outcomes.</li>
+<li>False certainty, unsupported forecasts and omission of assumptions.</li>
+</ul>
+<h3 id="142-professional-scepticism-checklist-clear">14.2 Professional scepticism checklist: <strong>CLEAR</strong><a class="heading-anchor" href="#142-professional-scepticism-checklist-clear" title="Permanent link">Link to this section</a></h3>
+<ul>
+<li><strong>C — Comparators:</strong> budget, prior period, benchmark and strategy consistent?</li>
+<li><strong>L — Language:</strong> neutral, precise and supported rather than promotional?</li>
+<li><strong>E — Evidence:</strong> calculations, sources, sample and definitions reliable?</li>
+<li><strong>A — All material information:</strong> adverse trends, risk and uncertainty included?</li>
+<li><strong>R — Reasons and response:</strong> genuine causes, implications and actions explained?</li>
+</ul>
+<h2 id="15-preparing-useful-narrative-commentary-c1e">15. Preparing useful narrative commentary (C1e)<a class="heading-anchor" href="#15-preparing-useful-narrative-commentary-c1e" title="Permanent link">Link to this section</a></h2>
+<p>A useful commentary converts data into insight and action. It does not narrate every number.</p>
+<h3 id="151-structure-whatwhyso-whatnow-what">15.1 Structure: <strong>WHAT–WHY–SO WHAT–NOW WHAT</strong><a class="heading-anchor" href="#151-structure-whatwhyso-whatnow-what" title="Permanent link">Link to this section</a></h3>
+<ol>
+<li><strong>What:</strong> overall result and material variance/trend, quantified.</li>
+<li><strong>Why:</strong> evidence-based drivers, separating volume, price, mix, efficiency and external factors where possible.</li>
+<li><strong>So what:</strong> consequence for objective, stakeholder, risk and future performance.</li>
+<li><strong>Now what:</strong> specific corrective action, owner/priority and measure of success.</li>
+</ol>
+<h3 id="152-example">15.2 Example<a class="heading-anchor" href="#152-example" title="Permanent link">Link to this section</a></h3>
+<p>Data: revenue +8%; operating profit −6%; complaints +35%; on-time delivery down from 94% to 82%.</p>
+<p>Weak commentary:</p>
+<blockquote>
+<p>Revenue performed strongly, although profit was slightly below last year. Management continues to focus on customers.</p>
+</blockquote>
+<p>Strong commentary:</p>
+<blockquote>
+<p>Revenue increased 8%, but operating profit fell 6%, indicating that growth has not converted into value. The deterioration coincided with on-time delivery falling 12 percentage points to 82% and complaints rising 35%, suggesting that capacity or fulfilment problems are increasing recovery and logistics costs and may threaten retention. Management should analyse margin and complaints by channel, address the delivery bottleneck, and track on-time delivery, repeat purchase and contribution monthly. External cost inflation should be quantified separately before it is accepted as the explanation.</p>
+</blockquote>
+<p>The strong version selects material data, links indicators, avoids claiming proven causation, identifies implications and recommends action.</p>
+<h3 id="153-good-commentary-qualities">15.3 Good commentary qualities<a class="heading-anchor" href="#153-good-commentary-qualities" title="Permanent link">Link to this section</a></h3>
+<ul>
+<li>Concise, objective and tailored to the user.</li>
+<li>Starts with mission/objectives and material overall picture.</li>
+<li>Quantifies rather than uses vague adjectives.</li>
+<li>Uses like-for-like comparators and explains definition changes.</li>
+<li>Integrates financial and non-financial leading/lagging indicators.</li>
+<li>Balanced: successes, failures, uncertainty and risk.</li>
+<li>Explains cause only to the extent evidence supports it.</li>
+<li>Forward-looking with practical recommendations.</li>
+</ul>
+<h3 id="154-likely-section-b-question">15.4 Likely Section B question<a class="heading-anchor" href="#154-likely-section-b-question" title="Permanent link">Link to this section</a></h3>
+<p>You may receive a draft management report, graphs and a director's commentary and be asked to:</p>
+<ul>
+<li>advise how commentary misrepresents performance;</li>
+<li>calculate missing trends/margins;</li>
+<li>prepare replacement commentary;</li>
+<li>demonstrate scepticism and commercial acumen.</li>
+</ul>
+<p>Read the narrative against the data line by line. Identify what was said, what was omitted and what users could wrongly conclude.</p>
+<hr>
+<h1 id="part-ix-integrated-exam-application">PART IX — INTEGRATED EXAM APPLICATION<a class="heading-anchor" href="#part-ix-integrated-exam-application" title="Permanent link">Link to this section</a></h1>
+<h2 id="16-likely-question-combinations">16. Likely question combinations<a class="heading-anchor" href="#16-likely-question-combinations" title="Permanent link">Link to this section</a></h2>
+<h3 id="161-listed-company-and-shareholder-value">16.1 Listed company and shareholder value<a class="heading-anchor" href="#161-listed-company-and-shareholder-value" title="Permanent link">Link to this section</a></h3>
+<p>Calculate TSR, compare with EPS/profit and market return, assess executive reward, identify value drivers and recommend a balanced scorecard.</p>
+<h3 id="162-sustainability-strategy">16.2 Sustainability strategy<a class="heading-anchor" href="#162-sustainability-strategy" title="Permanent link">Link to this section</a></h3>
+<p>Evaluate proposed sustainability objectives, recommend 3P KPIs, classify environmental costs, apply input–output/lifecycle analysis and assess integrated reporting or greenwashing.</p>
+<h3 id="163-service-organisation">16.3 Service organisation<a class="heading-anchor" href="#163-service-organisation" title="Permanent link">Link to this section</a></h3>
+<p>Apply SHIP, design Fitzgerald–Moon measures, evaluate NPS, assess reward consequences and recommend SLA content for an outsourced service.</p>
+<h3 id="164-product-launch">16.4 Product launch<a class="heading-anchor" href="#164-product-launch" title="Permanent link">Link to this section</a></h3>
+<p>Calculate lifecycle cost/profit, compare with target cost, identify environmental costs and recommend design/process actions before costs are committed.</p>
+<h3 id="165-reporting-question">16.5 Reporting question<a class="heading-anchor" href="#165-reporting-question" title="Permanent link">Link to this section</a></h3>
+<p>Challenge selective numerical and narrative presentation, calculate missing indicators and write neutral board commentary.</p>
+<h3 id="166-organisational-transformation">16.6 Organisational transformation<a class="heading-anchor" href="#166-organisational-transformation" title="Permanent link">Link to this section</a></h3>
+<p>Assess how centralisation, outsourcing, sustainability or digital strategy changes processes, systems, roles, KPIs, culture and rewards.</p>
+<h2 id="17-professional-skills-for-these-topics">17. Professional skills for these topics<a class="heading-anchor" href="#17-professional-skills-for-these-topics" title="Permanent link">Link to this section</a></h2>
+<h3 id="analysis-and-evaluation">Analysis and evaluation<a class="heading-anchor" href="#analysis-and-evaluation" title="Permanent link">Link to this section</a></h3>
+<ul>
+<li>Calculate relevant ratios/trends, then interpret causes and consequences.</li>
+<li>Compare against objective, target, prior period and external benchmark.</li>
+<li>Balance financial/non-financial and short/long term.</li>
+<li>Reach a clear, supported judgement.</li>
+</ul>
+<h3 id="scepticism">Scepticism<a class="heading-anchor" href="#scepticism" title="Permanent link">Link to this section</a></h3>
+<ul>
+<li>Challenge NPS sample and TSR benchmark.</li>
+<li>Test sustainability boundaries and green claims.</li>
+<li>Question lifecycle forecasts and SLA exclusions.</li>
+<li>Identify omitted bad news and unsupported causal narrative.</li>
+</ul>
+<h3 id="commercial-acumen">Commercial acumen<a class="heading-anchor" href="#commercial-acumen" title="Permanent link">Link to this section</a></h3>
+<ul>
+<li>Connect sustainability to cost, revenue, finance, resilience and reputation.</li>
+<li>Prioritise actions by materiality and feasibility.</li>
+<li>Recognise customer, employee, supplier and investor reactions.</li>
+<li>Recommend implementation, owner, measure and review—not slogans.</li>
+</ul>
+<h3 id="communication">Communication<a class="heading-anchor" href="#communication" title="Permanent link">Link to this section</a></h3>
+<ul>
+<li>Follow report/memo format and audience.</li>
+<li>Use headings that answer requirements.</li>
+<li>Write concise developed paragraphs.</li>
+<li>State assumptions and conclusions clearly.</li>
+</ul>
+<h2 id="18-universal-paragraph-and-requirement-plans">18. Universal paragraph and requirement plans<a class="heading-anchor" href="#18-universal-paragraph-and-requirement-plans" title="Permanent link">Link to this section</a></h2>
+<h3 id="181-pair-paragraph">18.1 <strong>PAIR</strong> paragraph<a class="heading-anchor" href="#181-pair-paragraph" title="Permanent link">Link to this section</a></h3>
+<ul>
+<li><strong>Point:</strong> technical issue or finding.</li>
+<li><strong>Apply:</strong> scenario evidence/calculation.</li>
+<li><strong>Impact:</strong> objective, stakeholder, risk or value.</li>
+<li><strong>Recommend:</strong> action, safeguard or judgement.</li>
+</ul>
+<h3 id="182-evaluate-a-measure">18.2 “Evaluate a measure”<a class="heading-anchor" href="#182-evaluate-a-measure" title="Permanent link">Link to this section</a></h3>
+<ol>
+<li>Purpose/objective and user.</li>
+<li>Correct calculation/definition.</li>
+<li>What insight it provides.</li>
+<li>Data, comparator and controllability limitations.</li>
+<li>Behavioural consequences.</li>
+<li>Complementary measures.</li>
+<li>Overall judgement and refinement.</li>
+</ol>
+<h3 id="183-recommend-kpis">18.3 “Recommend KPIs”<a class="heading-anchor" href="#183-recommend-kpis" title="Permanent link">Link to this section</a></h3>
+<p>For each KPI state:</p>
+<ul>
+<li>exact definition/formula;</li>
+<li>linked CSF/objective;</li>
+<li>why it predicts or measures success;</li>
+<li>source/frequency/owner;</li>
+<li>target/benchmark;</li>
+<li>limitation or gaming control.</li>
+</ul>
+<h3 id="184-advise-on-a-proposal">18.4 “Advise on a proposal”<a class="heading-anchor" href="#184-advise-on-a-proposal" title="Permanent link">Link to this section</a></h3>
+<p>Current problem → benefit in scenario → cost/risk → people/system implications → controls/pilot → final recommendation.</p>
+<h2 id="19-mini-integrated-case">19. Mini integrated case<a class="heading-anchor" href="#19-mini-integrated-case" title="Permanent link">Link to this section</a></h2>
+<h3 id="scenario">Scenario<a class="heading-anchor" href="#scenario" title="Permanent link">Link to this section</a></h3>
+<p>EcoStay is a listed hotel group pursuing premium sustainable hospitality. Revenue rose 10%, EPS rose 4%, but its share price fell from $6.00 to $5.55 after a $0.18 dividend. Guest NPS is reported as +48 from an app survey completed by 12% of guests; reception staff invite selected guests to participate. Room occupancy is 91%, while complaints about queues and cleanliness rose 30%. EcoStay claims it is “carbon neutral” because it buys offsets, but excludes outsourced laundry and guest energy use. It plans to outsource housekeeping under an SLA measuring only rooms cleaned per employee-hour.</p>
+<h3 id="model-points">Model points<a class="heading-anchor" href="#model-points" title="Permanent link">Link to this section</a></h3>
+<h4 id="tsr">TSR<a class="heading-anchor" href="#tsr" title="Permanent link">Link to this section</a></h4>
+<p>TSR = ($5.55 − $6.00 + $0.18) / $6.00 = <strong>−4.5%</strong>. EPS growth did not translate into shareholder return. Compare with sector/market and assess whether investors doubt service quality or sustainability credibility.</p>
+<h4 id="nps">NPS<a class="heading-anchor" href="#nps" title="Permanent link">Link to this section</a></h4>
+<p>+48 appears positive, but 12% response and selective invitation create bias. Analyse all guest segments and collection points; link to repeat booking, complaints and contribution. NPS conflicts with rising complaints, requiring investigation.</p>
+<h4 id="ship-and-occupancy">SHIP and occupancy<a class="heading-anchor" href="#ship-and-occupancy" title="Permanent link">Link to this section</a></h4>
+<p>Perishable room capacity makes occupancy important, but 91% may strain simultaneous service delivery. Heterogeneity between housekeeping teams and intangible quality require cleanliness audits, room-ready time, complaints and repeat booking. Maximising occupancy alone may harm premium positioning.</p>
+<h4 id="sustainability">Sustainability<a class="heading-anchor" href="#sustainability" title="Permanent link">Link to this section</a></h4>
+<p>The carbon-neutral claim has an incomplete boundary and may be greenwashing. Measure absolute and per-guest-night emissions, include material value-chain sources, prioritise actual reduction before offsets, explain methodology and obtain assurance.</p>
+<h4 id="sla">SLA<a class="heading-anchor" href="#sla" title="Permanent link">Link to this section</a></h4>
+<p>Rooms per employee-hour rewards speed, not cleanliness or guest outcome. Add room inspection pass rate, room-ready time, complaints, rework, staff safety, sustainability standards and escalation. Agree data, responsibilities and review; avoid penalties that encourage concealment.</p>
+<h4 id="commentary">Commentary<a class="heading-anchor" href="#commentary" title="Permanent link">Link to this section</a></h4>
+<p>A balanced narrative should report revenue/EPS growth alongside negative TSR, complaints and measurement limitations, explain uncertainty and state corrective actions.</p>
+<h2 id="20-common-mistakes-that-lose-marks">20. Common mistakes that lose marks<a class="heading-anchor" href="#20-common-mistakes-that-lose-marks" title="Permanent link">Link to this section</a></h2>
+<ol>
+<li>Calling every reordered outcome “new”.</li>
+<li>Calculating TSR without dividends or using closing price as denominator.</li>
+<li>Judging TSR without a market/sector/required-return comparator.</li>
+<li>Treating NPS as a percentage or including passives in the subtraction.</li>
+<li>Recommending NPS without checking sample and gaming.</li>
+<li>Listing sustainability KPIs unrelated to the scenario's material impacts.</li>
+<li>Reporting intensity only and hiding rising absolute impact.</li>
+<li>Confusing sustainability reporting with integrated thinking.</li>
+<li>Defining environmental cost categories without analysing action.</li>
+<li>Ignoring pre- and post-production lifecycle costs.</li>
+<li>Defining SHIP without explaining measurement consequences.</li>
+<li>Writing a generic SLA checklist without scenario standards.</li>
+<li>Repeating narrative data instead of creating insight.</li>
+<li>Accepting management's causal explanation without evidence.</li>
+<li>Giving recommendations with no owner, implementation or KPI.</li>
+</ol>
+<h2 id="21-rapid-revision-sheet">21. Rapid revision sheet<a class="heading-anchor" href="#21-rapid-revision-sheet" title="Permanent link">Link to this section</a></h2>
+<h3 id="tsr_1">TSR<a class="heading-anchor" href="#tsr_1" title="Permanent link">Link to this section</a></h3>
+<p>(Closing price − opening price + dividend) / opening price × 100.</p>
+<h3 id="nps_1">NPS<a class="heading-anchor" href="#nps_1" title="Permanent link">Link to this section</a></h3>
+<p>% promoters (9–10) − % detractors (0–6); passives 7–8; range −100 to +100.</p>
+<h3 id="3ps">3Ps<a class="heading-anchor" href="#3ps" title="Permanent link">Link to this section</a></h3>
+<p>People, Planet, Profit/Prosperity.</p>
+<h3 id="six-capitals">Six capitals<a class="heading-anchor" href="#six-capitals" title="Permanent link">Link to this section</a></h3>
+<p>Financial, manufactured, intellectual, human, social/relationship, natural.</p>
+<h3 id="environmental-costs">Environmental costs<a class="heading-anchor" href="#environmental-costs" title="Permanent link">Link to this section</a></h3>
+<p>Conventional, hidden, contingent, reputational.</p>
+<h3 id="ship">SHIP<a class="heading-anchor" href="#ship" title="Permanent link">Link to this section</a></h3>
+<p>Simultaneity, heterogeneity, intangibility, perishability.</p>
+<h3 id="sla_1">SLA<a class="heading-anchor" href="#sla_1" title="Permanent link">Link to this section</a></h3>
+<p>Scope, responsibilities, measures, targets, reporting, escalation, remedies, review and exit.</p>
+<h3 id="commentary_1">Commentary<a class="heading-anchor" href="#commentary_1" title="Permanent link">Link to this section</a></h3>
+<p>What → Why → So what → Now what.</p>
+<h3 id="strategic-change">Strategic change<a class="heading-anchor" href="#strategic-change" title="Permanent link">Link to this section</a></h3>
+<p>SPARC: strategy, processes, architecture, roles/rewards, change risk.</p>
+<h2 id="22-final-readiness-checklist">22. Final readiness checklist<a class="heading-anchor" href="#22-final-readiness-checklist" title="Permanent link">Link to this section</a></h2>
+<p>You should be able to:</p>
+<ul>
+<li>distinguish genuine additions from restructuring;</li>
+<li>trace strategic/structural/cultural change into processes, systems and people;</li>
+<li>calculate, decompose and evaluate TSR;</li>
+<li>calculate and challenge NPS;</li>
+<li>translate sustainability from strategy into CSFs, KPIs, targets and actions;</li>
+<li>evaluate 3P and integrated reporting measures;</li>
+<li>identify greenwashing, boundaries and reliability problems;</li>
+<li>classify and analyse four environmental cost categories;</li>
+<li>apply lifecycle costing, input–output analysis and ABC;</li>
+<li>calculate lifecycle cost/profit and recommend optimisation;</li>
+<li>apply each SHIP characteristic to measures and controls;</li>
+<li>design and manage a scenario-specific SLA;</li>
+<li>identify misleading narrative techniques;</li>
+<li>write concise, balanced, action-oriented commentary;</li>
+<li>integrate these topics in a 50-mark Section A case.</li>
+</ul>
+<h2 id="23-authoritative-acca-sources">23. Authoritative ACCA sources<a class="heading-anchor" href="#23-authoritative-acca-sources" title="Permanent link">Link to this section</a></h2>
+<ul>
+<li><a href="https://www.accaglobal.com/content/dam/acca/global/PDF-students/acca/p5/studyguides/apm_s26_j27_syllabus_and_study_guide.pdf">Official APM syllabus and study guide, September 2026–June 2027</a></li>
+<li><a href="https://accaglobal.com/us/en/student/exam-support-resources/professional-exams-study-resources/p5/technical-articles/apm-approach.html">APM examiner approach from September 2026</a></li>
+<li><a href="https://www.accaglobal.com/uk/en/student/exam-support-resources/professional-exams-study-resources/p5/faqs.html">APM frequently asked questions</a></li>
+<li><a href="https://www.accaglobal.com/us/en/student/exam-support-resources/professional-exams-study-resources/p5/technical-articles/sustainability.html">Sustainability and performance management</a></li>
+<li><a href="https://www.accaglobal.com/uk/en/student/exam-support-resources/fundamentals-exams-study-resources/f5/technical-articles/Env-MA.html">Environmental management accounting</a></li>
+<li><a href="https://www.accaglobal.com/uk/en/student/exam-support-resources/fundamentals-exams-study-resources/f5/technical-articles/target-lifestyle.html">Target costing and lifecycle costing</a></li>
+<li><a href="https://www.accaglobal.com/uk/en/student/exam-support-resources/professional-exams-study-resources/p5/technical-articles/structures.html">Complex business structures</a></li>
+<li><a href="https://www.accaglobal.com/uk/en/student/exam-support-resources/fundamentals-exams-study-resources/f5/technical-articles/buildblocks.html">Building blocks of performance management</a></li>
+<li><a href="https://www.accaglobal.com/uk/en/student/exam-support-resources/professional-exams-study-resources/p5/technical-articles/demystifying-vbm.html">Demystifying value-based management</a></li>
+<li><a href="https://www.accaglobal.com/uk/en/student/exam-support-resources/professional-exams-study-resources/p5/technical-articles/numerical-data.html">Common mistakes in numerical performance data</a></li>
+</ul>
+<p><em>Official source material has been synthesised and rephrased. Check ACCA's examinable documents and technical-article page for updates before the exam.</em></p></article>
+      <footer class="site-footer"><strong>ACCA APM new topics study guide</strong><br>Based on the official September 2026–June 2027 syllabus and ACCA technical articles. Always check ACCA for later examinable-document updates.</footer>
+    </main>
+  </div>
+
+  <div class="nav-scrim" id="nav-scrim" aria-hidden="true"></div>
+  <button class="back-to-top" id="back-to-top" type="button" aria-label="Back to top">↑</button>
+  <script>
+(() => {
+  const root = document.documentElement;
+  const themeButton = document.getElementById('theme-toggle');
+  const savedTheme = localStorage.getItem('apm-theme');
+  const initialTheme = savedTheme || (matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+
+  function setTheme(theme) {
+    root.dataset.theme = theme;
+    themeButton.setAttribute('aria-pressed', String(theme === 'dark'));
+    themeButton.title = theme === 'dark' ? 'Use light theme' : 'Use dark theme';
+  }
+  setTheme(initialTheme);
+  themeButton.addEventListener('click', () => {
+    const next = root.dataset.theme === 'dark' ? 'light' : 'dark';
+    setTheme(next);
+    localStorage.setItem('apm-theme', next);
+  });
+
+  document.getElementById('print-guide').addEventListener('click', () => window.print());
+
+  const menuButton = document.getElementById('menu-toggle');
+  const sidebar = document.getElementById('study-navigation');
+  const scrim = document.getElementById('nav-scrim');
+  function setMenu(open) {
+    sidebar.classList.toggle('open', open);
+    scrim.classList.toggle('open', open);
+    menuButton.setAttribute('aria-expanded', String(open));
+    document.body.style.overflow = open ? 'hidden' : '';
+  }
+  menuButton.addEventListener('click', () => setMenu(!sidebar.classList.contains('open')));
+  scrim.addEventListener('click', () => setMenu(false));
+  sidebar.addEventListener('click', event => {
+    if (event.target.closest('a') && innerWidth <= 980) setMenu(false);
+  });
+  addEventListener('keydown', event => { if (event.key === 'Escape') setMenu(false); });
+
+  const progress = document.getElementById('progress-bar');
+  const topButton = document.getElementById('back-to-top');
+  function updateScroll() {
+    const max = document.documentElement.scrollHeight - innerHeight;
+    progress.style.width = (max > 0 ? scrollY / max * 100 : 0) + '%';
+    topButton.classList.toggle('visible', scrollY > 700);
+  }
+  addEventListener('scroll', updateScroll, { passive: true });
+  addEventListener('resize', updateScroll);
+  updateScroll();
+  topButton.addEventListener('click', () => scrollTo({ top: 0, behavior: 'smooth' }));
+
+  const tocLinks = [...document.querySelectorAll('.toc a')];
+  const linkById = new Map(tocLinks.map(link => [decodeURIComponent(link.hash.slice(1)), link]));
+  const headings = [...document.querySelectorAll('#study-notes h2[id], #study-notes h3[id]')];
+  const observer = new IntersectionObserver(entries => {
+    const visible = entries.filter(entry => entry.isIntersecting).sort((a, b) => a.boundingClientRect.top - b.boundingClientRect.top);
+    if (!visible.length) return;
+    tocLinks.forEach(link => link.classList.remove('active'));
+    const active = linkById.get(visible[0].target.id);
+    if (active) {
+      active.classList.add('active');
+      active.scrollIntoView({ block: 'nearest' });
+    }
+  }, { rootMargin: '-12% 0px -76% 0px', threshold: 0 });
+  headings.forEach(heading => observer.observe(heading));
+
+  const search = document.getElementById('topic-search');
+  const status = document.getElementById('search-status');
+  search.addEventListener('input', () => {
+    const query = search.value.trim().toLowerCase();
+    let visibleCount = 0;
+    document.querySelectorAll('.toc li').forEach(item => {
+      const ownLink = item.querySelector(':scope > a');
+      if (!ownLink) return;
+      const ownMatch = !query || ownLink.textContent.toLowerCase().includes(query);
+      const childMatch = [...item.querySelectorAll(':scope > ul a')].some(link => !query || link.textContent.toLowerCase().includes(query));
+      const visible = ownMatch || childMatch;
+      item.classList.toggle('search-hidden', !visible);
+      if (visible && ownMatch) visibleCount++;
+    });
+    status.textContent = query ? `${visibleCount} matching topic${visibleCount === 1 ? '' : 's'}` : 'Filter the table of contents';
+  });
+
+  // Make the final revision checklist interactive and persist progress locally.
+  const checklistHeading = document.getElementById('22-final-readiness-checklist');
+  if (checklistHeading) {
+    const list = checklistHeading.nextElementSibling && checklistHeading.nextElementSibling.tagName === 'P'
+      ? checklistHeading.nextElementSibling.nextElementSibling
+      : checklistHeading.nextElementSibling;
+    if (list && list.tagName === 'UL') {
+      list.classList.add('interactive-checklist');
+      [...list.children].forEach((item, index) => {
+        const key = `apm-new-topics-check-${index}`;
+        const checkbox = document.createElement('input');
+        checkbox.type = 'checkbox';
+        checkbox.checked = localStorage.getItem(key) === '1';
+        checkbox.setAttribute('aria-label', `Mark checklist item ${index + 1} complete`);
+        checkbox.addEventListener('change', () => localStorage.setItem(key, checkbox.checked ? '1' : '0'));
+        item.prepend(checkbox);
+      });
+    }
+  }
+})();
+</script>
+</body>
+</html>
